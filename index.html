@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@500;700;900&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Nanum+Gothic+Coding:wght@400;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "경첩 하나, 손잡이 하나도 불러도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 화장실 문 경첩 교체, 손잡이 교체, 붙박이장 문 수리처럼 작은 작업도 블로그에 기록이 많이 있습니다."}}, {"@type": "Question", "name": "가전 설치도 해주시나요?", "acceptedAnswer": {"@type": "Answer", "text": "식기세척기, 가스레인지, 인덕션, 건조기, TV, 후드, 전등 설치를 자주 합니다. 제품 규격에 맞게 하부장을 리폼하거나 대리석 상판을 잘라 자리를 만들어 드려요."}}, {"@type": "Question", "name": "세탁실이 좁은데 건조기를 올릴 수 있을까요?", "acceptedAnswer": {"@type": "Answer", "text": "세탁기와 건조기 크기, 세탁실 구조를 확인한 뒤 건조기랙이나 선반을 설치합니다. 모델이 서로 달라도 확인 후 설치할 수 있고, 수평과 고정 상태를 점검해 흔들림 없이 마무리해요."}}, {"@type": "Question", "name": "대리석 상판을 잘라도 깨지지 않나요?", "acceptedAnswer": {"@type": "Answer", "text": "쿡탑이나 인덕션 규격을 먼저 확인하고 절단선을 테이프로 표시한 뒤 정밀하게 자릅니다. 절단면과 모서리까지 다듬어서 바로 매립할 수 있게 해 드려요."}}, {"@type": "Question", "name": "싱크대 문짝만 바꿔도 티가 안 나나요?", "acceptedAnswer": {"@type": "Answer", "text": "실측할 때 기존 몸통 색을 보고 가장 가까운 색으로 맞춥니다. 차이가 클 것 같으면 미리 말씀드려요."}}, {"@type": "Question", "name": "서랍이 안 열리면 통째로 바꿔야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "대부분 레일 문제입니다. 같은 규격 레일로 바꾸면 서랍과 몸통은 그대로 쓸 수 있어요."}}, {"@type": "Question", "name": "비용은 얼마나 나오나요?", "acceptedAnswer": {"@type": "Answer", "text": "작업 종류, 자재, 거리에 따라 달라요. 사진과 지역을 보내 주시면 예상 금액을 먼저 말씀드리고, 현장에서 달라질 수 있는 부분은 작업 전에 설명드려요."}}, {"@type": "Question", "name": "견적은 어떻게 받나요?", "acceptedAnswer": {"@type": "Answer", "text": "불편한 곳 사진과 작업할 지역을 문자로 보내주시면 예상 비용과 일정을 안내드립니다."}}, {"@type": "Question", "name": "새로 사지 않고 고쳐서 쓸 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "욕조는 코팅으로, 문틀은 필름으로, 정수기 구멍은 부분 복원으로 고친 사례가 있습니다. 교체 전에 복원이 되는지 먼저 봐드려요."}}, {"@type": "Question", "name": "필요 없는 걸 빼고 정리하는 것도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "가벽과 수납장 부분 철거, 식기세척기 철거 후 배관 정리, 빈자리 하부장 설치까지 합니다. 철거 흔적까지 깔끔하게 정리해요."}}, {"@type": "Question", "name": "식기세척기를 빼면 그 자리는 어떻게 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "같은 규격의 수납장을 만들어 채웁니다. 급수·배수는 새지 않게 막고, 상판 절단면과 옆판까지 원래 있던 것처럼 맞춰요."}}, {"@type": "Question", "name": "처진 상부장도 다시 달 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 벽 고정부가 헐거워진 경우가 많아서, 고정 위치를 다시 잡고 필요하면 보강재를 넣어 다시 답니다."}}, {"@type": "Question", "name": "서울, 경기 말고 다른 지역도 오시나요?", "acceptedAnswer": {"@type": "Answer", "text": "네, 전국 출장 가능합니다. 작업할 지역을 먼저 알려주시면 일정을 맞춰 안내드려요."}}]}</script>
 </head>
 <body>
 <style>
@@ -655,6 +656,10 @@ footer b{color:var(--deep-fg)}
 .ccta span{color:var(--muted);font-size:.94rem}
 .ccta .btns{margin-top:8px}
 .ccta .btn{min-height:48px;font-size:.95rem}
+.rep{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.rep a{display:flex;flex-direction:column;gap:6px;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--surface);text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+.rep a:hover{border-color:var(--flame);transform:translateY(-2px)}.rep b{font-size:1.02rem;line-height:1.4;letter-spacing:-.02em}.rep span{font-size:.86rem;color:var(--muted)}.rep span::before{content:"“"}.rep span::after{content:"”"}
+@media (max-width:980px){.rep{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:560px){.rep{grid-template-columns:1fr}.hide-m{display:none!important}}
 </style>
 
 <div class="rbar" aria-hidden="true"><i></i></div>
@@ -688,10 +693,11 @@ footer b{color:var(--deep-fg)}
       <span class="hpill">서울 · 경기 전 지역 · 전국 출장</span>
       <h1 class="slog" id="slog"><span class="sl on">부르면 <span class="fl">달려</span>갑니다</span><span class="sl">889번의 현장,<br>하나도 <span class="fl">빠짐없이</span></span><span class="sl">철거하면<br><span class="fl">복원</span>까지 합니다</span><span class="sl">사진 4장이면<br><span class="fl">견적</span> 끝</span></h1>
       <div class="sdots" id="sdots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
-      <p class="lead">경첩 하나부터 대리석 상판 절단·인덕션 매립까지.<br><b>간단한 집수리도 로켓집수리에 맡겨 주세요.</b></p>
+      <p class="lead">고장 난 곳, <b>사진만 보내 주시면 수리 가능 여부부터</b> 안내해 드립니다.<br>주방 · 욕실 · 문 · 가전 설치와 철거, 경첩 하나도 출장 갑니다.</p>
       <div class="btns">
-        <a class="btn flame" href="#contact">사진 보내고 견적 받기 <span class="arr">→</span></a>
-        <a class="btn" href="#/cases">시공 사례 보기</a>
+        <a class="btn flame" href="#contact">사진으로 견적 문의 <span class="arr">→</span></a>
+        <a class="btn" href="tel:010-3051-8015">전화 상담</a>
+        <a class="btn hide-m" href="/cases/">시공 사례 보기</a>
       </div>
       <ul class="hbadges">
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 6l1.5-2h5L16 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>사진 4장</b>이면 견적</span></li>
@@ -904,6 +910,13 @@ footer b{color:var(--deep-fg)}
     </div>
   </section>
 
+  <section data-pg="home" class="sec" id="repairs" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="tag">By symptom</span><h2>이럴 때 부르세요</h2></div>
+      <div class="rep"><a href="/repair/door-hinge/"><b>화장실 문이 안 닫힐 때, 경첩 교체 수리</b><span>문이 바닥이나 문틀에 긁혀요</span></a><a href="/repair/closet-removal/"><b>붙박이장 철거, 떼어낸 자리 복원까지</b><span>안 쓰는 붙박이장이 방을 차지해요</span></a><a href="/repair/bathtub-repair/"><b>욕조 기스·얼룩, 교체 말고 코팅으로 복원</b><span>욕조에 기스·찍힘이 생겼어요</span></a><a href="/repair/dishwasher/"><b>식기세척기 설치·빌트인, 철거 후 빈자리까지</b><span>식기세척기를 하부장에 넣고 싶어요</span></a><a href="/repair/dryer-rack/"><b>좁은 세탁실, 건조기랙으로 세탁기 위에 올리기</b><span>세탁실이 좁아 건조기 둘 자리가 없어요</span></a><a href="/repair/induction-cut/"><b>가스레인지를 인덕션으로, 대리석 상판 절단 매립</b><span>인덕션 구멍이 기존 가스레인지보다 커요</span></a><a href="/repair/tv-mount/"><b>TV 거치대 설치, 86인치 대형 TV까지</b><span>벽에 구멍 내기 싫어요</span></a><a href="/repair/gas-range/"><b>빌트인 가스레인지·후드 교체, 같은 자리에 딱 맞게</b><span>불이 잘 안 붙어요</span></a></div>
+    </div>
+  </section>
+
   <section data-pg="home faq" class="sec" id="faq" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head"><span class="tag">FAQ</span><h2>자주 묻는 질문</h2></div>
@@ -917,6 +930,7 @@ footer b{color:var(--deep-fg)}
           <details><summary>서랍이 안 열리면 통째로 바꿔야 하나요?</summary><p>대부분 레일 문제입니다. 같은 규격 레일로 바꾸면 서랍과 몸통은 그대로 쓸 수 있어요.</p></details>
         </div>
         <div class="faq-col">
+          <details><summary>비용은 얼마나 나오나요?</summary><p>작업 종류, 자재, 거리에 따라 달라요. 사진과 지역을 보내 주시면 예상 금액을 먼저 말씀드리고, 현장에서 달라질 수 있는 부분은 작업 전에 설명드려요.</p></details>
           <details><summary>견적은 어떻게 받나요?</summary><p>불편한 곳 사진과 작업할 지역을 문자로 보내주시면 예상 비용과 일정을 안내드립니다.</p></details>
           <details><summary>새로 사지 않고 고쳐서 쓸 수 있나요?</summary><p>욕조는 코팅으로, 문틀은 필름으로, 정수기 구멍은 부분 복원으로 고친 사례가 있습니다. 교체 전에 복원이 되는지 먼저 봐드려요.</p></details>
           <details><summary>필요 없는 걸 빼고 정리하는 것도 되나요?</summary><p>가벽과 수납장 부분 철거, 식기세척기 철거 후 배관 정리, 빈자리 하부장 설치까지 합니다. 철거 흔적까지 깔끔하게 정리해요.</p></details>
@@ -1191,7 +1205,7 @@ const WORKPIC="/img/work.webp";
     {k:'guide',sub:'사진 4장이면 견적',t:'견적 받는 법',tag:'From call to done',lead:'사진 네 장과 지역만 있으면 됩니다. 멀리서 2장, 가까이서 2장.',code:'4장',unit:'사진 · PHOTOS',head:''},
     {k:'records',sub:'889편 · 737일의 기록',t:'작업일지',tag:'Work log · 2024.03 – 2026.09',lead:'2024년 3월부터 한 달도 빠짐없이 남긴 작업 기록.',code:'889',unit:'편 · POSTS',head:'records'},
     {k:'area',sub:'서울 · 경기 · 전국',t:'출장 지역',tag:'Seoul · Gyeonggi · Nationwide',lead:'서울 25개 구, 경기 31개 시·군, 그리고 그 외 전국.',code:'전국',unit:'서울 · 경기 · 그 외',head:'area'},
-    {k:'faq',sub:'자주 묻는 질문 12개',t:'자주 묻는 질문',tag:'FAQ',lead:'경첩 하나부터 대리석 상판까지, 많이 물어보시는 것.',code:'12',unit:'질문 · QUESTIONS',head:'faq'}];
+    {k:'faq',sub:'자주 묻는 질문 13개',t:'자주 묻는 질문',tag:'FAQ',lead:'경첩 하나부터 대리석 상판까지, 많이 물어보시는 것.',code:'13',unit:'질문 · QUESTIONS',head:'faq'}];
 
   $('expGrid').innerHTML=PAGES.map((g,i)=>`<a href="#/${g.k}"><span class="no">0${i+1}</span><span><b>${g.t}</b><span class="s">${g.sub}</span></span><span class="go">→</span></a>`).join('');
   const pgEls=[...document.querySelectorAll('[data-pg]')];

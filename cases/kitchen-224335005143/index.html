@@ -110,19 +110,19 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
       <section class="blk"><h2>견적이 달라지는 조건</h2><ul><li>제품 크기(6인용·12인용)와 빌트인 여부</li><li>하부장 리폼이 필요한지</li><li>급수·배수·전원 위치</li><li>철거 시 빈자리를 수납장으로 채울지</li></ul></section>
       <section class="blk"><h2>비용 안내</h2><dl class="cost"><div><dt>견적 방법</dt><dd>사진과 지역을 보고 예상 금액을 먼저 알려드려요. 사진 1장부터 상담할 수 있어요.</dd></div><div><dt>출장비</dt><dd>지역과 작업에 따라 다르고, 견적을 드릴 때 함께 안내해요.</dd></div><div><dt>추가 비용이 생길 수 있는 경우</dt><dd>하부장 리폼이 필요하거나, 급수·배수·전원을 새로 끌어와야 할 때예요.</dd></div><div><dt>현장에서 금액이 바뀌면</dt><dd>작업 전에 먼저 설명드리고, 동의하신 뒤에 진행해요.</dd></div></dl></section>
       <div class="cta"><b>비슷한 곳을 고치고 싶으세요?</b><p>고장 난 곳 사진 1장부터 괜찮아요. 지역과 함께 보내 주시면 이 사례를 기준으로 예상 견적을 알려드려요.</p>
-        <div class="btns"><a class="btn f" data-q="1" href="sms:01030518015?&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90%EC%84%9C%20%22%EB%8F%99%ED%83%84%20%EC%8B%9D%EA%B8%B0%EC%84%B8%EC%B2%99%EA%B8%B0%20%EC%84%A4%EC%B9%98%22%20%EC%82%AC%EB%A1%80%20%EB%B3%B4%EA%B3%A0%20%EC%97%B0%EB%9D%BD%EB%93%9C%EB%A0%A4%EC%9A%94.%20%EB%B9%84%EC%8A%B7%ED%95%9C%20%EC%9E%91%EC%97%85%20%EA%B2%AC%EC%A0%81%20%EB%B6%80%ED%83%81%EB%93%9C%EB%A0%A4%EC%9A%94.%20%EC%A7%80%EC%97%AD%3A%20">문자로 견적 문의</a><a class="btn" href="tel:010-3051-8015">전화 010-3051-8015</a></div><form class="qq" onsubmit="return qqSend(this)" data-job="동탄 식기세척기 설치">
+        <div class="btns"><a class="btn f" href="#pf">사진으로 견적 접수</a><a class="btn" data-q="1" href="sms:01030518015?&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90%EC%84%9C%20%22%EB%8F%99%ED%83%84%20%EC%8B%9D%EA%B8%B0%EC%84%B8%EC%B2%99%EA%B8%B0%20%EC%84%A4%EC%B9%98%22%20%EC%82%AC%EB%A1%80%20%EB%B3%B4%EA%B3%A0%20%EC%97%B0%EB%9D%BD%EB%93%9C%EB%A0%A4%EC%9A%94.%20%EB%B9%84%EC%8A%B7%ED%95%9C%20%EC%9E%91%EC%97%85%20%EA%B2%AC%EC%A0%81%20%EB%B6%80%ED%83%81%EB%93%9C%EB%A0%A4%EC%9A%94.%20%EC%A7%80%EC%97%AD%3A%20">문자로 견적 문의</a><a class="btn" href="tel:010-3051-8015">전화 010-3051-8015</a></div><form class="qq" onsubmit="return qqSend(this)" data-job="동탄 식기세척기 설치">
   <b>간편 견적 신청</b>
   <label>작업할 지역<input name="area" placeholder="예: 마포구 공덕동" required></label>
   <label>불편한 점 (선택)<input name="note" placeholder="예: 문이 바닥에 긁혀요"></label>
   <button class="btn f" type="submit">문자 창 열기 → 사진 붙여서 보내기</button>
   <small>문자 창이 열리면 내용이 채워져 있어요. 사진만 붙여서 보내 주세요. 컴퓨터라면 내용이 복사되니 010-3051-8015로 보내 주세요.</small>
 </form></div>
-      <form class="pf" action="https://formsubmit.co/bbok3000@naver.com" method="POST" enctype="multipart/form-data" onsubmit="return pfSend(this)">
+      <form class="pf" id="pf" action="https://formsubmit.co/bbok3000@naver.com" method="POST" enctype="multipart/form-data" onsubmit="return pfSend(this)">
   <h3>사진으로 견적 접수</h3><p class="sub">문자 앱 없이 여기서 바로 보내셔도 돼요. 확인하고 연락드릴게요.</p>
   <input type="hidden" name="_subject" value="[홈페이지 견적] 동탄 식기세척기 설치">
   <input type="hidden" name="_next" value="https://rocketzipsuri.pages.dev/thanks/"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
   <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off">
-  <input type="hidden" name="작업" value="동탄 식기세척기 설치">
+  <label>작업 종류<input type="text" name="작업" value="동탄 식기세척기 설치"></label>
   <div class="row"><label>연락처 (필수)<input type="tel" name="연락처" placeholder="010-0000-0000" required inputmode="tel"></label>
   <label>작업할 지역 (필수)<input name="지역" placeholder="예: 마포구 공덕동" required></label></div>
   <label>불편한 점 (선택)<textarea name="내용" rows="2" placeholder="예: 정수기 뺀 자리에 구멍이 있어요"></textarea></label>

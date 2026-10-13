@@ -110,19 +110,19 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
     <div>
       <section class="blk"><h2>자주 묻는 질문</h2><div class="faq"><details><summary>아트월에도 달 수 있나요?</summary><p>벽 재질을 보고 가능한 방법을 먼저 말씀드려요.</p></details><details><summary>예전 구멍은요?</summary><p>기존 거치대 자리의 구멍도 복원해 드려요.</p></details><details><summary>우리 집도 출장 오시나요?</summary><p>서울 25개 구, 경기 31개 시·군 전 지역에 갑니다. 그 밖의 지역도 일정을 맞춰 출장해요.</p></details><details><summary>이렇게 작은 수리도 불러도 되나요?</summary><p>네. 경첩 하나, 손잡이 하나 같은 작은 작업도 많이 합니다.</p></details><details><summary>비용은 얼마나 나오나요?</summary><p>작업 종류, 자재, 거리에 따라 달라요. 사진과 지역을 보내 주시면 예상 금액을 먼저 말씀드리고, 현장에서 달라질 수 있는 부분은 작업 전에 설명드려요.</p></details><details><summary>고칠 수 있는지, 바꿔야 하는지 모르겠어요.</summary><p>사진으로 먼저 봐 드려요. 고쳐서 쓸 수 있으면 고치는 쪽을 먼저 권합니다.</p></details></div></section>
       <div class="cta"><b>비슷한 고장이라면 사진부터 보내 주세요</b><p>고장 난 곳 사진 1장부터 괜찮아요. 지역과 함께 보내 주시면 수리 가능 여부와 예상 견적을 먼저 알려드려요.</p>
-        <div class="btns"><a class="btn f" data-q="1" href="sms:01030518015?&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%B3%B4%EA%B3%A0%20%EC%97%B0%EB%9D%BD%EB%93%9C%EB%A0%A4%EC%9A%94.%2086%EC%9D%B8%EC%B9%98%20%EB%8C%80%ED%98%95%20TV%EA%B9%8C%EC%A7%80%20%EA%B2%AC%EC%A0%81%20%EB%B6%80%ED%83%81%EB%93%9C%EB%A0%A4%EC%9A%94.%20%EC%A7%80%EC%97%AD%3A%20">문자로 견적 문의</a><a class="btn" href="tel:010-3051-8015">전화 010-3051-8015</a></div><form class="qq" onsubmit="return qqSend(this)" data-job="86인치 대형 TV까지">
+        <div class="btns"><a class="btn f" href="#pf">사진으로 견적 접수</a><a class="btn" data-q="1" href="sms:01030518015?&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%B3%B4%EA%B3%A0%20%EC%97%B0%EB%9D%BD%EB%93%9C%EB%A0%A4%EC%9A%94.%2086%EC%9D%B8%EC%B9%98%20%EB%8C%80%ED%98%95%20TV%EA%B9%8C%EC%A7%80%20%EA%B2%AC%EC%A0%81%20%EB%B6%80%ED%83%81%EB%93%9C%EB%A0%A4%EC%9A%94.%20%EC%A7%80%EC%97%AD%3A%20">문자로 견적 문의</a><a class="btn" href="tel:010-3051-8015">전화 010-3051-8015</a></div><form class="qq" onsubmit="return qqSend(this)" data-job="86인치 대형 TV까지">
   <b>간편 견적 신청</b>
   <label>작업할 지역<input name="area" placeholder="예: 마포구 공덕동" required></label>
   <label>불편한 점 (선택)<input name="note" placeholder="예: 문이 바닥에 긁혀요"></label>
   <button class="btn f" type="submit">문자 창 열기 → 사진 붙여서 보내기</button>
   <small>문자 창이 열리면 내용이 채워져 있어요. 사진만 붙여서 보내 주세요. 컴퓨터라면 내용이 복사되니 010-3051-8015로 보내 주세요.</small>
 </form></div>
-      <form class="pf" action="https://formsubmit.co/bbok3000@naver.com" method="POST" enctype="multipart/form-data" onsubmit="return pfSend(this)">
+      <form class="pf" id="pf" action="https://formsubmit.co/bbok3000@naver.com" method="POST" enctype="multipart/form-data" onsubmit="return pfSend(this)">
   <h3>사진으로 견적 접수</h3><p class="sub">문자 앱 없이 여기서 바로 보내셔도 돼요. 확인하고 연락드릴게요.</p>
   <input type="hidden" name="_subject" value="[홈페이지 견적] 86인치 대형 TV까지">
   <input type="hidden" name="_next" value="https://rocketzipsuri.pages.dev/thanks/"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
   <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off">
-  <input type="hidden" name="작업" value="86인치 대형 TV까지">
+  <label>작업 종류<input type="text" name="작업" value="86인치 대형 TV까지"></label>
   <div class="row"><label>연락처 (필수)<input type="tel" name="연락처" placeholder="010-0000-0000" required inputmode="tel"></label>
   <label>작업할 지역 (필수)<input name="지역" placeholder="예: 마포구 공덕동" required></label></div>
   <label>불편한 점 (선택)<textarea name="내용" rows="2" placeholder="예: 정수기 뺀 자리에 구멍이 있어요"></textarea></label>

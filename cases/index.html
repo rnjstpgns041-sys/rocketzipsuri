@@ -67,6 +67,27 @@ footer{background:var(--deep);color:#9AA3BE;font-size:.85rem;padding:30px 0 40px
 </style>
 <script>window.track=function(n,p){p=p||{};window.dataLayer=window.dataLayer||[];dataLayer.push(Object.assign({event:n},p));if(typeof gtag==="function")gtag("event",n,p)};document.addEventListener("click",function(e){var a=e.target.closest("a");if(!a)return;var h=a.getAttribute("href")||"";if(h.indexOf("tel:")===0)track("call_click",{page:location.pathname});else if(h.indexOf("sms:")===0)track("sms_click",{page:location.pathname});else if(a.dataset.q)track("case_quote_click",{page:location.pathname})},true)</script>
 <script>function qqSend(f){var b="[로켓집수리 견적] 작업: "+f.dataset.job+" / 지역: "+f.area.value+(f.note.value?" / 내용: "+f.note.value:"")+" (사진 첨부)";track("quick_quote_submit",{page:location.pathname,job:f.dataset.job});try{navigator.clipboard&&navigator.clipboard.writeText(b)}catch(e){}location.href="sms:01030518015?&body="+encodeURIComponent(b);return false}</script>
+<style>
+.pf{display:grid;gap:12px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:22px}
+.pf h3{margin:0;font-size:1.2rem;font-weight:900;letter-spacing:-.02em}.pf .sub{margin:-4px 0 4px;color:var(--muted);font-size:.9rem}
+.pf .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:600px){.pf .row{grid-template-columns:1fr}}
+.pf label{display:grid;gap:5px;font-size:.85rem;font-weight:700;color:var(--muted)}
+.pf input,.pf select,.pf textarea{font:inherit;font-size:1rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%;box-sizing:border-box}
+.pf input:focus,.pf select:focus,.pf textarea:focus{outline:none;border-color:var(--flame)}
+.pf .ph{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pf .ph label{position:relative;aspect-ratio:1;border:1.5px dashed var(--line);border-radius:14px;display:grid;place-items:center;text-align:center;cursor:pointer;overflow:hidden;background:var(--bg);font-weight:700;font-size:.8rem}
+.pf .ph label:hover{border-color:var(--flame);color:var(--flame)}.pf .ph input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.pf .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pf button{border:0;cursor:pointer;font:inherit;font-weight:700;background:var(--flame);color:#fff;min-height:52px;border-radius:999px;font-size:1.02rem}
+.pf button[disabled]{opacity:.6;cursor:wait}.pf small{color:var(--muted);font-size:.78rem;line-height:1.5}.pf .hp{display:none}
+</style><script>
+document.addEventListener('change',function(ev){var i=ev.target;if(!i.matches||!i.matches('.pf .ph input'))return;var l=i.parentNode,o=l.querySelector('img');if(o)o.remove();if(i.files[0]){var m=document.createElement('img');m.src=URL.createObjectURL(i.files[0]);l.appendChild(m)}});
+function pfShrink(f){return new Promise(function(ok){if(!f||!/^image\//.test(f.type)||f.size<900000)return ok(f);var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(function(b){ok(b?new File([b],(f.name||'photo').replace(/\.[^.]+$/,'')+'.jpg',{type:'image/jpeg'}):f)},'image/jpeg',.82)};im.onerror=function(){ok(f)};im.src=u})}
+function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('button');b.disabled=true;b.textContent='사진 줄이는 중...';
+ var ins=[].slice.call(form.querySelectorAll('.ph input'));
+ Promise.all(ins.map(function(i){return pfShrink(i.files[0]).then(function(f){if(f&&f!==i.files[0]){try{var d=new DataTransfer();d.items.add(f);i.files=d.files}catch(e){}}})})).then(function(){
+  if(window.track)track('photo_form_submit',{page:location.pathname,job:(form.job||{}).value||''});form.dataset.go=1;b.textContent='보내는 중...';form.submit()});return false}
+</script>
 </head>
 <body>
 <header class="top"><div class="wrap"><a class="logo" href="/"><img src="/favicon.svg" alt="">로켓집수리</a><a class="call" href="tel:010-3051-8015">010-3051-8015</a></div></header>

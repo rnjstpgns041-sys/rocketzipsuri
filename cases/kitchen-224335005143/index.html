@@ -68,6 +68,27 @@ footer{background:var(--deep);color:#9AA3BE;font-size:.85rem;padding:30px 0 40px
 </style>
 <script>window.track=function(n,p){p=p||{};window.dataLayer=window.dataLayer||[];dataLayer.push(Object.assign({event:n},p));if(typeof gtag==="function")gtag("event",n,p)};document.addEventListener("click",function(e){var a=e.target.closest("a");if(!a)return;var h=a.getAttribute("href")||"";if(h.indexOf("tel:")===0)track("call_click",{page:location.pathname});else if(h.indexOf("sms:")===0)track("sms_click",{page:location.pathname});else if(a.dataset.q)track("case_quote_click",{page:location.pathname})},true)</script>
 <script>function qqSend(f){var b="[로켓집수리 견적] 작업: "+f.dataset.job+" / 지역: "+f.area.value+(f.note.value?" / 내용: "+f.note.value:"")+" (사진 첨부)";track("quick_quote_submit",{page:location.pathname,job:f.dataset.job});try{navigator.clipboard&&navigator.clipboard.writeText(b)}catch(e){}location.href="sms:01030518015?&body="+encodeURIComponent(b);return false}</script>
+<style>
+.pf{display:grid;gap:12px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:22px}
+.pf h3{margin:0;font-size:1.2rem;font-weight:900;letter-spacing:-.02em}.pf .sub{margin:-4px 0 4px;color:var(--muted);font-size:.9rem}
+.pf .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:600px){.pf .row{grid-template-columns:1fr}}
+.pf label{display:grid;gap:5px;font-size:.85rem;font-weight:700;color:var(--muted)}
+.pf input,.pf select,.pf textarea{font:inherit;font-size:1rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%;box-sizing:border-box}
+.pf input:focus,.pf select:focus,.pf textarea:focus{outline:none;border-color:var(--flame)}
+.pf .ph{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pf .ph label{position:relative;aspect-ratio:1;border:1.5px dashed var(--line);border-radius:14px;display:grid;place-items:center;text-align:center;cursor:pointer;overflow:hidden;background:var(--bg);font-weight:700;font-size:.8rem}
+.pf .ph label:hover{border-color:var(--flame);color:var(--flame)}.pf .ph input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.pf .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pf button{border:0;cursor:pointer;font:inherit;font-weight:700;background:var(--flame);color:#fff;min-height:52px;border-radius:999px;font-size:1.02rem}
+.pf button[disabled]{opacity:.6;cursor:wait}.pf small{color:var(--muted);font-size:.78rem;line-height:1.5}.pf .hp{display:none}
+</style><script>
+document.addEventListener('change',function(ev){var i=ev.target;if(!i.matches||!i.matches('.pf .ph input'))return;var l=i.parentNode,o=l.querySelector('img');if(o)o.remove();if(i.files[0]){var m=document.createElement('img');m.src=URL.createObjectURL(i.files[0]);l.appendChild(m)}});
+function pfShrink(f){return new Promise(function(ok){if(!f||!/^image\//.test(f.type)||f.size<900000)return ok(f);var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(function(b){ok(b?new File([b],(f.name||'photo').replace(/\.[^.]+$/,'')+'.jpg',{type:'image/jpeg'}):f)},'image/jpeg',.82)};im.onerror=function(){ok(f)};im.src=u})}
+function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('button');b.disabled=true;b.textContent='사진 줄이는 중...';
+ var ins=[].slice.call(form.querySelectorAll('.ph input'));
+ Promise.all(ins.map(function(i){return pfShrink(i.files[0]).then(function(f){if(f&&f!==i.files[0]){try{var d=new DataTransfer();d.items.add(f);i.files=d.files}catch(e){}}})})).then(function(){
+  if(window.track)track('photo_form_submit',{page:location.pathname,job:(form.job||{}).value||''});form.dataset.go=1;b.textContent='보내는 중...';form.submit()});return false}
+</script>
 </head>
 <body>
 <header class="top"><div class="wrap"><a class="logo" href="/"><img src="/favicon.svg" alt="">로켓집수리</a><a class="call" href="tel:010-3051-8015">010-3051-8015</a></div></header>
@@ -95,6 +116,19 @@ footer{background:var(--deep);color:#9AA3BE;font-size:.85rem;padding:30px 0 40px
   <button class="btn f" type="submit">문자 창 열기 → 사진 붙여서 보내기</button>
   <small>문자 창이 열리면 내용이 채워져 있어요. 사진만 붙여서 보내 주세요. 컴퓨터라면 내용이 복사되니 010-3051-8015로 보내 주세요.</small>
 </form></div>
+      <form class="pf" action="https://formsubmit.co/bbok3000@naver.com" method="POST" enctype="multipart/form-data" onsubmit="return pfSend(this)">
+  <h3>사진으로 견적 접수</h3><p class="sub">문자 앱 없이 여기서 바로 보내셔도 돼요. 확인하고 연락드릴게요.</p>
+  <input type="hidden" name="_subject" value="[홈페이지 견적] 동탄 식기세척기 설치">
+  <input type="hidden" name="_next" value="https://rocketzipsuri.pages.dev/thanks/"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
+  <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off">
+  <input type="hidden" name="작업" value="동탄 식기세척기 설치">
+  <div class="row"><label>연락처 (필수)<input type="tel" name="연락처" placeholder="010-0000-0000" required inputmode="tel"></label>
+  <label>작업할 지역 (필수)<input name="지역" placeholder="예: 마포구 공덕동" required></label></div>
+  <label>불편한 점 (선택)<textarea name="내용" rows="2" placeholder="예: 정수기 뺀 자리에 구멍이 있어요"></textarea></label>
+  <div class="ph"><label>사진 1<input type="file" name="사진1" accept="image/*"></label><label>사진 2<input type="file" name="사진2" accept="image/*"></label><label>사진 3<input type="file" name="사진3" accept="image/*"></label></div>
+  <button type="submit">견적 요청 보내기</button>
+  <small>사진은 1장만 있어도 돼요. 보내 주신 연락처는 견적 안내에만 써요.</small>
+</form>
       <section class="blk"><h2>자주 묻는 질문</h2><div class="faq"><details><summary>우리 집도 출장 오시나요?</summary><p>서울 25개 구, 경기 31개 시·군 전 지역에 갑니다. 그 밖의 지역도 일정을 맞춰 출장해요.</p></details><details><summary>이렇게 작은 수리도 불러도 되나요?</summary><p>네. 경첩 하나, 손잡이 하나 같은 작은 작업도 많이 합니다.</p></details><details><summary>비용은 얼마나 나오나요?</summary><p>작업 종류, 자재, 거리에 따라 달라요. 사진과 지역을 보내 주시면 예상 금액을 먼저 말씀드리고, 현장에서 달라질 수 있는 부분은 작업 전에 설명드려요.</p></details><details><summary>고칠 수 있는지, 바꿔야 하는지 모르겠어요.</summary><p>사진으로 먼저 봐 드려요. 고쳐서 쓸 수 있으면 고치는 쪽을 먼저 권합니다.</p></details></div></section>
       <a href="/repair/dishwasher/" style="display:block;color:var(--flame);font-weight:700;text-decoration:none;margin-bottom:8px">식기세척기 설치·빌트인, 철거 후 빈자리까지 더 알아보기 →</a>
       <a href="https://blog.naver.com/bssd8015/224335005143" target="_blank" rel="noopener" style="color:var(--muted);font-weight:700;text-decoration:none">블로그 원문 보기 →</a>

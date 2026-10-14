@@ -1,3 +1,5 @@
+https://:branch.rocketzipsuri.pages.dev/*
+  X-Robots-Tag: noindex
 /img/*
   Cache-Control: public, max-age=2592000
 /video/*

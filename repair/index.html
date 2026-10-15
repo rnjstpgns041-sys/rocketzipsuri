@@ -182,6 +182,18 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{fon
 .recl span{color:var(--muted);font-size:.86rem;font-variant-numeric:tabular-nums}.recl a:hover{color:var(--pri)}
 .recl em{font-style:normal;font-size:.76rem;font-weight:700;color:var(--pri);background:var(--pril);padding:3px 9px;border-radius:999px;white-space:nowrap}
 .recl a i{font-style:normal;color:var(--muted);font-size:.8rem}
+.recl .ra{display:flex;gap:6px;align-items:center}
+.recl .rq,.rra .rq{border:0;cursor:pointer;font:inherit;font-size:.78rem;font-weight:800;color:#fff;background:var(--pri);padding:5px 11px;border-radius:999px;white-space:nowrap}.recl .rq:hover,.rra .rq:hover{filter:brightness(.92)}
+.rres{margin:0 0 26px}.rres[hidden]{display:none}.rres h3{margin:0 0 14px;font-size:1.1rem}
+.rrg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.rrc{display:grid;grid-template-columns:120px 1fr;gap:16px;background:var(--card);border-radius:22px;padding:14px}
+.rrc .ri img{width:120px;height:120px;object-fit:cover;border-radius:14px;display:block}
+.rrc span{font-size:.78rem;font-weight:700;color:var(--pri)}.rrc b{display:block;margin:4px 0;font-size:.95rem;line-height:1.4}
+.rrc p{margin:0 0 10px;color:var(--muted);font-size:.84rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rra{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.rra a{font-size:.84rem;font-weight:700;color:var(--ink2)}.rra a:hover{color:var(--pri)}
+#pf.hl{animation:hl 1.6s ease}@keyframes hl{0%,40%{box-shadow:0 0 0 4px var(--pri)}100%{box-shadow:0 0 0 0 transparent}}
+.tagc span.no{background:none;border:1px dashed var(--line);color:var(--muted);font-weight:500}
+.lgd{display:flex;gap:14px;flex-wrap:wrap;margin:-6px 0 14px;font-size:.8rem;color:var(--muted)}.lgd i{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--pri);margin-right:5px;vertical-align:-1px}.lgd i.o{background:none;border:1px dashed var(--muted)}
 .recl .rk{font-size:.78rem;font-weight:800;color:var(--pri);background:var(--pril);padding:5px 11px;border-radius:999px;white-space:nowrap}.recl .rk:hover{background:var(--pri);color:#fff}
 .rpw{max-width:980px;margin:34px auto 0}
 .rpn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px;align-items:center;background:var(--bg2);border-radius:28px;padding:30px}.rpn[hidden]{display:none}
@@ -190,7 +202,7 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{fon
 .rpc3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.rpc3 a{display:block}.rpc3 img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;transition:transform .3s}.rpc3 a:hover img{transform:translateY(-3px)}
 .rpc3 b{display:block;margin-top:8px;font-size:.84rem;line-height:1.4}
 .ctab{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--card);border-radius:20px;padding:16px 16px 16px 22px;margin:0 0 26px;color:var(--ink2)}.ctab b{color:var(--ink)}
-@media (max-width:600px){.recl li{grid-template-columns:48px 1fr}.recl em{display:none}.recl .rk{grid-column:2;justify-self:start;margin-top:-4px}
+@media (max-width:600px){.recl li{grid-template-columns:48px 1fr}.recl em{display:none}.recl .ra{grid-column:2;margin-top:-4px}.rrg{grid-template-columns:1fr}.rrc{grid-template-columns:92px 1fr;gap:12px}.rrc .ri img{width:92px;height:92px}
 .rpn{grid-template-columns:1fr;padding:22px}.ctab{flex-direction:column;align-items:stretch;text-align:center}}
 /* faq */
 .fqw{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:40px;align-items:start}
@@ -268,7 +280,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
   <input type="hidden" name="_subject" value="[홈페이지 견적] 사진 견적 문의">
   <input type="hidden" name="_next" value="https://rocketzipsuri.pages.dev/thanks/?f=photo"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
   <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off">
-  <label>어떤 작업인가요?<select name="작업"><option>건조기랙 설치</option><option>식기세척기 설치·철거</option><option>가스레인지·인덕션</option><option>싱크대 상판 복원</option><option>문·경첩·붙박이장</option><option>TV 거치대</option><option>욕실·욕조</option><option>벽 구멍 복원</option><option>철거 후 복원</option><option>기타 집수리</option></select></label>
+  <label>어떤 작업인가요?<select name="작업"><option>건조기랙 설치</option><option>식기세척기 설치·철거</option><option>가스레인지·인덕션</option><option>싱크대·수납장</option><option>싱크대 상판 복원</option><option>문·경첩·붙박이장</option><option>TV 거치대·조명</option><option>욕실·욕조·실리콘</option><option>구멍·크랙 복원</option><option>철거 후 복원</option><option>바닥·도장·방수</option><option>기타 집수리</option></select></label>
   <div class="row"><label>연락처 (필수)<input type="tel" name="연락처" placeholder="010-0000-0000" required inputmode="tel"></label>
   <label>작업할 지역 (필수)<input name="지역" placeholder="예: 마포구 공덕동" required></label></div>
   <label>불편한 점 (선택)<textarea name="내용" rows="2" placeholder="예: 고장 난 곳을 짧게 적어 주세요"></textarea></label>
@@ -293,10 +305,28 @@ document.addEventListener("click",function(e){var a=e.target.closest("a");if(!a)
 var ba=$("ba");if(ba){var r=$("baR");r.oninput=function(){ba.style.setProperty("--p",r.value+"%")};
 $("pick").onclick=function(e){var b=e.target.closest("button");if(!b)return;[].forEach.call(this.children,function(x){x.classList.toggle("on",x===b)});$("baA").src=b.dataset.a;$("baB").src=b.dataset.b;$("baT").textContent=b.dataset.t;$("baD").textContent=b.dataset.d;$("baU").href=b.dataset.u;r.value=50;ba.style.setProperty("--p","50%")}}
 var cf=$("cf");if(cf){var cards=[].slice.call(document.querySelectorAll("#cgall a"));cf.onclick=function(e){var b=e.target.closest("button");if(!b)return;[].forEach.call(cf.children,function(x){x.classList.toggle("on",x===b)});cards.forEach(function(a){a.hidden=!!b.dataset.c&&a.dataset.c!==b.dataset.c});track("case_filter",{cat:b.dataset.c})}}
-var rq=$("rq");if(rq){var lis=[].slice.call(document.querySelectorAll(".recl li")),mons=[].slice.call(document.querySelectorAll(".mon")),cat="",cb=[].slice.call(document.querySelectorAll("#rbars button"));
-function rf(){var q=rq.value.trim().replace(/\s+/g,""),n=0;lis.forEach(function(li){var ok=(!q||li.dataset.t.indexOf(q)>-1)&&(!cat||li.dataset.k===cat);li.hidden=!ok;if(ok)n++});mons.forEach(function(m,i){var v=m.querySelectorAll("li:not([hidden])").length;m.hidden=!v;m.querySelector("small").textContent=v+"편";m.open=(q||cat)?v>0:i<2});$("rcnt").textContent=(q||cat)?n+"편을 찾았어요":"전체 "+lis.length+"편"}
-var pns=[].slice.call(document.querySelectorAll(".rpn"));
-rq.oninput=rf;cb.forEach(function(b){b.onclick=function(){cat=cat===b.dataset.k?"":b.dataset.k;cb.forEach(function(x){x.classList.toggle("on",x.dataset.k===cat)});pns.forEach(function(p){p.hidden=cat?p.dataset.k!==cat:p.id!=="panel0"});rf();if(cat)track("records_cat",{cat:b.querySelector("span").textContent});$("rpanel").scrollIntoView({behavior:"smooth",block:"nearest"})}});rf()}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function setJob(job,memo,go){var f=$("pf");if(!f)return;var s=f.querySelector('select[name="작업"]');if(s&&job)[].forEach.call(s.options,function(o){if(o.text===job)s.value=o.value});
+var t=f.querySelector('textarea[name="내용"]');if(t&&memo&&(!t.value||t.dataset.auto)){t.value=memo;t.dataset.auto=1}
+var sj=f.querySelector('input[name="_subject"]');if(sj)sj.value="[홈페이지 견적] "+(job||"사진 견적 문의");
+var h=document.querySelector("#contact h2");if(h){if(!h.dataset.o)h.dataset.o=h.innerHTML;h.innerHTML=job?esc(job)+"<br>사진 한 장으로 견적 받아 보세요":h.dataset.o}
+if(go){f.classList.remove("hl");void f.offsetWidth;f.classList.add("hl")}}
+document.addEventListener("click",function(ev){var b=ev.target.closest("a[data-job]");if(b){setJob(b.dataset.job,"",1);track("records_quote_click",{job:b.dataset.job||"전체",from:b.id==="ctabb"?"list":"panel"})}
+var q=ev.target.closest(".rq");if(q&&window.RD){var li=q.closest("li")||q.closest(".rrc"),j=RD.j[+li.dataset.k]||"기타 집수리",tt=li.dataset.n||li.querySelector("a").textContent.replace("↗","").trim();
+setJob(j,"작업일지 “"+tt+"” 같은 작업 견적 문의드려요.",1);$("contact").scrollIntoView({behavior:"smooth"});track("records_quote_click",{job:j,from:q.closest(".rrc")?"photo_card":"row"})}});
+var rq=$("rq");if(rq){var lis=[].slice.call(document.querySelectorAll(".recl li")),mons=[].slice.call(document.querySelectorAll(".mon")),cat="",cb=[].slice.call(document.querySelectorAll("#rbars button")),pns=[].slice.call(document.querySelectorAll(".rpn")),rr=$("rres"),rg=$("rrg"),ct=$("ctabt"),ct0=ct.innerHTML;
+function cards(){var got=[],imgs={};function pass(f){lis.forEach(function(li){if(got.length>=6||li.hidden||!f(li))return;var c=li.dataset.c,s=li.dataset.s,d=c?RD.c[c]:(s?RD.s[s]:null);if(!d||imgs[d[1]])return;imgs[d[1]]=1;got.push([li,d,!!c])})}
+pass(function(li){return li.dataset.c});pass(function(li){return li.dataset.s});
+rg.innerHTML=got.map(function(g){var li=g[0],d=g[1],tt=li.querySelector("a").textContent.replace("↗","").trim();
+return '<div class="rrc" data-k="'+li.dataset.k+'" data-n="'+esc(tt)+'"><a class="ri" href="'+d[0]+'"><img src="'+d[1]+'" alt="" loading="lazy"></a><div><span>'+li.querySelector("span").textContent+' · '+(g[2]?"전·후 사진 사례":"수리 안내")+'</span><b>'+esc(tt)+'</b><p>'+esc(d[2])+'</p><div class="rra"><a href="'+d[0]+'">'+(g[2]?"사례 보기 →":esc(d[3])+" 안내 →")+'</a><button type="button" class="rq">비슷한 작업 견적</button></div></div></div>'}).join("");
+rr.hidden=!got.length}
+function rf(){var q=rq.value.trim().replace(/\s+/g,""),n=0;lis.forEach(function(li){var ok=(!q||li.dataset.t.indexOf(q)>-1)&&(!cat||li.dataset.k===cat);li.hidden=!ok;if(ok)n++});mons.forEach(function(m,i){var v=m.querySelectorAll("li:not([hidden])").length;m.hidden=!v;m.querySelector("small").textContent=v+"편";m.open=(q||cat)?v>0:i<2});$("rcnt").textContent=(q||cat)?n+"편을 찾았어요":"전체 "+lis.length+"편";
+if((q||cat)&&window.RD)cards();else rr.hidden=true}
+var tq;rq.oninput=function(){clearTimeout(tq);tq=setTimeout(function(){rf();if(rq.value.trim())track("records_search",{q:rq.value.trim()})},250)};
+cb.forEach(function(b){b.onclick=function(){cat=cat===b.dataset.k?"":b.dataset.k;var job=cat?b.dataset.job:"",nm=b.querySelector("span").textContent;cb.forEach(function(x){x.classList.toggle("on",x.dataset.k===cat)});pns.forEach(function(p){p.hidden=cat?p.dataset.k!==cat:p.id!=="panel0"});
+ct.innerHTML=cat?"<b>"+esc(nm)+"</b> 쪽 고장이 있나요? <b>사진 한 장으로 견적 받아 보세요</b>":ct0;$("ctabb").dataset.job=job;$("ctabb").textContent=cat?job+" 견적 →":"견적 문의 →";setJob(job,"",0);
+rf();if(cat)track("records_cat",{cat:nm});$("rpanel").scrollIntoView({behavior:"smooth",block:"nearest"})}});rf()}
+[].forEach.call(document.querySelectorAll("form"),function(f){var n=f.querySelector('input[name="_next"]');if(n&&n.value.indexOf("&p=")<0)n.value+="&p="+encodeURIComponent(location.pathname);if(f.querySelector('input[name="연락처"]')&&!f.querySelector('input[name="보낸 페이지"]')){var i=document.createElement("input");i.type="hidden";i.name="보낸 페이지";i.value=location.pathname;f.appendChild(i)}});
 var fq=$("fq");if(fq){var ds=[].slice.call(document.querySelectorAll(".fqg details")),gs=[].slice.call(document.querySelectorAll(".fqg"));
 fq.oninput=function(){var q=fq.value.trim().replace(/\s+/g,""),n=0;ds.forEach(function(d){var ok=!q||d.textContent.replace(/\s+/g,"").indexOf(q)>-1;d.hidden=!ok;d.open=!!q&&ok;if(ok)n++});gs.forEach(function(g){g.hidden=!g.querySelector("details:not([hidden])")});$("fcnt").textContent=q?n+"개 질문을 찾았어요":"전체 "+ds.length+"개 질문"}}
 var els=[].slice.call(document.querySelectorAll(".fhd,.sh,.cg a,.sy a,.rpc,.stp li,.rvi,.gal a,.pm div,.nw a,.baw,.area>div,.bars"));

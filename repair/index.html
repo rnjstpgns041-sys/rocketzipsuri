@@ -181,7 +181,7 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{fon
 .recl li[hidden]{display:none}
 .recl span{color:var(--muted);font-size:.86rem;font-variant-numeric:tabular-nums}.recl a:hover{color:var(--pri)}
 .recl em{font-style:normal;font-size:.76rem;font-weight:700;color:var(--pri);background:var(--pril);padding:3px 9px;border-radius:999px;white-space:nowrap}
-.recl a.bl::after{content:" ↗";color:var(--muted);font-size:.8rem}.recl a i{font-style:normal;color:var(--muted);font-size:.8rem}
+.recl img.th{width:34px;height:34px;border-radius:8px;object-fit:cover;vertical-align:middle;margin-right:8px}.recl a.bl::after{content:" ↗";color:var(--muted);font-size:.8rem}.recl a i{font-style:normal;color:var(--muted);font-size:.8rem}
 .recl .ra{display:flex;gap:6px;align-items:center}
 .recl .rq,.rra .rq{border:0;cursor:pointer;font:inherit;font-size:.78rem;font-weight:800;color:#fff;background:var(--pri);padding:5px 11px;border-radius:999px;white-space:nowrap}.recl .rq:hover,.rra .rq:hover{filter:brightness(.92)}
 .mon{content-visibility:auto;contain-intrinsic-size:auto 70px}.mon.more{display:none}.allm .mon.more{display:block}.mon.more[hidden]{display:none}
@@ -190,6 +190,9 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{fon
 .rpr li{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--card);border-radius:16px;padding:12px 14px}
 .rpr li a{font-size:.9rem;line-height:1.45;font-weight:600}.rpr li span{display:block;font-size:.76rem;color:var(--pri);font-weight:700}.rpr li i{font-style:normal;color:var(--muted)}
 .rpr .rq{border:0;cursor:pointer;font:inherit;font-size:.78rem;font-weight:800;color:#fff;background:var(--pri);padding:6px 12px;border-radius:999px;white-space:nowrap}
+@media (max-width:600px){#rres0 .rrc:nth-child(n+5){display:none}}
+.ryr{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin:30px 0 0}.ryr b{width:100%;text-align:center;font-size:.9rem;color:var(--muted);margin-bottom:4px}.ryr a{background:var(--card);padding:10px 16px;border-radius:999px;font-weight:700;font-size:.92rem}.ryr a:hover{color:var(--pri)}.ryr small{opacity:.6;margin-left:4px}
+.ymh{font-size:1.15rem;margin:30px 0 6px}.ymh small{color:var(--muted);font-weight:600;font-size:.85rem;margin-left:6px}
 .rres{margin:0 0 26px}.rres[hidden]{display:none}.rres h3{margin:0 0 14px;font-size:1.1rem}
 .rrg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .rrc{display:grid;grid-template-columns:120px 1fr;gap:16px;background:var(--card);border-radius:22px;padding:14px}
@@ -325,10 +328,10 @@ var rq=$("rq");if(rq){var lis=[].slice.call(document.querySelectorAll(".recl li"
 function cards(){var got=[],imgs={};function pass(f){lis.forEach(function(li){if(got.length>=6||li.hidden||!f(li))return;var c=li.dataset.c,s=li.dataset.s,d=c?RD.c[c]:(s?RD.s[s]:null);if(!d||imgs[d[1]])return;imgs[d[1]]=1;got.push([li,d,!!c])})}
 pass(function(li){return li.dataset.c});pass(function(li){return li.dataset.s});
 rg.innerHTML=got.map(function(g){var li=g[0],d=g[1],tt=li.querySelector("a").textContent.replace("↗","").trim();
-return '<div class="rrc" data-k="'+li.dataset.k+'" data-n="'+esc(tt)+'" data-u="'+li.querySelector("a").href+'"><a class="ri" href="'+d[0]+'"><img src="'+d[1]+'" alt="" loading="lazy"></a><div><span>'+li.querySelector("span").textContent+' · '+(g[2]?"전·후 사진 사례":"수리 안내")+'</span><b>'+esc(tt)+'</b><p>'+esc(d[2])+'</p><div class="rra"><a href="'+d[0]+'">'+(g[2]?"사례 보기 →":esc(d[3])+" 안내 →")+'</a><button type="button" class="rq">비슷한 작업 견적</button></div></div></div>'}).join("");
+return '<div class="rrc" data-k="'+li.dataset.k+'" data-n="'+esc(tt)+'" data-u="'+li.querySelector("a").href+'"><a class="ri" href="'+d[0]+'"><img src="'+d[1]+'" alt="" loading="lazy"></a><div><span>'+li.querySelector("span").textContent+' · '+(g[2]?"전·후 사진 사례":"수리 안내")+'</span><b>'+esc(tt)+'</b><p>'+esc(d[2])+'</p><div class="rra"><a href="'+d[0]+'">'+(g[2]?"사례 보기 →":esc(d[3])+" 안내 →")+'</a><button type="button" class="rq">이 작업 견적 받기</button></div></div></div>'}).join("");
 rr.hidden=!got.length}
 function rf(){var q=rq.value.trim().replace(/\s+/g,""),n=0;lis.forEach(function(li){var ok=(!q||li.dataset.t.indexOf(q)>-1)&&(!cat||li.dataset.k===cat);li.hidden=!ok;if(ok)n++});mons.forEach(function(m,i){var v=m.querySelectorAll("li:not([hidden])").length;m.hidden=!v;m.querySelector("small").textContent=v+"편";m.open=(q||cat)?v>0:i<2});$("rlist").classList.toggle("allm",!!(q||cat||allm));$("rcnt").textContent=(q||cat)?n+"편을 찾았어요":"전체 "+lis.length+"편";
-if((q||cat)&&window.RD)cards();else rr.hidden=true}
+if((q||cat)&&window.RD)cards();else rr.hidden=true;$("rres0").hidden=!!(q||cat)}
 var allm=false,rm=$("rmore");if(rm)rm.onclick=function(){allm=true;$("rlist").classList.add("allm");track("records_more",{})};
 var tq;rq.oninput=function(){clearTimeout(tq);tq=setTimeout(function(){rf();if(rq.value.trim())track("records_search",{q:rq.value.trim()})},250)};
 cb.forEach(function(b){b.onclick=function(){cat=cat===b.dataset.k?"":b.dataset.k;var job=cat?b.dataset.job:"",nm=b.querySelector("span").textContent;cb.forEach(function(x){x.classList.toggle("on",x.dataset.k===cat)});pns.forEach(function(p){p.hidden=cat?p.dataset.k!==cat:p.id!=="panel0"});

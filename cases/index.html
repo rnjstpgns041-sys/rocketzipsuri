@@ -191,6 +191,8 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{fon
 .rpr li a{font-size:.9rem;line-height:1.45;font-weight:600}.rpr li span{display:block;font-size:.76rem;color:var(--pri);font-weight:700}.rpr li i{font-style:normal;color:var(--muted)}
 .rpr .rq{border:0;cursor:pointer;font:inherit;font-size:.78rem;font-weight:800;color:#fff;background:var(--pri);padding:6px 12px;border-radius:999px;white-space:nowrap}
 @media (max-width:600px){#rres0 .rrc:nth-child(n+5){display:none}}
+.qch{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;max-width:760px;margin:-8px auto 22px}.qch b{font-size:.85rem;color:var(--muted);margin-right:4px}.qch a{background:var(--card);padding:8px 14px;border-radius:999px;font-weight:700;font-size:.88rem}.qch a:hover{color:var(--pri)}.qch small{opacity:.55;margin-left:3px;font-weight:600}
+.rrh{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.rrh h3{margin:0}@media (max-width:600px){.rrh{flex-direction:column;align-items:stretch}}
 .ryr{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin:30px 0 0}.ryr b{width:100%;text-align:center;font-size:.9rem;color:var(--muted);margin-bottom:4px}.ryr a{background:var(--card);padding:10px 16px;border-radius:999px;font-weight:700;font-size:.92rem}.ryr a:hover{color:var(--pri)}.ryr small{opacity:.6;margin-left:4px}
 .ymh{font-size:1.15rem;margin:30px 0 6px}.ymh small{color:var(--muted);font-weight:600;font-size:.85rem;margin-left:6px}
 .rres{margin:0 0 26px}.rres[hidden]{display:none}.rres h3{margin:0 0 14px;font-size:1.1rem}
@@ -317,25 +319,32 @@ var ba=$("ba");if(ba){var r=$("baR");r.oninput=function(){ba.style.setProperty("
 $("pick").onclick=function(e){var b=e.target.closest("button");if(!b)return;[].forEach.call(this.children,function(x){x.classList.toggle("on",x===b)});$("baA").src=b.dataset.a;$("baB").src=b.dataset.b;$("baT").textContent=b.dataset.t;$("baD").textContent=b.dataset.d;$("baU").href=b.dataset.u;r.value=50;ba.style.setProperty("--p","50%")}}
 var cf=$("cf");if(cf){var cards=[].slice.call(document.querySelectorAll("#cgall a"));cf.onclick=function(e){var b=e.target.closest("button");if(!b)return;[].forEach.call(cf.children,function(x){x.classList.toggle("on",x===b)});cards.forEach(function(a){a.hidden=!!b.dataset.c&&a.dataset.c!==b.dataset.c});track("case_filter",{cat:b.dataset.c})}}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-function setJob(job,memo,go,ref){var f=$("pf");if(!f)return;if(ref){var hr=f.querySelector('input[name="참고 작업일지"]');if(!hr){hr=document.createElement("input");hr.type="hidden";hr.name="참고 작업일지";f.appendChild(hr)}hr.value=ref}var s=f.querySelector('select[name="작업"]');if(s&&job)[].forEach.call(s.options,function(o){if(o.text===job)s.value=o.value});
+function setJob(job,memo,go,ref){var f=$("pf");if(!f)return;var sp=f.querySelector('input[name="보낸 페이지"]');if(sp)sp.value=location.pathname+location.search;if(ref){var hr=f.querySelector('input[name="참고 작업일지"]');if(!hr){hr=document.createElement("input");hr.type="hidden";hr.name="참고 작업일지";f.appendChild(hr)}hr.value=ref}var s=f.querySelector('select[name="작업"]');if(s&&job)[].forEach.call(s.options,function(o){if(o.text===job)s.value=o.value});
 var t=f.querySelector('textarea[name="내용"]');if(t&&memo&&(!t.value||t.dataset.auto)){t.value=memo;t.dataset.auto=1}
 var sj=f.querySelector('input[name="_subject"]');if(sj)sj.value="[홈페이지 견적] "+(job||"사진 견적 문의");
 var h=document.querySelector("#contact h2");if(h){if(!h.dataset.o)h.dataset.o=h.innerHTML;h.innerHTML=job?esc(job)+"<br>사진 한 장으로 견적 받아 보세요":h.dataset.o}
 if(go){f.classList.remove("hl");void f.offsetWidth;f.classList.add("hl")}}
-document.addEventListener("click",function(ev){var b=ev.target.closest("a[data-job]");if(b){setJob(b.dataset.job,"",1);track("records_quote_click",{job:b.dataset.job||"전체",from:b.id==="ctabb"?"list":"panel"})}
+document.addEventListener("click",function(ev){var b=ev.target.closest("a[data-job]");if(b){setJob(b.dataset.job,b.dataset.memo||"",1,b.dataset.memo?location.href:"");track("records_quote_click",{job:b.dataset.job||"전체",from:b.id==="ctabb"?"list":"panel"})}
 var q=ev.target.closest(".rq");if(q&&window.RD){var li=q.closest("li")||q.closest(".rrc"),j=RD.j[+li.dataset.k]||"기타 집수리",tt=li.dataset.n||li.querySelector("a").textContent.replace("↗","").trim(),u=li.dataset.u||li.querySelector("a").href;
 setJob(j,"작업일지 “"+tt+"” 같은 작업 견적 문의드려요.",1,tt+" "+u);$("contact").scrollIntoView({behavior:"smooth"});track("records_quote_click",{job:j,from:q.closest(".rrc")?"photo_card":(q.closest(".rpr")?"panel_log":"row")})}
 var rl=ev.target.closest(".rk,.rpl a,.rra a,.rpc3 a,.nw a");if(rl&&$("rq"))track("records_link_click",{to:rl.getAttribute("href")})});
 var rq=$("rq");if(rq){var lis=[].slice.call(document.querySelectorAll(".recl li")),mons=[].slice.call(document.querySelectorAll(".mon")),cat="",cb=[].slice.call(document.querySelectorAll("#rbars button")),pns=[].slice.call(document.querySelectorAll(".rpn")),rr=$("rres"),rg=$("rrg"),ct=$("ctabt"),ct0=ct.innerHTML;
-function cards(){var got=[],imgs={};function pass(f){lis.forEach(function(li){if(got.length>=6||li.hidden||!f(li))return;var c=li.dataset.c,s=li.dataset.s,d=c?RD.c[c]:(s?RD.s[s]:null);if(!d||imgs[d[1]])return;imgs[d[1]]=1;got.push([li,d,!!c])})}
-pass(function(li){return li.dataset.c});pass(function(li){return li.dataset.s});
-rg.innerHTML=got.map(function(g){var li=g[0],d=g[1],tt=li.querySelector("a").textContent.replace("↗","").trim();
-return '<div class="rrc" data-k="'+li.dataset.k+'" data-n="'+esc(tt)+'" data-u="'+li.querySelector("a").href+'"><a class="ri" href="'+d[0]+'"><img src="'+d[1]+'" alt="" loading="lazy"></a><div><span>'+li.querySelector("span").textContent+' · '+(g[2]?"전·후 사진 사례":"수리 안내")+'</span><b>'+esc(tt)+'</b><p>'+esc(d[2])+'</p><div class="rra"><a href="'+d[0]+'">'+(g[2]?"사례 보기 →":esc(d[3])+" 안내 →")+'</a><button type="button" class="rq">이 작업 견적 받기</button></div></div></div>'}).join("");
-rr.hidden=!got.length}
+function cards(){var got=[],imgs={},vis=lis.filter(function(li){return !li.hidden}),cc={};vis.forEach(function(li){cc[li.dataset.k]=(cc[li.dataset.k]||0)+1});var bk=Object.keys(cc).sort(function(a,b){return cc[b]-cc[a]})[0];
+function add(d,tt,dt,lab,k,u,lk,key){key=key||d[1];if(got.length>=6||!d||imgs[key])return;imgs[key]=1;got.push({d:d,tt:tt,dt:dt,lab:lab,k:k,u:u,lk:lk})}
+function pass(f){vis.forEach(function(li){if(!f(li))return;var c=li.dataset.c,s=li.dataset.s,a=li.querySelector("a");add(c?RD.c[c]:RD.s[s],a.textContent.replace("↗","").trim(),li.querySelector("span").textContent,c?"전·후 사진 사례":"수리 안내",li.dataset.k,a.href,c?"사례 보기 →":esc(RD.s[s][3])+" 안내 →",c||RD.s[s][4])})}
+pass(function(li){return li.dataset.c});pass(function(li){return li.dataset.s&&RD.s[li.dataset.s]});
+(RD.k[bk]||[]).forEach(function(id){var d=RD.c[id];if(d)add(d,d[3],"","같은 분야 사례",bk,"",d[3]+" 사례 보기 →",id)});
+rg.innerHTML=got.map(function(g){return '<div class="rrc" data-k="'+g.k+'" data-n="'+esc(g.tt)+'" data-u="'+(g.u||location.origin+g.d[0])+'"><a class="ri" href="'+g.d[0]+'"><img src="'+g.d[1]+'" alt="'+esc(g.tt)+'" loading="lazy"></a><div><span>'+(g.dt?g.dt+" · ":"")+g.lab+'</span><b>'+esc(g.tt)+'</b><p>'+esc(g.d[2])+'</p><div class="rra"><a href="'+g.d[0]+'">'+g.lk+'</a><button type="button" class="rq">이 작업 견적 받기</button></div></div></div>'}).join("");
+var job=RD.j[+bk]||"기타 집수리",qq=rq.value.trim(),ca=$("rqcta");
+ca.dataset.job=job;ca.dataset.memo=qq?"“"+qq+"” 작업 견적 문의드려요.":"";ca.textContent=qq?"“"+qq+"” 견적 받기":job+" 견적 받기";$("rresh").textContent=qq?"“"+qq+"” 비슷한 작업 사진":"사진으로 보는 비슷한 작업";
+rr.hidden=!vis.length}
 function rf(){var q=rq.value.trim().replace(/\s+/g,""),n=0;lis.forEach(function(li){var ok=(!q||li.dataset.t.indexOf(q)>-1)&&(!cat||li.dataset.k===cat);li.hidden=!ok;if(ok)n++});mons.forEach(function(m,i){var v=m.querySelectorAll("li:not([hidden])").length;m.hidden=!v;m.querySelector("small").textContent=v+"편";m.open=(q||cat)?v>0:i<2});$("rlist").classList.toggle("allm",!!(q||cat||allm));$("rcnt").textContent=(q||cat)?n+"편을 찾았어요":"전체 "+lis.length+"편";
 if((q||cat)&&window.RD)cards();else rr.hidden=true;$("rres0").hidden=!!(q||cat)}
 var allm=false,rm=$("rmore");if(rm)rm.onclick=function(){allm=true;$("rlist").classList.add("allm");track("records_more",{})};
-var tq;rq.oninput=function(){clearTimeout(tq);tq=setTimeout(function(){rf();if(rq.value.trim())track("records_search",{q:rq.value.trim()})},250)};
+var qn=document.querySelector(".qch");if(qn)qn.onclick=function(ev){var a=ev.target.closest("a[data-q]");if(!a)return;ev.preventDefault();rq.value=a.dataset.q;rf();setQ();track("records_quick_search",{q:a.dataset.q});$("rlist").scrollIntoView({behavior:"smooth"})};
+function setQ(){try{var v=rq.value.trim();history.replaceState(null,"",location.pathname+(v?"?q="+encodeURIComponent(v):"")+location.hash)}catch(e){}}
+var tq;rq.oninput=function(){clearTimeout(tq);tq=setTimeout(function(){rf();setQ();if(rq.value.trim())track("records_search",{q:rq.value.trim()})},250)};
+try{var q0=new URLSearchParams(location.search).get("q");if(q0){rq.value=q0;setTimeout(function(){$("rlist").scrollIntoView()},50)}}catch(e){}
 cb.forEach(function(b){b.onclick=function(){cat=cat===b.dataset.k?"":b.dataset.k;var job=cat?b.dataset.job:"",nm=b.querySelector("span").textContent;cb.forEach(function(x){x.classList.toggle("on",x.dataset.k===cat)});pns.forEach(function(p){p.hidden=cat?p.dataset.k!==cat:p.id!=="panel0"});
 ct.innerHTML=cat?"<b>"+esc(nm)+"</b> 쪽 고장이 있나요? <b>사진 한 장으로 견적 받아 보세요</b>":ct0;$("ctabb").dataset.job=job;$("ctabb").textContent=cat?job+" 견적 →":"견적 문의 →";setJob(job,"",0);
 rf();if(cat)track("records_cat",{cat:nm});$("rpanel").scrollIntoView({behavior:"smooth",block:"nearest"})}});rf()}

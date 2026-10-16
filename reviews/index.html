@@ -181,7 +181,7 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{fon
 .recl li[hidden]{display:none}
 .recl span{color:var(--muted);font-size:.86rem;font-variant-numeric:tabular-nums}.recl a:hover{color:var(--pri)}
 .recl em{font-style:normal;font-size:.76rem;font-weight:700;color:var(--pri);background:var(--pril);padding:3px 9px;border-radius:999px;white-space:nowrap}
-.recl img.th{width:34px;height:34px;border-radius:8px;object-fit:cover;vertical-align:middle;margin-right:8px}.recl a.bl::after{content:" ↗";color:var(--muted);font-size:.8rem}.recl a i{font-style:normal;color:var(--muted);font-size:.8rem}
+.recl img.th{width:34px;height:34px;border-radius:8px;object-fit:cover;float:left;margin:2px 10px 2px 0}.recl a.bl::after{content:" ↗";color:var(--muted);font-size:.8rem}.recl a i{font-style:normal;color:var(--muted);font-size:.8rem}
 .recl .ra{display:flex;gap:6px;align-items:center}
 .recl .rq,.rra .rq{border:0;cursor:pointer;font:inherit;font-size:.78rem;font-weight:800;color:#fff;background:var(--pri);padding:5px 11px;border-radius:999px;white-space:nowrap}.recl .rq:hover,.rra .rq:hover{filter:brightness(.92)}
 .mon{content-visibility:auto;contain-intrinsic-size:auto 70px}.mon.more{display:none}.allm .mon.more{display:block}.mon.more[hidden]{display:none}
@@ -191,7 +191,7 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{fon
 .rpr li a{font-size:.9rem;line-height:1.45;font-weight:600}.rpr li span{display:block;font-size:.76rem;color:var(--pri);font-weight:700}.rpr li i{font-style:normal;color:var(--muted)}
 .rpr .rq{border:0;cursor:pointer;font:inherit;font-size:.78rem;font-weight:800;color:#fff;background:var(--pri);padding:6px 12px;border-radius:999px;white-space:nowrap}
 @media (max-width:600px){#rres0 .rrc:nth-child(n+5){display:none}}
-.qch{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;max-width:760px;margin:-8px auto 22px}.qch b{font-size:.85rem;color:var(--muted);margin-right:4px}.qch a{background:var(--card);padding:8px 14px;border-radius:999px;font-weight:700;font-size:.88rem}.qch a:hover{color:var(--pri)}.qch small{opacity:.55;margin-left:3px;font-weight:600}
+.tnav{margin-top:34px}.qch{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;max-width:760px;margin:-8px auto 22px}.qch b{font-size:.85rem;color:var(--muted);margin-right:4px}.qch a{background:var(--card);padding:8px 14px;border-radius:999px;font-weight:700;font-size:.88rem}.qch a:hover{color:var(--pri)}.qch small{opacity:.55;margin-left:3px;font-weight:600}
 .rrh{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.rrh h3{margin:0}@media (max-width:600px){.rrh{flex-direction:column;align-items:stretch}}
 .ryr{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin:30px 0 0}.ryr b{width:100%;text-align:center;font-size:.9rem;color:var(--muted);margin-bottom:4px}.ryr a{background:var(--card);padding:10px 16px;border-radius:999px;font-weight:700;font-size:.92rem}.ryr a:hover{color:var(--pri)}.ryr small{opacity:.6;margin-left:4px}
 .ymh{font-size:1.15rem;margin:30px 0 6px}.ymh small{color:var(--muted);font-weight:600;font-size:.85rem;margin-left:6px}
@@ -323,6 +323,7 @@ var t=f.querySelector('textarea[name="내용"]');if(t&&memo&&(!t.value||t.datase
 var sj=f.querySelector('input[name="_subject"]');if(sj)sj.value="[홈페이지 견적] "+(job||"사진 견적 문의");
 var h=document.querySelector("#contact h2");if(h){if(!h.dataset.o)h.dataset.o=h.innerHTML;h.innerHTML=job?esc(job)+"<br>사진 한 장으로 견적 받아 보세요":h.dataset.o}
 if(go){f.classList.remove("hl");void f.offsetWidth;f.classList.add("hl")}}
+var aj=$("autojob");if(aj)setTimeout(function(){setJob(aj.dataset.job,aj.dataset.memo,0,location.href)},0);
 document.addEventListener("click",function(ev){var b=ev.target.closest("a[data-job]");if(b){setJob(b.dataset.job,b.dataset.memo||"",1,b.dataset.memo?location.href:"");track("records_quote_click",{job:b.dataset.job||"전체",from:b.id==="ctabb"?"list":"panel"})}
 var q=ev.target.closest(".rq");if(q&&window.RD){var li=q.closest("li")||q.closest(".rrc"),j=RD.j[+li.dataset.k]||"기타 집수리",tt=li.dataset.n||li.querySelector("a").textContent.replace("↗","").trim(),u=li.dataset.u||li.querySelector("a").href;
 setJob(j,"작업일지 “"+tt+"” 같은 작업 견적 문의드려요.",1,tt+" "+u);$("contact").scrollIntoView({behavior:"smooth"});track("records_quote_click",{job:j,from:q.closest(".rrc")?"photo_card":(q.closest(".rpr")?"panel_log":"row")})}
@@ -332,7 +333,7 @@ function cards(){var got=[],imgs={},vis=lis.filter(function(li){return !li.hidde
 function add(d,tt,dt,lab,k,u,lk,key){key=key||d[1];if(got.length>=6||!d||imgs[key])return;imgs[key]=1;got.push({d:d,tt:tt,dt:dt,lab:lab,k:k,u:u,lk:lk})}
 function pass(f){vis.forEach(function(li){if(!f(li))return;var c=li.dataset.c,s=li.dataset.s,a=li.querySelector("a");add(c?RD.c[c]:RD.s[s],a.textContent.replace("↗","").trim(),li.querySelector("span").textContent,c?"전·후 사진 사례":"수리 안내",li.dataset.k,a.href,c?"사례 보기 →":esc(RD.s[s][3])+" 안내 →",c||RD.s[s][4])})}
 pass(function(li){return li.dataset.c});pass(function(li){return li.dataset.s&&RD.s[li.dataset.s]});
-(RD.k[bk]||[]).forEach(function(id){var d=RD.c[id];if(d)add(d,d[3],"","같은 분야 사례",bk,"",d[3]+" 사례 보기 →",id)});
+(rq.value.trim()?[]:(RD.k[bk]||[])).forEach(function(id){var d=RD.c[id];if(d)add(d,d[3],"","같은 분야 사례",bk,"",d[3]+" 사례 보기 →",id)});
 rg.innerHTML=got.map(function(g){return '<div class="rrc" data-k="'+g.k+'" data-n="'+esc(g.tt)+'" data-u="'+(g.u||location.origin+g.d[0])+'"><a class="ri" href="'+g.d[0]+'"><img src="'+g.d[1]+'" alt="'+esc(g.tt)+'" loading="lazy"></a><div><span>'+(g.dt?g.dt+" · ":"")+g.lab+'</span><b>'+esc(g.tt)+'</b><p>'+esc(g.d[2])+'</p><div class="rra"><a href="'+g.d[0]+'">'+g.lk+'</a><button type="button" class="rq">이 작업 견적 받기</button></div></div></div>'}).join("");
 var job=RD.j[+bk]||"기타 집수리",qq=rq.value.trim(),ca=$("rqcta");
 ca.dataset.job=job;ca.dataset.memo=qq?"“"+qq+"” 작업 견적 문의드려요.":"";ca.textContent=qq?"“"+qq+"” 견적 받기":job+" 견적 받기";$("rresh").textContent=qq?"“"+qq+"” 비슷한 작업 사진":"사진으로 보는 비슷한 작업";

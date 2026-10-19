@@ -6,17 +6,32 @@
 <title>정수기 구멍 메꿈 · 싱크대 상판 구멍 복원 | 로켓집수리</title>
 <meta name="description" content="정수기나 수전을 뺀 자리에 남은 구멍을 상판 교체 없이 메우고 옆면 색과 비슷하게 맞춰 마무리해요. 서울·경기 전 지역 출장. 사진 1장부터 상담 010-3406-4060.">
 <script>(function(h){if(h==="rocketzipsuri.pages.dev"||h==="www.rocketzipsuri.com")location.replace("https://rocketzipsuri.com"+location.pathname+location.search+location.hash)})(location.hostname)</script>
-<script>/* 컴퓨터에서 문자 버튼을 누르면 아무 일도 안 일어나므로 안내 창을 띄움 */
-document.addEventListener("click",function(ev){var a=ev.target.closest&&ev.target.closest('a[href^="sms:"]');if(!a)return;
-if(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/.test(navigator.platform)))return;
-ev.preventDefault();try{gtag("event","sms_desktop_click",{page:location.pathname})}catch(e){}
-var o=document.getElementById("smsdlg");if(!o){o=document.createElement("div");o.id="smsdlg";
-o.setAttribute("style","position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px");
-o.innerHTML='<div role="dialog" aria-modal="true" aria-label="문자 문의 안내" style="background:#fff;color:#191f28;border-radius:20px;max-width:360px;width:100%;padding:26px 22px;text-align:center;font-family:inherit;box-shadow:0 20px 50px rgba(0,0,0,.25)"><b style="display:block;font-size:19px;margin-bottom:8px">휴대폰으로 문자 주세요</b><p style="margin:0 0 14px;color:#4e5968;font-size:15px;line-height:1.55">컴퓨터에서는 문자가 바로 보내지지 않아요.<br>아래 번호로 문자나 사진을 보내 주세요.</p><div style="font-size:24px;font-weight:800;letter-spacing:.5px;margin-bottom:16px">010-3406-4060</div><button type="button" id="smscp" style="width:100%;border:0;border-radius:12px;padding:13px;font-size:16px;font-weight:700;background:#00c4a7;color:#fff;cursor:pointer;margin-bottom:8px">번호 복사하기</button><a href="#contact" id="smsfm" style="display:block;border-radius:12px;padding:13px;font-size:16px;font-weight:700;background:#f2f4f6;color:#191f28;text-decoration:none;margin-bottom:8px">여기서 사진 견적 보내기</a><button type="button" id="smsx" style="border:0;background:none;color:#8b95a1;font-size:14px;padding:8px;cursor:pointer">닫기</button></div>';
-document.body.appendChild(o);o.addEventListener("click",function(e){if(e.target===o||e.target.id==="smsx"||e.target.id==="smsfm")o.style.display="none";
-if(e.target.id==="smsfm"&&!document.getElementById("contact")){e.preventDefault();location.href="/#contact"}
-if(e.target.id==="smscp"){var b=e.target;function ok(){b.textContent="복사했어요"}if(navigator.clipboard)navigator.clipboard.writeText("010-3406-4060").then(ok,ok);else ok()}})}
-o.style.display="flex";document.getElementById("smscp").textContent="번호 복사하기"})</script>
+<script>/* 문자 연결: 앱 안 창(카톡·네이버 등)에서도 열리도록 손님이 직접 누르는 문자 버튼을 띄움 */
+(function(){var N="01034064060",NS="010-3406-4060";
+function mob(){return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/.test(navigator.platform))}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var B="width:100%;display:block;box-sizing:border-box;border:0;border-radius:12px;padding:14px;font-size:16px;font-weight:700;text-decoration:none;cursor:pointer;margin-bottom:8px;text-align:center;font-family:inherit";
+window.smsShow=function(lines,sent){var m=mob(),body=(lines||[]).filter(Boolean).join("\n"),href="sms:"+N+(body?"?&body="+encodeURIComponent(body):"");
+var o=document.getElementById("smsdlg");if(o)o.remove();o=document.createElement("div");o.id="smsdlg";
+o.setAttribute("style","position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:16px");
+var h=sent?(m?"마지막 단계예요":"견적 신청이 접수됐어요"):(m?"문자로 보내 주세요":"휴대폰으로 문자 주세요");
+var p=m?(sent?"아래 버튼을 누르면 문자 화면이 열려요.<br>전송만 눌러 주세요. 사진도 붙여 주시면 좋아요.":"아래 버튼을 누르면 문자 화면이 열려요."):(sent?"확인하고 연락드릴게요.<br>급하시면 아래 번호로 문자나 전화 주세요.":"컴퓨터에서는 문자가 바로 보내지지 않아요.<br>아래 번호로 문자나 사진을 보내 주세요.");
+o.innerHTML='<div role="dialog" aria-modal="true" aria-label="문자 문의" style="background:#fff;color:#191f28;border-radius:20px;max-width:360px;width:100%;padding:26px 22px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.25)"><b style="display:block;font-size:20px;margin-bottom:8px">'+h+'</b><p style="margin:0 0 14px;color:#4e5968;font-size:15px;line-height:1.55">'+p+'</p>'
++(body&&m?'<div style="text-align:left;background:#f2f4f6;border-radius:12px;padding:10px 12px;font-size:13px;color:#4e5968;white-space:pre-line;margin-bottom:12px">'+esc(body)+'</div>':'')
++'<div style="font-size:24px;font-weight:800;letter-spacing:.5px;margin-bottom:14px">'+NS+'</div>'
++(m?'<a id="smsgo" href="'+esc(href)+'" style="'+B+';background:#00c4a7;color:#fff;font-size:18px;padding:16px">문자 보내기</a><a href="tel:'+NS+'" style="'+B+';background:#f2f4f6;color:#191f28">전화하기</a>'
+:'<button type="button" id="smscp" style="'+B+';background:#00c4a7;color:#fff">번호 복사하기</button>'+(sent?'':'<a href="#contact" id="smsfm" style="'+B+';background:#f2f4f6;color:#191f28">여기서 사진 견적 보내기</a>'))
++'<button type="button" id="smsx" style="border:0;background:none;color:#8b95a1;font-size:14px;padding:8px;cursor:pointer">닫기</button></div>';
+document.body.appendChild(o);
+o.addEventListener("click",function(e){var t=e.target;if(t===o||t.id==="smsx"||t.id==="smsfm")o.remove();
+if(t.id==="smsgo")try{gtag("event","sms_open",{page:location.pathname,from:sent?"form":"button"})}catch(x){}
+if(t.id==="smsfm"&&!document.getElementById("contact")){e.preventDefault();location.href="/#contact"}
+if(t.id==="smscp"){var ok=function(){t.textContent="복사했어요"};if(navigator.clipboard)navigator.clipboard.writeText(NS).then(ok,ok);else ok()}})};
+/* 신청서는 페이지 이동 없이 메일로도 보내 둠 (휴대폰) */
+window.formBg=function(f){var fr=document.getElementById("pfbg");if(!fr){fr=document.createElement("iframe");fr.name=fr.id="pfbg";fr.hidden=true;document.body.appendChild(fr)}f.target="pfbg";f.submit()};
+window.smsMob=mob;
+document.addEventListener("click",function(ev){var a=ev.target.closest&&ev.target.closest('a[href^="sms:"]');if(!a||a.id==="smsgo"||mob())return;
+ev.preventDefault();try{gtag("event","sms_desktop_click",{page:location.pathname})}catch(e){}smsShow([],false)})})()</script>
 <link rel="canonical" href="https://rocketzipsuri.com/repair/water-purifier-hole/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="로켓집수리닷컴">
@@ -83,7 +98,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
 .cats{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px}.cats a{text-decoration:none;border:1px solid var(--line);background:var(--bg);padding:8px 16px;border-radius:999px;font-weight:700;font-size:.92rem}
 </style>
 <script>window.track=function(n,p){p=p||{};window.dataLayer=window.dataLayer||[];dataLayer.push(Object.assign({event:n},p));if(typeof gtag==="function")gtag("event",n,p)};document.addEventListener("click",function(e){var a=e.target.closest("a");if(!a)return;var h=a.getAttribute("href")||"";if(h.indexOf("tel:")===0)track("call_click",{page:location.pathname});else if(h.indexOf("sms:")===0)track("sms_click",{page:location.pathname});else if(a.dataset.q)track("case_quote_click",{page:location.pathname})},true)</script>
-<script>function qqSend(f){var b="[로켓집수리 견적] 작업: "+f.dataset.job+" / 지역: "+f.area.value+(f.note.value?" / 내용: "+f.note.value:"")+" (사진 첨부)";track("quick_quote_submit",{page:location.pathname,job:f.dataset.job});try{navigator.clipboard&&navigator.clipboard.writeText(b)}catch(e){}location.href="sms:01034064060?&body="+encodeURIComponent(b);return false}</script>
+<script>function qqSend(f){track("quick_quote_submit",{page:location.pathname,job:f.dataset.job});smsShow(["[로켓집수리 견적]","작업: "+f.dataset.job,"지역: "+f.area.value,f.note.value?"내용: "+f.note.value:""],true);return false}</script>
 <style>
 .pf{display:grid;gap:12px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:22px}
 .pf h3{margin:0;font-size:1.2rem;font-weight:900;letter-spacing:-.02em}.pf .sub{margin:-4px 0 4px;color:var(--muted);font-size:.9rem}
@@ -100,11 +115,11 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
 </style><script>
 document.addEventListener('change',function(ev){var i=ev.target;if(!i.matches||!i.matches('.pf .ph input'))return;var l=i.parentNode,o=l.querySelector('img');if(o)o.remove();if(i.files[0]){var m=document.createElement('img');m.src=URL.createObjectURL(i.files[0]);l.appendChild(m)}});
 function pfShrink(f){return new Promise(function(ok){if(!f||!/^image\//.test(f.type)||f.size<900000)return ok(f);var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(function(b){ok(b?new File([b],(f.name||'photo').replace(/\.[^.]+$/,'')+'.jpg',{type:'image/jpeg'}):f)},'image/jpeg',.82)};im.onerror=function(){ok(f)};im.src=u})}
-function pfSms(form){if(!/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)&&!(navigator.maxTouchPoints>1&&/Mac/.test(navigator.platform)))return 0;var g=function(n){var x=form.querySelector('[name="'+n+'"]');return x?x.value.trim():''};var t='[홈페이지 견적]\n작업: '+g('작업')+'\n지역: '+g('지역')+'\n연락처: '+g('연락처')+(g('내용')?'\n내용: '+g('내용'):'');if(window.track)track('sms_from_form',{page:location.pathname});location.href='sms:01034064060?&body='+encodeURIComponent(t);return 1}
+function pfSms(form){if(!window.smsMob||!smsMob())return 0;var g=function(n){var x=form.querySelector('[name="'+n+'"]');return x?x.value.trim():''};if(window.track)track('sms_from_form',{page:location.pathname});smsShow(['[홈페이지 견적]','작업: '+g('작업'),'지역: '+g('지역'),'연락처: '+g('연락처'),g('내용')?'내용: '+g('내용'):''],true);return 1}
 function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('button');b.disabled=true;var sm=pfSms(form);b.textContent=sm?'문자앱 여는 중...':'사진 줄이는 중...';
  var ins=[].slice.call(form.querySelectorAll('.ph input'));
  Promise.all(ins.map(function(i){return pfShrink(i.files[0]).then(function(f){if(f&&f!==i.files[0]){try{var d=new DataTransfer();d.items.add(f);i.files=d.files}catch(e){}}})})).then(function(){
-  if(window.track)track('photo_form_submit',{page:location.pathname,job:(form.job||{}).value||''});form.dataset.go=1;b.textContent='보내는 중...';setTimeout(function(){form.submit()},sm?1500:0)});return false}
+  if(window.track)track('photo_form_submit',{page:location.pathname,job:(form.job||{}).value||''});form.dataset.go=1;if(sm){formBg(form);b.textContent='접수됐어요';return}b.textContent='보내는 중...';form.submit()});return false}
 </script>
 </head>
 <body>

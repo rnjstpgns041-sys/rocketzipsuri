@@ -304,7 +304,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
     <div class="row"><a class="btn p lg" href="sms:01030518015?&body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%2C%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%B3%B4%EA%B3%A0%20%EC%97%B0%EB%9D%BD%EB%93%9C%EB%A0%A4%EC%9A%94.%20%EC%A7%80%EC%97%AD%3A%20">문자로 사진 보내기</a><a class="btn lg" href="tel:010-3051-8015">전화하기</a></div>
     <ul><li>멀리서 1장, 가까이서 1장이면 충분해요</li><li>동네 이름만 알려 주셔도 돼요</li><li>작업한 자리는 깨끗이 정리해 드려요</li></ul></div>
   <form class="pf" id="pf" action="https://formsubmit.co/bbok3000@naver.com" method="POST" enctype="multipart/form-data" onsubmit="return pfSend(this)">
-  <h3>사진으로 견적 접수</h3><p class="sub">문자 앱 없이 여기서 바로 보내셔도 돼요. 확인하고 연락드릴게요.</p>
+  <h3>사진으로 견적 접수</h3><p class="sub">휴대폰에서는 보내기를 누르면 문자앱이 열려요. 전송만 눌러 주세요.</p>
   <input type="hidden" name="_subject" value="[홈페이지 견적] 사진 견적 문의">
   <input type="hidden" name="_next" value="https://rocketzipsuri.com/thanks/?f=photo"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
   <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off">
@@ -322,10 +322,11 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
 <div class="dock"><a class="btn" href="tel:010-3051-8015">전화</a><a class="btn p" href="#contact">견적 신청</a></div><script>
 document.addEventListener('change',function(ev){var i=ev.target;if(!i.matches||!i.matches('.pf .ph input'))return;var l=i.parentNode,o=l.querySelector('img');if(o)o.remove();if(i.files[0]){var m=document.createElement('img');m.src=URL.createObjectURL(i.files[0]);l.appendChild(m)}});
 function pfShrink(f){return new Promise(function(ok){if(!f||!/^image\//.test(f.type)||f.size<900000)return ok(f);var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(function(b){ok(b?new File([b],(f.name||'photo').replace(/\.[^.]+$/,'')+'.jpg',{type:'image/jpeg'}):f)},'image/jpeg',.82)};im.onerror=function(){ok(f)};im.src=u})}
-function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('button');b.disabled=true;b.textContent='사진 줄이는 중...';
+function pfSms(form){if(!/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)&&!(navigator.maxTouchPoints>1&&/Mac/.test(navigator.platform)))return 0;var g=function(n){var x=form.querySelector('[name="'+n+'"]');return x?x.value.trim():''};var t='[홈페이지 견적]\n작업: '+g('작업')+'\n지역: '+g('지역')+'\n연락처: '+g('연락처')+(g('내용')?'\n내용: '+g('내용'):'');if(window.track)track('sms_from_form',{page:location.pathname});location.href='sms:01030518015?&body='+encodeURIComponent(t);return 1}
+function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('button');b.disabled=true;var sm=pfSms(form);b.textContent=sm?'문자앱 여는 중...':'사진 줄이는 중...';
  var ins=[].slice.call(form.querySelectorAll('.ph input'));
  Promise.all(ins.map(function(i){return pfShrink(i.files[0]).then(function(f){if(f&&f!==i.files[0]){try{var d=new DataTransfer();d.items.add(f);i.files=d.files}catch(e){}}})})).then(function(){
-  if(window.track)track('photo_form_submit',{page:location.pathname,job:(form.job||{}).value||''});form.dataset.go=1;b.textContent='보내는 중...';form.submit()});return false}
+  if(window.track)track('photo_form_submit',{page:location.pathname,job:(form.job||{}).value||''});form.dataset.go=1;b.textContent='보내는 중...';setTimeout(function(){form.submit()},sm?1500:0)});return false}
 </script><script>
 window.track=window.track||function(n,p){p=p||{};window.dataLayer=window.dataLayer||[];dataLayer.push(Object.assign({event:n},p));if(typeof gtag==="function")gtag("event",n,p)};
 document.addEventListener("click",function(e){var a=e.target.closest("a");if(!a)return;var h=a.getAttribute("href")||"";if(h.indexOf("tel:")===0)track("call_click",{page:location.pathname});else if(h.indexOf("sms:")===0)track("sms_click",{page:location.pathname})},true);

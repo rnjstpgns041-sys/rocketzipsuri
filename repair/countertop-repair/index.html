@@ -100,10 +100,11 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
 </style><script>
 document.addEventListener('change',function(ev){var i=ev.target;if(!i.matches||!i.matches('.pf .ph input'))return;var l=i.parentNode,o=l.querySelector('img');if(o)o.remove();if(i.files[0]){var m=document.createElement('img');m.src=URL.createObjectURL(i.files[0]);l.appendChild(m)}});
 function pfShrink(f){return new Promise(function(ok){if(!f||!/^image\//.test(f.type)||f.size<900000)return ok(f);var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(function(b){ok(b?new File([b],(f.name||'photo').replace(/\.[^.]+$/,'')+'.jpg',{type:'image/jpeg'}):f)},'image/jpeg',.82)};im.onerror=function(){ok(f)};im.src=u})}
-function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('button');b.disabled=true;b.textContent='사진 줄이는 중...';
+function pfSms(form){if(!/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)&&!(navigator.maxTouchPoints>1&&/Mac/.test(navigator.platform)))return 0;var g=function(n){var x=form.querySelector('[name="'+n+'"]');return x?x.value.trim():''};var t='[홈페이지 견적]\n작업: '+g('작업')+'\n지역: '+g('지역')+'\n연락처: '+g('연락처')+(g('내용')?'\n내용: '+g('내용'):'');if(window.track)track('sms_from_form',{page:location.pathname});location.href='sms:01030518015?&body='+encodeURIComponent(t);return 1}
+function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('button');b.disabled=true;var sm=pfSms(form);b.textContent=sm?'문자앱 여는 중...':'사진 줄이는 중...';
  var ins=[].slice.call(form.querySelectorAll('.ph input'));
  Promise.all(ins.map(function(i){return pfShrink(i.files[0]).then(function(f){if(f&&f!==i.files[0]){try{var d=new DataTransfer();d.items.add(f);i.files=d.files}catch(e){}}})})).then(function(){
-  if(window.track)track('photo_form_submit',{page:location.pathname,job:(form.job||{}).value||''});form.dataset.go=1;b.textContent='보내는 중...';form.submit()});return false}
+  if(window.track)track('photo_form_submit',{page:location.pathname,job:(form.job||{}).value||''});form.dataset.go=1;b.textContent='보내는 중...';setTimeout(function(){form.submit()},sm?1500:0)});return false}
 </script>
 </head>
 <body>
@@ -133,7 +134,7 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
   <small>문자 창이 열리면 내용이 채워져 있어요. 사진만 붙여서 보내 주세요. 컴퓨터라면 내용이 복사되니 010-3051-8015로 보내 주세요.</small>
 </form></div>
       <form class="pf" id="pf" action="https://formsubmit.co/bbok3000@naver.com" method="POST" enctype="multipart/form-data" onsubmit="return pfSend(this)">
-  <h3>사진으로 견적 접수</h3><p class="sub">문자 앱 없이 여기서 바로 보내셔도 돼요. 확인하고 연락드릴게요.</p>
+  <h3>사진으로 견적 접수</h3><p class="sub">휴대폰에서는 보내기를 누르면 문자앱이 열려요. 전송만 눌러 주세요.</p>
   <input type="hidden" name="_subject" value="[홈페이지 견적] 인조대리석 상판 복원">
   <input type="hidden" name="_next" value="https://rocketzipsuri.com/thanks/?f=photo"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
   <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off">

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://rocketzipsuri.pages.dev/sitemap.xml
+Sitemap: https://rocketzipsuri.com/sitemap.xml

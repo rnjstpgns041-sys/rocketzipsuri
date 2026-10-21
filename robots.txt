@@ -3,4 +3,5 @@ Allow: /
 Disallow: /stats/
 Disallow: /api/
 Disallow: /functions/
+Disallow: /p/
 Sitemap: https://rocketzipsuri.com/sitemap.xml

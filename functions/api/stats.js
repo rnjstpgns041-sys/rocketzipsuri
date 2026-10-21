@@ -19,5 +19,10 @@ export async function onRequestGet({ request, env }) {
     q(`SELECT p, SUM(t='call') calls, SUM(t='sms') sms, SUM(t='lead') leads FROM hits WHERE d>=? AND t<>'view' GROUP BY p ORDER BY COUNT(*) DESC LIMIT 10`),
     q(`SELECT m, COUNT(*) n FROM hits WHERE d>=? AND t='view' GROUP BY m`),
   ]);
-  return json({ from, days, daily, pages, refs, kws, lp, dev });
+  let photos = [];
+  try {
+    await env.DB.prepare('CREATE TABLE IF NOT EXISTS photos (g TEXT, n INTEGER, ts INTEGER, type TEXT, data BLOB, PRIMARY KEY (g, n))').run();
+    photos = (await env.DB.prepare('SELECT g, COUNT(*) c, MIN(n) f, MAX(ts) ts FROM photos GROUP BY g ORDER BY ts DESC LIMIT 40').all()).results;
+  } catch (e) {}
+  return json({ from, days, daily, pages, refs, kws, lp, dev, photos });
 }

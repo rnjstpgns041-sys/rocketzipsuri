@@ -121,12 +121,18 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
 .pf button[disabled]{opacity:.6;cursor:wait}.pf small{color:var(--muted);font-size:.78rem;line-height:1.5}.pf .hp{display:none}
 </style><script>
 document.addEventListener('change',function(ev){var i=ev.target;if(!i.matches||!i.matches('.pf .ph input'))return;var l=i.parentNode,o=l.querySelector('img');if(o)o.remove();if(i.files[0]){var m=document.createElement('img');m.src=URL.createObjectURL(i.files[0]);l.appendChild(m)}});
-function pfShrink(f){return new Promise(function(ok){if(!f||!/^image\//.test(f.type)||f.size<900000)return ok(f);var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(function(b){ok(b?new File([b],(f.name||'photo').replace(/\.[^.]+$/,'')+'.jpg',{type:'image/jpeg'}):f)},'image/jpeg',.82)};im.onerror=function(){ok(f)};im.src=u})}
+function pfShrink(f,n){return new Promise(function(ok){if(!f)return ok(f);var nm='photo'+(n||1),done=0,fin=function(x){if(!done){done=1;ok(x)}};
+ var keep=function(){var ext=((f.name||'').split('.').pop()||'jpg').toLowerCase();if(ext.length>5)ext='jpg';fin(f.size>4500000?null:new File([f],nm+'.'+ext,{type:f.type||'application/octet-stream'}))};
+ if(f.type&&f.type.indexOf('image/')!==0)return keep();setTimeout(keep,9000);
+ var draw=function(src,w,h){try{var s=Math.min(1,1600/Math.max(w,h)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(w*s));c.height=Math.max(1,Math.round(h*s));c.getContext('2d').drawImage(src,0,0,c.width,c.height);c.toBlob(function(b){b&&b.size>0?fin(new File([b],nm+'.jpg',{type:'image/jpeg'})):keep()},'image/jpeg',.8)}catch(e){keep()}};
+ var viaImg=function(){var u=URL.createObjectURL(f),im=new Image();im.onload=function(){draw(im,im.naturalWidth,im.naturalHeight)};im.onerror=keep;im.src=u};
+ if(window.createImageBitmap)createImageBitmap(f,{imageOrientation:'from-image'}).then(function(bm){draw(bm,bm.width,bm.height)},viaImg);else viaImg()})}
+function pfSet(i,f){try{if(!f){i.value='';return}var d=new DataTransfer();d.items.add(f);i.files=d.files}catch(e){}}
 function pfSms(form){if(!window.smsMob||!smsMob())return 0;var g=function(n){var x=form.querySelector('[name="'+n+'"]');return x?x.value.trim():''};if(window.track)track('sms_from_form',{page:location.pathname});smsShow(['[홈페이지 견적]','작업: '+g('작업'),'지역: '+g('지역'),'연락처: '+g('연락처'),g('내용')?'내용: '+g('내용'):''],true);return 1}
 function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('button');b.disabled=true;var sm=pfSms(form);b.textContent=sm?'문자앱 여는 중...':'사진 줄이는 중...';
  var ins=[].slice.call(form.querySelectorAll('.ph input'));
- Promise.all(ins.map(function(i){return pfShrink(i.files[0]).then(function(f){if(f&&f!==i.files[0]){try{var d=new DataTransfer();d.items.add(f);i.files=d.files}catch(e){}}})})).then(function(){
-  if(window.track)track('photo_form_submit',{page:location.pathname,job:(form.job||{}).value||''});form.dataset.go=1;if(sm){formBg(form);b.textContent='접수됐어요';return}b.textContent='보내는 중...';form.submit()});return false}
+ Promise.all(ins.map(function(i,k){return i.files[0]?pfShrink(i.files[0],k+1).then(function(f){pfSet(i,f);return f?0:1}):0})).then(function(dr){var tot=0,big=ins.filter(function(i){return i.files[0]}).sort(function(a,b){return b.files[0].size-a.files[0].size});big.forEach(function(i){tot+=i.files[0].size});while(tot>9500000&&big.length){var x=big.shift();tot-=x.files[0].size;pfSet(x,null);dr.push(1)}if(dr.some(Boolean)){var h=form.querySelector('input[name="사진 안내"]')||form.appendChild(Object.assign(document.createElement('input'),{type:'hidden',name:'사진 안내'}));h.value='사진 용량이 커서 일부 사진이 빠졌어요. 문자로 사진을 다시 받아 주세요.'}
+  ins.forEach(function(i){if(!i.files[0])i.disabled=true});if(window.track)track('photo_form_submit',{page:location.pathname,job:(form.job||{}).value||''});form.dataset.go=1;if(sm){formBg(form);b.textContent='접수됐어요';return}b.textContent='보내는 중...';form.submit()});return false}
 </script>
 </head>
 <body>
@@ -164,7 +170,7 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
   <div class="row"><label>연락처 (필수)<input type="tel" name="연락처" placeholder="010-0000-0000" required inputmode="tel"></label>
   <label>작업할 지역 (필수)<input name="지역" placeholder="예: 마포구 공덕동" required></label></div>
   <label>불편한 점 (선택)<textarea name="내용" rows="2" placeholder="예: 세면대 물이 잘 안 내려가요"></textarea></label>
-  <div class="ph"><label>사진 1<input type="file" name="사진1" accept="image/*"></label><label>사진 2<input type="file" name="사진2" accept="image/*"></label><label>사진 3<input type="file" name="사진3" accept="image/*"></label></div>
+  <div class="ph"><label>사진 1<input type="file" name="photo1" accept="image/*"></label><label>사진 2<input type="file" name="photo2" accept="image/*"></label><label>사진 3<input type="file" name="photo3" accept="image/*"></label></div>
   <button type="submit">견적 요청 보내기</button>
   <small>사진은 1장만 있어도 돼요. 보내 주신 연락처는 견적 안내에만 써요.</small>
 </form>

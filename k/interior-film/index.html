@@ -364,7 +364,7 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;
 function setJob(job,memo,go,ref){var f=$("pf");if(!f)return;var sp=f.querySelector('input[name="보낸 페이지"]');if(sp)sp.value=location.pathname+location.search;if(ref){var hr=f.querySelector('input[name="참고 작업일지"]');if(!hr){hr=document.createElement("input");hr.type="hidden";hr.name="참고 작업일지";f.appendChild(hr)}hr.value=ref}var s=f.querySelector('select[name="작업"]');if(s&&job)[].forEach.call(s.options,function(o){if(o.text===job)s.value=o.value});
 var t=f.querySelector('textarea[name="내용"]');if(t&&memo&&(!t.value||t.dataset.auto)){t.value=memo;t.dataset.auto=1}
 var sj=f.querySelector('input[name="_subject"]');if(sj)sj.value="[홈페이지 견적] "+(job||"사진 견적 문의");
-var h=document.querySelector("#contact h2");if(h){if(!h.dataset.o)h.dataset.o=h.innerHTML;h.innerHTML=job?esc(job)+"<br>사진 한 장으로 견적 받아 보세요":h.dataset.o}
+var h=document.querySelector("#contact h2");if(h){if(!h.dataset.o)h.dataset.o=h.innerHTML;h.innerHTML=job&&job!=="기타 집수리"?esc(job)+"<br>사진 한 장으로 견적 받아 보세요":h.dataset.o}
 if(go){f.classList.remove("hl");void f.offsetWidth;f.classList.add("hl")}}
 var aj=$("autojob");if(aj)setTimeout(function(){setJob(aj.dataset.job,aj.dataset.memo,0,location.href)},0);
 document.addEventListener("click",function(ev){var b=ev.target.closest("a[data-job]");if(b){setJob(b.dataset.job,b.dataset.memo||"",1,b.dataset.memo?location.href:"");track("records_quote_click",{job:b.dataset.job||"전체",from:b.id==="ctabb"?"list":"panel"})}

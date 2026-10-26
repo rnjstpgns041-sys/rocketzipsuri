@@ -10,6 +10,11 @@ export async function onRequestPost({ request, env }) {
   if (!/^[a-z0-9]{10,24}$/.test(g)) return new Response('bad id', { status: 400 });
   await env.DB.prepare(SCHEMA).run();
   await env.DB.prepare('DELETE FROM photos WHERE ts < ?').bind(Date.now() - KEEP).run();
+  // 손님이 쓴 문자 내용(지역·작업·연락처)도 같이 남김. 통계 페이지(비밀번호)에서만 보여요
+  const msg = String(fd.get('msg') || '').slice(0, 1000);
+  await env.DB.prepare('CREATE TABLE IF NOT EXISTS photo_msg (g TEXT PRIMARY KEY, ts INTEGER, msg TEXT)').run();
+  await env.DB.prepare('DELETE FROM photo_msg WHERE ts < ?').bind(Date.now() - KEEP).run();
+  if (msg) await env.DB.prepare('INSERT OR REPLACE INTO photo_msg VALUES (?,?,?)').bind(g, Date.now(), msg).run();
   let n = 0;
   for (let i = 1; i <= 3; i++) {
     const f = fd.get('photo' + i);

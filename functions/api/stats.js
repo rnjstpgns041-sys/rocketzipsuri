@@ -66,7 +66,8 @@ export async function onRequestGet({ request, env }) {
   let photos = [];
   try {
     await env.DB.prepare('CREATE TABLE IF NOT EXISTS photos (g TEXT, n INTEGER, ts INTEGER, type TEXT, data BLOB, PRIMARY KEY (g, n))').run();
-    photos = (await env.DB.prepare('SELECT g, COUNT(*) c, MIN(n) f, MAX(ts) ts FROM photos GROUP BY g ORDER BY ts DESC LIMIT 40').all()).results;
+    await env.DB.prepare('CREATE TABLE IF NOT EXISTS photo_msg (g TEXT PRIMARY KEY, ts INTEGER, msg TEXT)').run();
+    photos = (await env.DB.prepare('SELECT p.g, p.c, p.f, p.ts, m.msg FROM (SELECT g, COUNT(*) c, MIN(n) f, MAX(ts) ts FROM photos GROUP BY g ORDER BY ts DESC LIMIT 40) p LEFT JOIN photo_msg m ON m.g = p.g ORDER BY p.ts DESC').all()).results;
   } catch (e) {}
 
   return json({

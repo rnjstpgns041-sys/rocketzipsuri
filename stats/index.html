@@ -52,7 +52,7 @@ td small{color:var(--ink-faint)}
 .setup{max-width:560px;margin:10vh auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;line-height:1.7}.setup ol{padding-left:20px}
 details summary{cursor:pointer;font-weight:700;font-size:.9rem}
 .foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--ink-faint)}
-.ph{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}.ph a{display:block;text-decoration:none;color:inherit}.ph img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;background:var(--grid)}.ph span{display:block;font-size:12px;margin-top:4px;color:var(--ink-soft)}
+.ph{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}.pmsg{margin:6px 0 0;padding:8px 10px;border-radius:10px;background:var(--grid);font-size:12px;line-height:1.5;white-space:pre-line;word-break:break-all}.ph a{display:block;text-decoration:none;color:inherit}.ph img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;background:var(--grid)}.ph span{display:block;font-size:12px;margin-top:4px;color:var(--ink-soft)}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -149,7 +149,7 @@ details summary{cursor:pointer;font-weight:700;font-size:.9rem}
     $('tContact').innerHTML=table(d.contact_pages,['페이지','연락'],function(r){return '<td class="p">'+link(r.path)+' <small>전화 '+r.phone+' · 문자 '+r.sms+' · 견적 '+r.form+'</small></td><td class="n">'+n(r.contacts)+'</td>'});
     $('tPages').innerHTML=table(d.pages,['페이지','열람','연락'],function(r,max){return '<td class="p">'+link(r.path)+'<span class="bar" style="width:'+Math.max(2,r.views/max*100)+'%"></span></td><td class="n">'+n(r.views)+'</td><td class="n">'+n(r.contacts)+'</td>'},'views');
     var ph=d.photos||[];
-    $('tPhotos').innerHTML=ph.length?'<div class="ph">'+ph.map(function(r){var tm=new Date(r.ts+9*36e5).toISOString().slice(5,16).replace('-','.').replace('T',' ');return '<a href="/p/'+esc(r.g)+'/" target="_blank" rel="noopener"><img loading="lazy" src="/p/'+esc(r.g)+'/'+(+r.f)+'" alt="견적 사진"><span>'+tm+' · '+r.c+'장</span></a>'}).join('')+'</div>':'<p class="empty">아직 받은 사진이 없어요.</p>';
+    $('tPhotos').innerHTML=ph.length?'<div class="ph">'+ph.map(function(r){var tm=new Date(r.ts+9*36e5).toISOString().slice(5,16).replace('-','.').replace('T',' ');return '<div class="phi"><a href="/p/'+esc(r.g)+'/" target="_blank" rel="noopener"><img loading="lazy" src="/p/'+esc(r.g)+'/'+(+r.f)+'" alt="견적 사진"><span>'+tm+' · '+r.c+'장</span></a>'+(r.msg?'<p class="pmsg">'+esc(r.msg.replace(/^\[[^\]]*\]\s*/,''))+'</p>':'')+'</div>'}).join('')+'</div>':'<p class="empty">아직 받은 사진이 없어요.</p>';
     $('tDaily').innerHTML=table(daily.slice().reverse(),['날짜','방문자','열람','전화','문자','견적'],function(r){return '<td>'+r.day+'</td><td class="n">'+n(r.visitors)+'</td><td class="n">'+n(r.views)+'</td><td class="n">'+n(r.phone)+'</td><td class="n">'+n(r.sms)+'</td><td class="n">'+n(r.form)+'</td>'});
     var dv=d.devices||{};$('devices').textContent='휴대폰 '+n(dv.mobile)+'명 · PC '+n(dv.pc)+'명';
   }

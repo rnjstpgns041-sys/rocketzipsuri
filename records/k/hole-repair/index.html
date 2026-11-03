@@ -307,7 +307,147 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
 .pf .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pf button{border:0;cursor:pointer;font:inherit;font-weight:700;background:var(--flame);color:#fff;min-height:52px;border-radius:999px;font-size:1.02rem}
 .pf button[disabled]{opacity:.6;cursor:wait}.pf small{color:var(--muted);font-size:.78rem;line-height:1.5}.pf .hp{display:none}
-</style></head>
+</style><style id="accent">
+:root{--acc:#FF5B1F;--acc2:#E64A0F;--accl:#FFEFE6;--sky:#2F7CF6;--skyl:#E8F1FF;--vio:#7B5CFA;--viol:#F0ECFF;--sun:#FFB800;--sunl:#FFF6D9;--navy:#0C1530;--mint:#0A8F8C;--mintl:#E3F4F3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--acc:#FF7A45;--acc2:#FF8F61;--accl:#3A2116;--sky:#6AA5FF;--skyl:#162438;--vio:#A08BFF;--viol:#231D3D;--sun:#FFC940;--sunl:#352B10;--navy:#0A1022;--mint:#22B3AF;--mintl:#15302F}}
+:root[data-theme="dark"]{--acc:#FF7A45;--acc2:#FF8F61;--accl:#3A2116;--sky:#6AA5FF;--skyl:#162438;--vio:#A08BFF;--viol:#231D3D;--sun:#FFC940;--sunl:#352B10;--navy:#0A1022;--mint:#22B3AF;--mintl:#15302F}
+
+/* ---------- 공통: 머리말 알약, 버튼 ---------- */
+.hd .act .btn.p,.dock .btn.p{background:linear-gradient(135deg,var(--acc),#FF8A3D);color:#fff;box-shadow:0 6px 16px rgba(255,91,31,.28)}
+.hd .act .btn.p:hover,.dock .btn.p:hover{background:linear-gradient(135deg,var(--acc2),var(--acc))}
+.brand small{background:linear-gradient(90deg,var(--mint),var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn.p{box-shadow:0 8px 20px rgba(10,143,140,.22)}
+.sh .eb,.sh .se{--c:var(--mint);--cl:var(--mintl);display:inline-flex!important;align-items:center;gap:7px;width:auto;color:var(--c)!important;background:var(--cl);padding:7px 15px 7px 13px;border-radius:999px;font-size:.92rem!important;font-weight:800}
+.sh .eb::before,.sh .se::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 22%,transparent)}
+.sh .se{margin-left:auto;margin-right:auto}.sh.l .se{margin-left:0}
+.c-acc{--c:var(--acc)!important;--cl:var(--accl)!important}
+
+/* ---------- 홈: 히어로 ---------- */
+.hero2{position:relative;isolation:isolate}
+.hero2::before{content:"";position:absolute;inset:-10% -10% 30%;z-index:-1;pointer-events:none;background:radial-gradient(38% 42% at 14% 30%,color-mix(in srgb,var(--mint) 20%,transparent),transparent 70%),radial-gradient(32% 40% at 88% 22%,color-mix(in srgb,var(--acc) 16%,transparent),transparent 70%),radial-gradient(30% 34% at 70% 78%,color-mix(in srgb,var(--sun) 18%,transparent),transparent 70%),radial-gradient(26% 30% at 24% 82%,color-mix(in srgb,var(--sky) 12%,transparent),transparent 70%)}
+.hero2 .eb{background:var(--card);color:var(--ink);box-shadow:0 4px 14px rgba(25,31,40,.08),inset 0 0 0 1.5px color-mix(in srgb,var(--mint) 35%,transparent)}
+.hero2 .eb svg{color:var(--acc)}
+.hero2 h1 em{position:relative;background:linear-gradient(100deg,#0A8F8C 10%,#12B3A3 55%,#2F9BD6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero2 h1 em::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.08em;height:.24em;border-radius:6px;background:color-mix(in srgb,var(--sun) 55%,transparent);z-index:-1}
+.stage .pc.a span,.ba .y,.lab.r{background:var(--acc)!important}
+.stage .bub.you b{color:var(--acc)}
+/* 핵심 4가지 띠: 아이콘마다 다른 색 */
+.band{background:linear-gradient(180deg,var(--bg2),color-mix(in srgb,var(--mintl) 55%,var(--bg2)))}
+.band .kp div{box-shadow:0 8px 24px rgba(25,31,40,.05);border-top:3px solid var(--c,var(--mint))}
+.kp div:nth-child(1){--c:var(--mint);--cl:var(--mintl)}.kp div:nth-child(2){--c:var(--acc);--cl:var(--accl)}.kp div:nth-child(3){--c:var(--sky);--cl:var(--skyl)}.kp div:nth-child(4){--c:var(--vio);--cl:var(--viol)}
+.kp div svg,.band .kp div svg{color:var(--c);background:var(--cl)}
+
+/* ---------- 홈: 섹션별 색 ---------- */
+#ba-sec .sh .eb,#guide .sh .eb,#faq .sh .eb{--c:var(--acc);--cl:var(--accl)}
+#video .sh .eb,#area .sh .eb{--c:var(--sky);--cl:var(--skyl)}
+#log .sh .eb,#kw .sh .eb{--c:var(--vio);--cl:var(--viol)}
+#reviews .sh .eb{--c:#D98A00;--cl:var(--sunl)}
+#log{background:linear-gradient(180deg,var(--bg2),color-mix(in srgb,var(--viol) 60%,var(--bg2)))}
+#guide{background:linear-gradient(180deg,var(--bg2),color-mix(in srgb,var(--accl) 70%,var(--bg2)))}
+#kw{background:linear-gradient(180deg,var(--bg2),color-mix(in srgb,var(--skyl) 70%,var(--bg2)))}
+/* 현장 영상: 로고 남색 배경 */
+#video{background:radial-gradient(60% 60% at 85% 0%,rgba(255,91,31,.22),transparent 70%),radial-gradient(50% 60% at 10% 100%,rgba(10,143,140,.35),transparent 70%),var(--navy)!important;color:#fff}
+#video .sh h2{color:#fff}#video .sh .eb{--c:#8EC2FF;--cl:rgba(142,194,255,.14)}
+#video .vd figcaption{color:#A9B3C7}#video .vd figcaption b{color:#fff}
+#video .vd video{box-shadow:0 30px 70px rgba(0,0,0,.45)}
+
+/* 수리 종류 아이콘: 6가지 색 돌아가며 */
+.ic a:nth-child(6n+1){--c:var(--mint);--cl:var(--mintl)}.ic a:nth-child(6n+2){--c:var(--acc);--cl:var(--accl)}.ic a:nth-child(6n+3){--c:var(--sky);--cl:var(--skyl)}
+.ic a:nth-child(6n+4){--c:var(--vio);--cl:var(--viol)}.ic a:nth-child(6n+5){--c:#D98A00;--cl:var(--sunl)}.ic a:nth-child(6n+6){--c:#E0457B;--cl:color-mix(in srgb,#E0457B 12%,var(--card))}
+.ic .o,.ic.ic1 .o{background:var(--cl)!important;color:var(--c)!important}
+.ic a:hover .o{background:var(--c)!important;color:#fff!important}.ic a:hover{color:var(--c)}
+
+/* 사례 카드 */
+.cg .bdg{background:linear-gradient(135deg,var(--acc),#FF8A3D)!important;border-radius:999px!important;box-shadow:0 4px 12px rgba(255,91,31,.35)}
+.cg .tg{color:var(--mint)}
+.cg a:hover b{color:var(--mint)}
+.pick button.on{background:var(--accl)!important;box-shadow:inset 0 0 0 2px var(--acc)!important}
+.ba .h::after{background:linear-gradient(135deg,var(--mint),#12B3A3)!important;color:#fff!important}
+
+/* 후기 */
+.rv3 figure{border-top:4px solid var(--c,var(--mint))}
+.rv3 figure:nth-child(3n+1){--c:var(--mint);--cl:var(--mintl)}.rv3 figure:nth-child(3n+2){--c:var(--acc);--cl:var(--accl)}.rv3 figure:nth-child(3n+3){--c:var(--sky);--cl:var(--skyl)}
+.rv3 figure::after{color:var(--cl)!important}
+.rv3 .s{color:var(--sun)!important;text-shadow:0 2px 8px color-mix(in srgb,var(--sun) 40%,transparent)}
+
+/* 작업일지 막대 */
+.lg a:nth-child(4n+1){--c:var(--mint)}.lg a:nth-child(4n+2){--c:var(--sky)}.lg a:nth-child(4n+3){--c:var(--vio)}.lg a:nth-child(4n+4){--c:var(--acc)}
+.lg .br i{background:linear-gradient(90deg,color-mix(in srgb,var(--c) 70%,#fff),var(--c))!important}
+.lg em{color:var(--c)!important}
+.lg a:first-child{box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--mint) 40%,transparent)}
+.lg a:first-child b::after{content:"1위";margin-left:8px;font-size:.72rem;font-weight:800;color:#fff;background:var(--acc);padding:2px 7px;border-radius:999px;vertical-align:2px}
+
+/* 견적 순서·단계 번호 */
+.stp li:nth-child(4n+1){--c:var(--mint);--cl:var(--mintl)}.stp li:nth-child(4n+2){--c:var(--acc);--cl:var(--accl)}.stp li:nth-child(4n+3){--c:var(--sky);--cl:var(--skyl)}.stp li:nth-child(4n+4){--c:var(--vio);--cl:var(--viol)}
+.stp li::before{background:var(--c)!important;box-shadow:0 6px 14px color-mix(in srgb,var(--c) 35%,transparent)}
+.stp li:not(:last-child)::after{border-color:color-mix(in srgb,var(--c) 45%,transparent)!important}
+.stp li{border-bottom:3px solid var(--cl)}
+.gd figure:nth-child(3n+1){--c:var(--mint)}.gd figure:nth-child(3n+2){--c:var(--acc)}.gd figure:nth-child(3n+3){--c:var(--sky)}
+.gi span{background:var(--c)!important;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.gd figcaption b{color:var(--ink)}.gd figure{border-bottom:3px solid var(--c)}
+
+/* 출장 지역 */
+.ar div:nth-child(1){--c:var(--mint);--cl:var(--mintl)}.ar div:nth-child(2){--c:var(--acc);--cl:var(--accl)}.ar div:nth-child(3){--c:var(--sky);--cl:var(--skyl)}
+.ar div{background:linear-gradient(160deg,var(--cl),var(--card) 75%)!important;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 18%,transparent)}
+.ar b{color:var(--c)!important}
+
+/* 많이 찾는 집수리 칩 */
+.kwc a:nth-child(5n+1){color:var(--mint);background:var(--mintl)!important}
+.kwc a:nth-child(5n+3){color:var(--acc2);background:var(--accl)!important}
+.kwc a:nth-child(5n+4){color:var(--vio);background:var(--viol)!important}
+.kwc a{font-weight:600;transition:transform .2s}.kwc a:hover{transform:translateY(-2px);color:var(--ink)}
+
+/* FAQ */
+.fq summary::before{color:var(--acc)!important}
+.fq details[open]{box-shadow:inset 3px 0 0 var(--mint)}
+
+/* 마무리 상담 칸 */
+.ct{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(45% 60% at 92% 8%,rgba(255,138,61,.45),transparent 70%),radial-gradient(40% 55% at 0% 100%,rgba(255,200,64,.25),transparent 70%),linear-gradient(150deg,#0A8F8C,#0B6E86 60%,#123A6B)!important}
+.ct .big{color:#fff!important;text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:4px;text-underline-offset:8px}
+.ct .row .btn.p{background:linear-gradient(135deg,var(--acc),#FF8A3D)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 10px 24px rgba(255,91,31,.35)}
+.ct li::before{color:var(--sun)!important}
+.side{background:radial-gradient(60% 50% at 100% 0%,rgba(255,138,61,.4),transparent 70%),linear-gradient(160deg,#0A8F8C,#0B6E86 60%,#123A6B)!important}
+
+/* 바닥글: 로고 남색 */
+.ft,body>footer{background:var(--navy);color:#9AA6BD!important;border-top:0!important}
+.ft b,body>footer b{color:#fff!important}.ft nav{color:#D5DCEA!important}.ft nav a:hover,body>footer a:hover{color:#FF9A6B}
+body>footer a{color:#D5DCEA!important}
+
+/* ---------- 하위 페이지(시공사례·수리 종류·후기·FAQ·작업일지) ---------- */
+.ph{position:relative;isolation:isolate;overflow:hidden}
+.ph::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(34% 55% at 10% 20%,color-mix(in srgb,var(--mint) 16%,transparent),transparent 70%),radial-gradient(30% 50% at 92% 18%,color-mix(in srgb,var(--acc) 13%,transparent),transparent 70%),radial-gradient(30% 40% at 60% 100%,color-mix(in srgb,var(--sun) 14%,transparent),transparent 70%)}
+.ph .eb{background:var(--card);color:var(--ink);box-shadow:0 4px 14px rgba(25,31,40,.07),inset 0 0 0 1.5px color-mix(in srgb,var(--mint) 35%,transparent)}
+.ph .eb svg{color:var(--acc)}
+.ph h1 em{background:linear-gradient(100deg,#0A8F8C,#12B3A3 55%,#2F9BD6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats div{background:var(--card)!important;box-shadow:0 8px 24px rgba(25,31,40,.06);border-top:3px solid var(--c)}
+.stats div:nth-child(1){--c:var(--mint)}.stats div:nth-child(2){--c:var(--acc)}.stats div:nth-child(3){--c:var(--sky)}.stats div:nth-child(4){--c:var(--vio)}
+.stats b{color:var(--c)}
+.sec:nth-of-type(3n+2) .sh .se,.sec:nth-of-type(3n+2) .sh .eb{--c:var(--acc);--cl:var(--accl)}
+.sec:nth-of-type(3n) .sh .se,.sec:nth-of-type(3n) .sh .eb{--c:var(--sky);--cl:var(--skyl)}
+.rpcat:nth-of-type(4n+1) .se{--c:var(--mint);--cl:var(--mintl)}.rpcat:nth-of-type(4n+2) .se{--c:var(--acc);--cl:var(--accl)}.rpcat:nth-of-type(4n+3) .se{--c:var(--sky);--cl:var(--skyl)}.rpcat:nth-of-type(4n+4) .se{--c:var(--vio);--cl:var(--viol)}
+.rpc .pi i{color:var(--c,var(--mint))!important}
+.rpcat:nth-of-type(4n+1){--c:var(--mint)}.rpcat:nth-of-type(4n+2){--c:var(--acc)}.rpcat:nth-of-type(4n+3){--c:var(--sky)}.rpcat:nth-of-type(4n+4){--c:var(--vio)}
+.rpc li::before{color:var(--c,var(--mint))!important}
+.rpc .mt em{color:var(--c,var(--mint))!important}
+.rpc:hover{box-shadow:0 18px 40px rgba(25,31,40,.08),inset 0 0 0 2px color-mix(in srgb,var(--c,var(--mint)) 35%,transparent)!important}
+.chips .on{background:linear-gradient(135deg,var(--mint),#12B3A3)!important;color:#fff!important;box-shadow:0 6px 16px rgba(10,143,140,.25)}
+.tagc span b{color:var(--acc)!important}
+
+/* ---------- 사례·수리 상세 페이지 ---------- */
+.top .call{background:linear-gradient(135deg,var(--acc),#FF8A3D);color:#fff;box-shadow:0 6px 16px rgba(255,91,31,.28)}
+.cat{color:var(--acc)!important;background:var(--accl)!important}
+.blk h2{display:flex;align-items:center;gap:10px}
+.blk h2::before{content:"";width:6px;height:1.05em;border-radius:3px;background:var(--c,var(--mint))}
+.blk:nth-of-type(4n+1){--c:var(--mint)}.blk:nth-of-type(4n+2){--c:var(--acc)}.blk:nth-of-type(4n+3){--c:var(--sky)}.blk:nth-of-type(4n+4){--c:var(--vio)}
+.sym li:nth-child(4n+1){--c:var(--mint);--cl:var(--mintl)}.sym li:nth-child(4n+2){--c:var(--acc);--cl:var(--accl)}.sym li:nth-child(4n+3){--c:var(--sky);--cl:var(--skyl)}.sym li:nth-child(4n+4){--c:var(--vio);--cl:var(--viol)}
+.sym li{background:var(--cl)!important}.sym li::before{color:var(--c)!important}
+.cta{background:radial-gradient(60% 60% at 100% 0%,rgba(255,91,31,.35),transparent 70%),radial-gradient(50% 50% at 0% 100%,rgba(10,143,140,.4),transparent 70%),var(--navy)!important}
+.qsteps li:nth-child(4n+1){--c:var(--mint)}.qsteps li:nth-child(4n+2){--c:var(--acc)}.qsteps li:nth-child(4n+3){--c:var(--sky)}.qsteps li:nth-child(4n+4){--c:var(--vio)}
+.qsteps li::before,.qsteps li:before{background:var(--c)!important}
+.cats a:hover{border-color:var(--acc);color:var(--acc)}
+@media (prefers-reduced-motion:reduce){.kwc a{transition:none}}
+</style>
+</head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
 <header class="hd"><div class="w"><div class="t"><a class="brand" href="/"><img src="/favicon.svg" alt="">로켓집수리<small>닷컴</small></a>

@@ -7,6 +7,8 @@ crumb: 식기세척기 설치 방식 고르는 법
 image: /img/c/224369216537-a.webp
 image_alt: 하부장에 빌트인으로 넣은 식기세척기
 repair: dishwasher
+date: 2026-11-04
+time: 22:00
 ---
 
 ## 한 줄로 정리하면

@@ -7,6 +7,8 @@ crumb: 가스레인지 → 인덕션 교체
 image: /img/c/224359030070-a.webp
 image_alt: 상판을 맞춰 자르고 인덕션을 넣은 주방
 repair: induction-cut
+date: 2026-11-04
+time: 22:00
 ---
 
 ## 한 줄로 정리하면

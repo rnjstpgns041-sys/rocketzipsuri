@@ -4,4 +4,6 @@ Disallow: /stats/
 Disallow: /api/
 Disallow: /functions/
 Disallow: /p/
+Disallow: /.github/
 Sitemap: https://rocketzipsuri.com/sitemap.xml
+Sitemap: https://rocketzipsuri.com/blog/feed.xml

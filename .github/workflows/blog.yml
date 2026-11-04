@@ -1,12 +1,13 @@
-# 매일 아침 7시(한국 시간)쯤 블로그 새 글을 하나 올려요.
-# - 대기열(.github/blog/queue/)에서 이름 순서대로 하나를 꺼내 /blog/ 에 올림
-# - 오늘 글이 이미 있으면 아무것도 안 함
+# 매일 아침 7시, 밤 10시(한국 시간)쯤 블로그 새 글을 2편씩 올려요.
+# - 대기열(.github/blog/queue/)에서 이름 순서대로 꺼내 /blog/ 에 올림
+# - 그 시간대 글이 이미 2편 있으면 아무것도 안 함
 # - main 에 다른 변경이 올라오면(홈페이지 다시 빌드 등) 블로그 메뉴·사이트맵만 다시 맞춤
 # 직접 올리기: Actions → 블로그 매일 올리기 → Run workflow
 name: 블로그 매일 올리기
 on:
   schedule:
-    - cron: '50 21 * * *'   # 한국 시간 06:50 시작 → 보통 7시 전후에 올라감
+    - cron: '50 21 * * *'   # 한국 시간 06:50 시작 → 보통 아침 7시 전후에 올라감
+    - cron: '50 12 * * *'   # 한국 시간 21:50 시작 → 보통 밤 10시 전후에 올라감
   push:
     branches: [main, 'claude/**']
   workflow_dispatch:
@@ -63,7 +64,7 @@ jobs:
           fi
           left=$(ls .github/blog/queue/*.md 2>/dev/null | wc -l)
           echo "남은 대기 글: $left"
-          if [ "$left" -lt 3 ]; then echo "::warning::블로그 대기 글이 ${left}개 남았어요"; fi
+          if [ "$left" -lt 4 ]; then echo "::warning::블로그 대기 글이 ${left}개 남았어요"; fi
       - name: 저장하고 올리기
         id: push
         run: |

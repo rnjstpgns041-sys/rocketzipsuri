@@ -233,6 +233,18 @@ def set_head(head, title, desc, url, image, og_type, ld):
     return head.replace('</head>', CSS + '\n' + rss + lds + '</head>', 1)
 
 
+PER_SLOT = 2  # 한 번에 올리는 글 수
+SLOTS = ('07:00', '22:00')  # 아침 7시, 밤 10시
+
+
+def ptime(p):
+    return p.get('time') or '07:00'
+
+
+def iso(p):
+    return f'{p["date"]}T{ptime(p)}:00+09:00'
+
+
 def kdate(d):
     y, m, dd = d.split('-')
     return f'{y}년 {int(m)}월 {int(dd)}일'
@@ -266,7 +278,7 @@ def render_post(p, posts, head, tail):
             f'<details><summary>{inline(q)}</summary><p>{inline(a)}</p></details>' for q, a in faqs) + '</div>'
         toc.append(('faq', '자주 묻는 질문'))
     image = abs_url(p.get('image') or '/img/share-v7.jpg')
-    published = f'{p["date"]}T07:00:00+09:00'
+    published = iso(p)
     ld = [{
         '@context': 'https://schema.org', '@type': 'BlogPosting', 'headline': p['title'],
         'description': p['description'], 'image': image, 'datePublished': published, 'dateModified': published,
@@ -313,17 +325,17 @@ def render_post(p, posts, head, tail):
 def render_index(posts, head, tail):
     url = SITE + '/blog/'
     title = f'집수리 블로그 · 고치기 전에 읽는 이야기 | {BRAND}'
-    desc = '서울·경기 출장 집수리 현장에서 직접 겪은 일로 쓰는 글. 건조기랙, 식기세척기, 상판 복원, 문 수리까지 고치기 전에 알아 두면 좋은 내용을 매일 아침 올려요.'
+    desc = '서울·경기 출장 집수리 현장에서 직접 겪은 일로 쓰는 글. 건조기랙, 식기세척기, 상판 복원, 문 수리까지 고치기 전에 알아 두면 좋은 내용을 매일 아침·저녁 올려요.'
     ld = [{'@context': 'https://schema.org', '@type': 'Blog', 'name': f'{BRAND} 블로그', 'url': url, 'description': desc, 'inLanguage': 'ko-KR',
            'publisher': {'@type': 'Organization', 'name': BRAND, 'url': SITE + '/'},
-           'blogPost': [{'@type': 'BlogPosting', 'headline': p['title'], 'url': f'{SITE}/blog/{p["slug"]}/', 'datePublished': f'{p["date"]}T07:00:00+09:00'} for p in posts[:30]]}]
+           'blogPost': [{'@type': 'BlogPosting', 'headline': p['title'], 'url': f'{SITE}/blog/{p["slug"]}/', 'datePublished': iso(p)} for p in posts[:30]]}]
     h = set_head(head, title, desc, url, SITE + '/img/share-v7.jpg', 'website', ld)
     if posts:
         cards = card(posts[0], first=True) + '<div class="bl-grid">' + ''.join(card(p) for p in posts[1:]) + '</div>'
     else:
         cards = '<p>첫 글을 준비하고 있어요.</p>'
     main = f'''<main id="main">
-<section class="ph"><div class="w"><nav class="crumb"><a href="/">홈</a> › 블로그</nav><span class="eb">매일 아침 7시 새 글</span>
+<section class="ph"><div class="w"><nav class="crumb"><a href="/">홈</a> › 블로그</nav><span class="eb">매일 아침 7시·밤 10시 새 글</span>
 <h1>고치기 전에 읽는<br><em>집수리 이야기</em></h1>
 <p class="lead">현장에서 직접 겪은 일로 써요. 어떤 고장인지, 고칠지 바꿀지, 무엇을 준비하면 되는지 정리했어요.</p></div></section>
 <section class="sec" style="padding-top:0"><div class="w">{cards}</div></section>
@@ -334,7 +346,7 @@ def render_index(posts, head, tail):
 def rss(posts):
     items = ''.join(
         f'<item><title>{esc(p["title"])}</title><link>{SITE}/blog/{p["slug"]}/</link><guid>{SITE}/blog/{p["slug"]}/</guid>'
-        f'<pubDate>{dt.datetime.fromisoformat(p["date"] + "T07:00:00+09:00").strftime("%a, %d %b %Y %H:%M:%S +0900")}</pubDate>'
+        f'<pubDate>{dt.datetime.fromisoformat(iso(p)).strftime("%a, %d %b %Y %H:%M:%S +0900")}</pubDate>'
         f'<description>{esc(p["description"])}</description></item>' for p in posts[:50])
     return (f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>{BRAND} 블로그</title><link>{SITE}/blog/</link>'
             f'<description>서울·경기 출장 생활 집수리 이야기</description><language>ko</language>{items}</channel></rss>\n')
@@ -385,29 +397,35 @@ def main():
     os.makedirs(POSTS, exist_ok=True)
     os.makedirs(QUEUE, exist_ok=True)
     published_new = []
+    now = dt.datetime.now(KST)
+    slot = SLOTS[0] if now.hour < 15 else SLOTS[1]
     if '--publish' in sys.argv:
         posts = [read_post(os.path.join(POSTS, f)) for f in sorted(os.listdir(POSTS)) if f.endswith('.md')]
         slugs = {p['slug'] for p in posts}
-        if any(p.get('date') == today for p in posts):
-            print('오늘 글은 이미 올라가 있어요')
-        else:
-            queue = sorted(f for f in os.listdir(QUEUE) if f.endswith('.md'))
-            for f in queue:
-                p = read_post(os.path.join(QUEUE, f))
-                if p['slug'] in slugs:
-                    print(f'{f}: 같은 주소 글이 이미 있어서 건너뜀')
-                    continue
-                p['date'] = today
-                write_post(p, os.path.join(POSTS, f'{today}-{p["slug"]}.md'))
-                os.remove(os.path.join(QUEUE, f))
-                published_new.append(p['slug'])
-                print(f'새 글 올림: {p["title"]}')
+        need = PER_SLOT - sum(1 for p in posts if p.get('date') == today and ptime(p) == slot)
+        if need <= 0:
+            print(f'오늘 {slot} 글은 이미 올라가 있어요')
+        queue = sorted(f for f in os.listdir(QUEUE) if f.endswith('.md'))
+        for f in queue:
+            if need <= 0:
                 break
-            else:
-                print('대기열에 글이 없어요')
+            p = read_post(os.path.join(QUEUE, f))
+            if p['slug'] in slugs:
+                print(f'{f}: 같은 주소 글이 이미 있어서 건너뜀')
+                continue
+            p['date'] = today
+            p['time'] = slot
+            write_post(p, os.path.join(POSTS, f'{today}-{slot.replace(":", "")}-{p["slug"]}.md'))
+            os.remove(os.path.join(QUEUE, f))
+            slugs.add(p['slug'])
+            published_new.append(p['slug'])
+            need -= 1
+            print(f'새 글 올림 ({slot}): {p["title"]}')
+        if need > 0:
+            print(f'대기열에 글이 모자라요 ({need}편 부족)')
     posts = [read_post(os.path.join(POSTS, f)) for f in sorted(os.listdir(POSTS)) if f.endswith('.md')]
     posts = [p for p in posts if p.get('date') and p['date'] <= today]
-    posts.sort(key=lambda p: (p['date'], p['path']), reverse=True)
+    posts.sort(key=lambda p: (p['date'], ptime(p), p['path']), reverse=True)
     head, tail = load_template()
     out = os.path.join(ROOT, 'blog')
     keep = {p['slug'] for p in posts}

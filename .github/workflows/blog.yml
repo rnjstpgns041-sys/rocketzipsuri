@@ -8,7 +8,7 @@ on:
   schedule:
     - cron: '50 21 * * *'   # 한국 시간 06:50 시작 → 보통 7시 전후에 올라감
   push:
-    branches: [main]
+    branches: [main, 'claude/**']
   workflow_dispatch:
 
 permissions:
@@ -19,7 +19,38 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # 다른 브랜치(claude/...)에 새 대기 글이 올라오면 그 글만 main 대기열로 옮겨요
+  take-queue:
+    if: github.event_name == 'push' && github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: 새 대기 글 옮기기
+        run: |
+          git fetch -q origin "${{ github.ref }}"
+          BEFORE="${{ github.event.before }}"
+          git cat-file -e "$BEFORE" 2>/dev/null || BEFORE=$(git merge-base origin/main "${{ github.sha }}")
+          files=$(git diff --diff-filter=A --name-only "$BEFORE" "${{ github.sha }}" -- '.github/blog/queue/*.md')
+          [ -n "$files" ] || { echo "새 대기 글 없음"; exit 0; }
+          for f in $files; do
+            slug=$(git show "${{ github.sha }}:$f" | sed -n 's/^slug: *//p' | head -1)
+            if grep -rqs "^slug: *$slug\$" .github/blog/posts .github/blog/queue; then echo "이미 있음: $f"; continue; fi
+            git show "${{ github.sha }}:$f" > "$f"; echo "옮김: $f"
+          done
+          python3 .github/blog/publish.py >/dev/null
+          git checkout -- . ':!.github/blog/queue'
+          git add .github/blog/queue
+          git diff --cached --quiet && { echo "바뀐 것 없음"; exit 0; }
+          git config user.name "rocket-blog-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "블로그 대기 글 추가 (${GITHUB_REF_NAME})"
+          for i in 1 2 3 4; do git pull --rebase origin main && git push origin HEAD:main && break; sleep $((i * 5)); done
+
   publish:
+    if: github.event_name != 'push' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

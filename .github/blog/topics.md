@@ -5,9 +5,9 @@
 관련 페이지가 있으면 본문에서 링크해요 (/repair/..., /cases/..., /k/...).
 
 ## 욕실
-- 욕실 실리콘 곰팡이, 닦아도 안 지워질 때 재시공해야 하나요? (/k/bathroom-silicone)
-- 세면대 물이 안 내려갈 때, 팝업만 바꾸면 되나요? (/repair/sink-popup)
-- 세면대 교체, 언제 해야 하고 어떻게 하나요? (/k/washbasin-replace 지역 페이지들)
+- 욕실 실리콘 곰팡이, 닦아도 안 지워질 때 재시공해야 하나요? (/k/bathroom-silicone) (완료: bathroom-silicone-mold)
+- 세면대 물이 안 내려갈 때, 팝업만 바꾸면 되나요? (/repair/sink-popup) (완료: washbasin-not-draining-popup)
+- 세면대 교체, 언제 해야 하고 어떻게 하나요? (/k/washbasin-replace 지역 페이지들) (완료: washbasin-replace-when)
 - 변기 교체 시기와 교체할 때 확인할 것 (/k/*-toilet-replace)
 - 욕조 기스·얼룩, 교체 말고 코팅으로 되나요? (/repair/bathtub-repair)
 - 욕조 배수구 막힘·물 고임 (/k/bathtub-drain)

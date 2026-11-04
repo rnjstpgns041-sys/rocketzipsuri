@@ -1,0 +1,64 @@
+# 매일 아침 7시(한국 시간)쯤 블로그 새 글을 하나 올려요.
+# - 대기열(.github/blog/queue/)에서 이름 순서대로 하나를 꺼내 /blog/ 에 올림
+# - 오늘 글이 이미 있으면 아무것도 안 함
+# - main 에 다른 변경이 올라오면(홈페이지 다시 빌드 등) 블로그 메뉴·사이트맵만 다시 맞춤
+# 직접 올리기: Actions → 블로그 매일 올리기 → Run workflow
+name: 블로그 매일 올리기
+on:
+  schedule:
+    - cron: '50 21 * * *'   # 한국 시간 06:50 시작 → 보통 7시 전후에 올라감
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 글 올리기
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            python3 .github/blog/publish.py
+          else
+            python3 .github/blog/publish.py --publish
+          fi
+          left=$(ls .github/blog/queue/*.md 2>/dev/null | wc -l)
+          echo "남은 대기 글: $left"
+          if [ "$left" -lt 3 ]; then echo "::warning::블로그 대기 글이 ${left}개 남았어요"; fi
+      - name: 저장하고 올리기
+        id: push
+        run: |
+          git add -A
+          if git diff --cached --quiet; then echo "바뀐 것 없음"; echo "pushed=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git config user.name "rocket-blog-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "블로그: $(date -u -d '+9 hours' +%Y-%m-%d) 새 글/메뉴 맞춤"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push origin HEAD:main && break
+            sleep $((i * 5))
+          done
+          echo "pushed=1" >> "$GITHUB_OUTPUT"
+      - name: 네이버·빙에 새 글 알리기
+        if: steps.push.outputs.pushed == '1' && hashFiles('.github/blog/new-urls.txt') != ''
+        run: |
+          [ -s .github/blog/new-urls.txt ] || { echo "새 글 없음"; exit 0; }
+          KEY=$(ls [0-9a-f]*.txt | grep -E '^[0-9a-f]{32}\.txt$' | head -1 | sed 's/\.txt$//')
+          FIRST=$(head -n 1 .github/blog/new-urls.txt)
+          for i in $(seq 1 40); do
+            c=$(curl -s -o /dev/null -w '%{http_code}' "$FIRST" || true)
+            [ "$c" = "200" ] && { echo "반영됨"; break; }
+            sleep 15
+          done
+          BODY=$(jq -Rn --arg key "$KEY" '{host:"rocketzipsuri.com", key:$key, keyLocation:("https://rocketzipsuri.com/"+$key+".txt"), urlList:[inputs | select(length>0)]}' < .github/blog/new-urls.txt)
+          for EP in https://searchadvisor.naver.com/indexnow https://api.indexnow.org/indexnow; do
+            code=$(curl -s -o resp.txt -w '%{http_code}' -X POST "$EP" -H 'Content-Type: application/json; charset=utf-8' -d "$BODY")
+            echo "$EP → $code"; cat resp.txt; echo
+          done

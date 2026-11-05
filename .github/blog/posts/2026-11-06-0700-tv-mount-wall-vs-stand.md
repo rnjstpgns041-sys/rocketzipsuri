@@ -7,6 +7,8 @@ crumb: TV 벽걸이와 스탠드
 image: /img/c/224407277752-a.webp
 image_alt: 벽에 구멍 없이 세운 TV 스탠드 거치대
 repair: tv-mount
+date: 2026-11-06
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

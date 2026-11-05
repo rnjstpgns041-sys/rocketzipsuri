@@ -7,6 +7,8 @@ crumb: 화장실 문이 안 닫힐 때
 image: /img/c/224424459908-a.webp
 image_alt: 경첩을 교체해 다시 잘 닫히는 화장실 문
 repair: door-hinge
+date: 2026-11-05
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

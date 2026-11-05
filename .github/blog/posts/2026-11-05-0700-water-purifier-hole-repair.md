@@ -7,6 +7,8 @@ crumb: 정수기 구멍 메우기
 image: /img/c/224387214880-a.webp
 image_alt: 정수기 구멍을 메운 인조대리석 상판
 repair: water-purifier-hole
+date: 2026-11-05
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

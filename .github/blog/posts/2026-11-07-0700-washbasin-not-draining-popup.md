@@ -5,6 +5,8 @@ description: 세면대에 물이 고이거나 천천히 빠질 때, 마개(팝�
 tag: 욕실
 crumb: 세면대 물 안 내려갈 때
 repair: sink-popup
+date: 2026-11-07
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

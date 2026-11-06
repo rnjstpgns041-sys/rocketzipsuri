@@ -143,11 +143,12 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--pri:#FF7A3D;--pri2:#FF9A66;--pril:#3A2116;--acc:#FF7A3D;--acc2:#FF9A66;--accl:#3A2116;--navy:#1C1F66;--navy2:#14164A;--mint:#B5B9F5;--mintl:#23265C}}
 :root[data-theme="dark"]{--pri:#FF7A3D;--pri2:#FF9A66;--pril:#3A2116;--acc:#FF7A3D;--acc2:#FF9A66;--accl:#3A2116;--navy:#1C1F66;--navy2:#14164A;--mint:#B5B9F5;--mintl:#23265C}
 
-/* 헤더 로고: 실제 로고 이미지 */
-.brand img.lgo,.logo img.lgo{width:auto!important;height:42px!important;border-radius:9px;display:block}
-.brand,.logo{gap:0!important}
-@media (max-width:600px){.brand img.lgo,.logo img.lgo{height:36px!important;border-radius:8px}}
-.hd{border-bottom:3px solid var(--pri)!important}
+/* 헤더 로고: 작은 로켓 아이콘 + 글자(로켓=남색, 집수리닷컴=주황) */
+.brand,.logo{display:flex!important;align-items:center;gap:8px!important;text-decoration:none}
+.brand img.lgi,.logo img.lgi{width:30px!important;height:30px!important;display:block;flex:none}
+.lgt{font-weight:900;font-size:1.25rem;letter-spacing:-.05em;color:var(--pri);white-space:nowrap;line-height:1}
+.lgt b{color:var(--navy);font-weight:900}
+@media (max-width:600px){.lgt{font-size:1.12rem}.brand img.lgi,.logo img.lgi{width:27px!important;height:27px!important}}
 
 /* 주황: 메인 버튼 */
 .btn.p,.hd .act .btn.p,.dock .btn.p,.top .call{background:var(--acc)!important;color:#fff!important;border-color:transparent!important}
@@ -196,7 +197,7 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap"><a class="logo" href="/"><img class="lgo" src="/img/logo-h.png" width="192" height="84" alt="로켓집수리닷컴"></a><nav><a href="/cases/">시공사례</a><a href="/repair/">수리 종류</a><a href="/reviews/">후기</a><a href="/records/">현장 소식</a><a href="/faq/">자주 묻는 질문</a></nav><a class="call" href="tel:010-3051-8015">010-3051-8015</a></div></header>
+<header class="top"><div class="wrap"><a class="logo" href="/"><img class="lgi" src="/favicon.svg" width="30" height="30" alt=""><span class="lgt"><b>로켓</b>집수리닷컴</span></a><nav><a href="/cases/">시공사례</a><a href="/repair/">수리 종류</a><a href="/reviews/">후기</a><a href="/records/">현장 소식</a><a href="/faq/">자주 묻는 질문</a></nav><a class="call" href="tel:010-3051-8015">010-3051-8015</a></div></header>
 <main class="wrap">
   <nav class="crumb"><a href="/">홈</a> › <a href="/cases/">시공 사례</a> › 주방</nav>
   <span class="cat">주방 · 강남구</span>

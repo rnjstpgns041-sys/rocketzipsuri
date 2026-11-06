@@ -277,14 +277,14 @@ def render_post(p, posts, head, tail):
         faq_html = '<h2 id="faq">자주 묻는 질문</h2><div class="faq">' + ''.join(
             f'<details><summary>{inline(q)}</summary><p>{inline(a)}</p></details>' for q, a in faqs) + '</div>'
         toc.append(('faq', '자주 묻는 질문'))
-    image = abs_url(p.get('image') or '/img/share-v7.jpg')
+    image = abs_url(p.get('image') or '/img/share-v8.jpg')
     published = iso(p)
     ld = [{
         '@context': 'https://schema.org', '@type': 'BlogPosting', 'headline': p['title'],
         'description': p['description'], 'image': image, 'datePublished': published, 'dateModified': published,
         'mainEntityOfPage': url, 'inLanguage': 'ko-KR',
         'author': {'@type': 'Organization', 'name': BRAND, 'url': SITE + '/'},
-        'publisher': {'@type': 'Organization', 'name': BRAND, 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/favicon.svg'}},
+        'publisher': {'@type': 'Organization', 'name': BRAND, 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/img/logo-512.png'}},
         'about': p.get('tag', '집수리'),
     }, {
         '@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
@@ -329,7 +329,7 @@ def render_index(posts, head, tail):
     ld = [{'@context': 'https://schema.org', '@type': 'Blog', 'name': f'{BRAND} 블로그', 'url': url, 'description': desc, 'inLanguage': 'ko-KR',
            'publisher': {'@type': 'Organization', 'name': BRAND, 'url': SITE + '/'},
            'blogPost': [{'@type': 'BlogPosting', 'headline': p['title'], 'url': f'{SITE}/blog/{p["slug"]}/', 'datePublished': iso(p)} for p in posts[:30]]}]
-    h = set_head(head, title, desc, url, SITE + '/img/share-v7.jpg', 'website', ld)
+    h = set_head(head, title, desc, url, SITE + '/img/share-v8.jpg', 'website', ld)
     if posts:
         cards = card(posts[0], first=True) + '<div class="bl-grid">' + ''.join(card(p) for p in posts[1:]) + '</div>'
     else:

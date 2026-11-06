@@ -536,6 +536,80 @@ body{letter-spacing:-.02em}
 .ph h1{color:var(--navy)}
 .dock .btn:not(.p){background:var(--navy)!important;color:#fff!important}
 </style>
+<style id="v7css">
+/* 2026-11-06 v7 고급 디자인 */
+:root{--h7bg:#151858;--h7bg2:#212575;--hd2:#212575}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--h7bg:#0E1040;--h7bg2:#171A55;--hd2:var(--ink)}}
+:root[data-theme="dark"]{--h7bg:#0E1040;--h7bg2:#171A55;--hd2:var(--ink)}
+.h7{position:relative;padding:72px 0 0;color:#fff;overflow:hidden;background:radial-gradient(900px 520px at 85% 10%,rgba(255,106,38,.28),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(90,100,255,.25),transparent 60%),linear-gradient(160deg,var(--h7bg2),var(--h7bg))}
+.h7::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:linear-gradient(180deg,#000 20%,transparent 85%);mask-image:linear-gradient(180deg,#000 20%,transparent 85%);pointer-events:none}
+.h7 .w{position:relative}
+.h7g{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.h7e{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.92rem;color:#E9EBFF;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:8px 15px;border-radius:999px}
+.h7e i{width:8px;height:8px;border-radius:50%;background:#FF7A3D;box-shadow:0 0 0 4px rgba(255,122,61,.25)}
+.h7 h1{margin:22px 0 0;font-size:clamp(2.4rem,4.8vw,4.2rem);line-height:1.14;letter-spacing:-.055em;font-weight:900;color:#fff}
+.h7 h1 em{font-style:normal;color:#FF7A3D}
+.h7 h1 br.m{display:none}
+.h7l{margin:20px 0 0;font-size:1.15rem;color:#C9CDF2;line-height:1.7}
+.h7b{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
+.h7b a{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:60px;padding:0 28px;border-radius:16px;font-weight:800;font-size:1.08rem;text-decoration:none;transition:transform .15s,background .15s}
+.h7b a:hover{transform:translateY(-2px)}
+.h7s{background:#FF6A26;color:#fff;box-shadow:0 14px 30px -12px rgba(255,106,38,.85)}.h7s:hover{background:#FF7A3D}
+.h7p{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.28)}.h7p:hover{background:rgba(255,255,255,.14)}
+.h7c{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;color:#DADDF7;font-weight:600;font-size:.95rem}
+.h7c li{display:flex;align-items:center;gap:7px}.h7c svg{color:#FF7A3D}
+.h7v{position:relative;padding-bottom:30px}
+.h7ba{--p:50%;position:relative;aspect-ratio:4/4.5;max-height:600px;margin:0 auto;border-radius:28px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.12);background:#2a2d6a}
+.h7ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.h7af{position:absolute;inset:0;clip-path:inset(0 0 0 var(--p))}
+.h7h{position:absolute;top:0;bottom:0;left:var(--p);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
+.h7h::after{content:"";position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:#FF6A26 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E") center/22px no-repeat;box-shadow:0 0 0 4px #fff,0 8px 20px rgba(0,0,0,.35)}
+.h7ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;touch-action:pan-y}
+.h7tag{position:absolute;top:16px;padding:6px 12px;border-radius:999px;font-weight:800;font-size:.85rem;color:#fff;background:rgba(16,18,40,.72);pointer-events:none}
+.h7tag.l{left:16px}.h7tag.r{right:16px;background:#FF6A26}
+.h7cap{position:absolute;left:20px;right:20px;bottom:0;display:flex;flex-direction:column;gap:3px;background:#fff;border-radius:18px;padding:15px 20px;box-shadow:0 18px 40px -16px rgba(0,0,0,.55);text-decoration:none;color:#16191D}
+.h7cap b{font-size:1.03rem;letter-spacing:-.02em}.h7cap span{font-size:.86rem;color:#7B838C}
+.h7n{display:grid;grid-template-columns:repeat(4,1fr);margin:64px 0 0;border-top:1px solid rgba(255,255,255,.14);padding:30px 0 40px}
+.h7n div{text-align:center;display:flex;flex-direction:column;gap:4px;position:relative}
+.h7n div+div::before{content:"";position:absolute;left:0;top:10%;bottom:10%;width:1px;background:rgba(255,255,255,.12)}
+.h7n b{font-size:2.3rem;font-weight:900;letter-spacing:-.04em;color:#fff;line-height:1.1}.h7n small{font-size:1rem;font-weight:700;margin-left:3px;color:#FF9A66}.h7n span{color:#AEB3E6;font-weight:600;font-size:.92rem}
+.mq7{background:#FF6A26;color:#fff;overflow:hidden;white-space:nowrap;padding:15px 0;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+.mq7i{display:inline-flex;animation:mq7 40s linear infinite}
+.mq7 span{display:inline-flex;align-items:center;padding:0 22px}.mq7 span::after{content:"";width:6px;height:6px;border-radius:50%;background:#212575;margin-left:44px;margin-right:-22px}
+@keyframes mq7{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.mq7i{animation:none}}
+.t7{padding:100px 0;background:var(--bg)}
+.t7g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.t7g a{position:relative;display:block;aspect-ratio:4/4.2;border-radius:22px;overflow:hidden;text-decoration:none;background:var(--bg2)}
+.t7g img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}.t7g a:hover img{transform:scale(1.07)}
+.t7g a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(14,16,64,.85))}
+.t7g span{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;display:flex;justify-content:space-between;align-items:center;color:#fff;font-weight:800;font-size:1.08rem;letter-spacing:-.03em}
+.t7g span i{font-style:normal;width:30px;height:30px;border-radius:50%;background:#FF6A26;display:grid;place-items:center;font-size:.9rem;transition:transform .2s}.t7g a:hover span i{transform:translateX(3px)}
+.t7m{display:table;margin:28px auto 0;font-weight:800;color:#fff;background:var(--navy);padding:14px 26px;border-radius:999px;text-decoration:none}.t7m:hover{background:var(--acc)}
+#work .ic.ic1{display:none}
+/* 섹션 제목: 알약 → 주황 선 + 글자, 제목은 남색 */
+.sh .eb,.t7 .sh .eb{background:none!important;padding:0!important;border-radius:0!important;color:var(--pri)!important;font-size:.95rem!important;font-weight:800;letter-spacing:.02em;gap:10px!important;margin-bottom:16px}
+.sh .eb::before{content:"";width:22px;height:2px;background:currentColor;display:inline-block}
+.sh h2{color:var(--hd2);font-weight:900!important}
+.sec.alt .sh h2,.sec .sh h2{color:var(--hd2)}
+#video .sh h2{color:#fff}#video .sh .eb{color:#FF9A66!important}
+.sec{padding:110px 0}
+.rv3 figure{border:1px solid var(--line);box-shadow:0 18px 40px -30px rgba(20,24,88,.35)}
+.hero2,.band{display:none}
+.h7on .dock{transform:translateY(120%)}.dock{transition:transform .25s}
+@media (max-width:960px){.h7g{grid-template-columns:1fr;gap:36px}.h7v{max-width:560px;margin:0 auto;width:100%}}
+@media (max-width:720px){
+.h7{padding:34px 0 0}.h7 h1{font-size:2.45rem;margin-top:16px}.h7 h1 br.m{display:inline}.h7l{font-size:1rem;margin-top:14px}
+.h7b{margin-top:22px;flex-direction:column}.h7b a{min-height:56px;font-size:1.05rem;border-radius:14px}
+.h7c{margin-top:18px;font-size:.88rem;gap:6px 14px}
+.h7ba{border-radius:22px;aspect-ratio:4/4.3}.h7cap{left:14px;right:14px;padding:12px 15px}
+.h7n{margin-top:40px;padding:22px 0 28px;grid-template-columns:repeat(2,1fr);row-gap:22px}.h7n div:nth-child(3)::before{display:none}.h7n b{font-size:1.8rem}.h7n small{font-size:.85rem}.h7n span{font-size:.82rem}
+.mq7{padding:12px 0;font-size:.92rem}
+.t7{padding:64px 0}.t7g{grid-template-columns:repeat(2,1fr);gap:10px}.t7g a{border-radius:16px;aspect-ratio:1/1}.t7g span{left:12px;right:12px;bottom:10px;font-size:.95rem}.t7g span i{width:24px;height:24px;font-size:.75rem}
+.sec{padding:72px 0}
+}
+</style>
+<script>document.addEventListener("DOMContentLoaded",function(){var h=document.querySelector(".h7b");if(h&&"IntersectionObserver" in window)new IntersectionObserver(function(e){document.body.classList.toggle("h7on",e[0].isIntersecting)}).observe(h)});</script>
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
@@ -546,22 +620,27 @@ body{letter-spacing:-.02em}
   <div class="act"><a class="tel" href="tel:010-3051-8015">010-3051-8015</a><a class="btn p" href="#contact">견적 신청</a></div></div>
 </div></header>
 <main id="main">
-<section class="hero2"><div class="w">
-  <span class="eb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.5s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.6"/></svg>서울·경기 생활 집수리</span>
-  <h1>고장 난 곳,<br><em>사진 한 장</em>이면 돼요</h1>
-  <p class="lead">사진만 보내 주시면 예상 금액부터 알려드려요.<br>사진이 없으면 동네와 고장 난 곳만 문자로 알려 주셔도 돼요.</p>
-  <div class="row"><a class="btn p lg" href="sms:01030518015?&body=%5B%EB%A1%9C%EC%BC%93%EC%A7%91%EC%88%98%EB%A6%AC%EB%8B%B7%EC%BB%B4%20%EB%AC%B8%EC%9D%98%5D%0A%0A1.%20%EC%A7%80%EC%97%AD%20%3A%20%0A2.%20%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%20%3A%20%0A3.%20%EC%82%AC%EC%A7%84%20%3A%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%EC%B2%A8%EB%B6%80%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94%20%28%EC%97%86%EC%9C%BC%EB%A9%B4%20%EB%82%98%EC%A4%91%EC%97%90%20%EB%B3%B4%EB%82%B4%EC%85%94%EB%8F%84%20%EB%90%A9%EB%8B%88%EB%8B%A4%29%0A%0A%EC%9D%BC%EC%A0%95%C2%B7%EC%98%88%EC%82%B0%EC%9D%80%20%EB%8B%B5%EC%9E%A5%20%EB%93%9C%EB%A6%B4%20%EB%95%8C%20%EC%97%AC%EC%AD%A4%EB%B3%BC%EA%B2%8C%EC%9A%94.">문자 보내기</a><a class="btn lg" href="tel:010-3051-8015">전화 상담 010-3051-8015</a></div>
-  <div class="stage" aria-hidden="true">
-    <div class="pc b"><img src="/img/c/224365691797-b.webp" alt=""><span>작업 전</span></div>
-    <div class="pc a"><img src="/img/c/224365691797-a.webp" alt=""><span>작업 후</span></div>
-    <div class="phone"><div class="scr"><div class="top">로켓집수리</div><div class="bub me"><img src="/img/c/224387214880-b.webp" alt=""></div><div class="bub me t">정수기 빼고 구멍이 남았어요. 마포구예요</div><div class="bub you">사진 확인했어요! 예상 금액 먼저 알려드릴게요 😊</div><div class="bub you">작업비·출장비 합쳐 <b>예상 금액</b>은 이 정도예요.</div></div></div>
+<section class="h7"><div class="w h7g">
+  <div class="h7t">
+    <span class="h7e"><i></i>서울·경기 출장 생활 집수리</span>
+    <h1>고장 난 곳,<br><em>사진 한 장</em>이면 돼요</h1>
+    <p class="h7l">사진이나 증상만 문자로 보내 주세요.<br>예상 금액부터 먼저 알려 드려요.</p>
+    <div class="h7b"><a class="h7s" href="sms:01030518015?&body=%5B%EB%A1%9C%EC%BC%93%EC%A7%91%EC%88%98%EB%A6%AC%EB%8B%B7%EC%BB%B4%20%EB%AC%B8%EC%9D%98%5D%0A%0A1.%20%EC%A7%80%EC%97%AD%20%3A%20%0A2.%20%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%20%3A%20%0A3.%20%EC%82%AC%EC%A7%84%20%3A%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%EC%B2%A8%EB%B6%80%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94%20%28%EC%97%86%EC%9C%BC%EB%A9%B4%20%EB%82%98%EC%A4%91%EC%97%90%20%EB%B3%B4%EB%82%B4%EC%85%94%EB%8F%84%20%EB%90%A9%EB%8B%88%EB%8B%A4%29%0A%0A%EC%9D%BC%EC%A0%95%C2%B7%EC%98%88%EC%82%B0%EC%9D%80%20%EB%8B%B5%EC%9E%A5%20%EB%93%9C%EB%A6%B4%20%EB%95%8C%20%EC%97%AC%EC%AD%A4%EB%B3%BC%EA%B2%8C%EC%9A%94."><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.8A8 8 0 1 1 21 12z"/></svg>문자로 견적 받기</a><a class="h7p" href="tel:010-3051-8015"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.5l1.8 4.6-2.3 1.4a11 11 0 0 0 6.5 6.5l1.4-2.3 4.6 1.8V19a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5z"/></svg>010-3051-8015</a></div>
+    <ul class="h7c"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>사진 없어도 문의 돼요</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>경첩 하나도 와요</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>고칠 수 있으면 고쳐서 써요</li></ul>
   </div>
-</div></section>
-<section class="band"><div class="w">
-  <div class="kp"><div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2.5l1.5-2h6l1.5 2H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.8"/></svg><b>사진 1장이면 견적</b><span>문자로 보내셔도 돼요</span></div><div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0 5 5L21 13l-8 8-2-2 8-8M14.5 6.5 13 5a4 4 0 0 0-5 5L3 15l2 2 5-5"/></svg><b>고칠 수 있으면 고쳐서</b><span>통째로 바꾸기 전에 살려요</span></div><div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.5s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.6"/></svg><b>서울·경기 전 지역</b><span>그 밖의 지역도 일정 맞춰요</span></div><div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2.5h9l4 4v15H6z"/><path d="M15 2.5v4h4M9 11h7M9 15h7M9 19h4"/></svg><b>작업일지 889편</b><span>다녀온 현장을 모두 기록해요</span></div></div>
-</div></section>
+  <div class="h7v">
+    <div class="h7ba"><img src="/img/c/224337708271-b.webp" alt="좁은 세탁장, 건조기 놓을 자리가 없던 모습" fetchpriority="high"><div class="h7af"><img src="/img/c/224337708271-a.webp" alt="랙을 짜 넣고 세탁기 위에 건조기를 올린 모습"></div>
+      <span class="h7tag l">작업 전</span><span class="h7tag r">작업 후</span><i class="h7h" aria-hidden="true"></i>
+      <input type="range" min="0" max="100" value="50" aria-label="작업 전후 비교" oninput="this.parentNode.style.setProperty('--p',this.value+'%')"></div>
+    <a class="h7cap" href="/cases/laundry-224337708271/"><b>좁은 세탁장, 세탁기 위에 건조기</b><span>실제 작업 사진 · 밀어서 비교해 보세요 →</span></a>
+  </div>
+</div>
+<div class="w"><div class="h7n"><div><b>889<small>편</small></b><span>현장 작업일지</span></div><div><b>25<small>개 구</small></b><span>서울 전 지역</span></div><div><b>31<small>개 시·군</small></b><span>경기 전 지역</span></div><div><b>12<small>개</small></b><span>직접 받은 후기</span></div></div></div>
+</section>
+<div class="mq7" aria-hidden="true"><div class="mq7i"><span>건조기랙 설치</span><span>식기세척기 빌트인</span><span>인덕션 매립</span><span>대리석 절단</span><span>정수기 구멍 복원</span><span>문 경첩 교체</span><span>욕조 코팅</span><span>TV 거치대</span><span>붙박이장 수리</span><span>가스레인지 교체</span><span>상부장 수리</span><span>싱크 팝업</span><span>건조기랙 설치</span><span>식기세척기 빌트인</span><span>인덕션 매립</span><span>대리석 절단</span><span>정수기 구멍 복원</span><span>문 경첩 교체</span><span>욕조 코팅</span><span>TV 거치대</span><span>붙박이장 수리</span><span>가스레인지 교체</span><span>상부장 수리</span><span>싱크 팝업</span></div></div>
 
 
+<section class="t7"><div class="w"><div class="sh"><span class="eb">수리 종류</span><h2>어떤 고장이에요?</h2></div><div class="t7g"><a href="/repair/dryer-rack/"><img src="/img/c/224348238887-a.webp" alt="건조기랙 설치 작업 사진" loading="lazy"><span>건조기랙 설치<i>→</i></span></a><a href="/repair/dishwasher/"><img src="/img/c/224369216537-a.webp" alt="식기세척기 빌트인 작업 사진" loading="lazy"><span>식기세척기 빌트인<i>→</i></span></a><a href="/repair/induction-cut/"><img src="/img/c/224365691797-a.webp" alt="인덕션 매립 작업 사진" loading="lazy"><span>인덕션 매립<i>→</i></span></a><a href="/repair/gas-range/"><img src="/img/c/224399350100-a.webp" alt="가스레인지 교체 작업 사진" loading="lazy"><span>가스레인지 교체<i>→</i></span></a><a href="/repair/door-direction/"><img src="/img/c/224357244224-a.webp" alt="문 방향 바꾸기 작업 사진" loading="lazy"><span>문 방향 바꾸기<i>→</i></span></a><a href="/repair/closet-roller/"><img src="/img/c/224317293941-a.webp" alt="붙박이장 수리 작업 사진" loading="lazy"><span>붙박이장 수리<i>→</i></span></a><a href="/repair/bathtub-repair/"><img src="/img/c/224353976750-a.webp" alt="욕조 코팅 작업 사진" loading="lazy"><span>욕조 코팅<i>→</i></span></a><a href="/repair/tv-mount/"><img src="/img/c/224407277752-a.webp" alt="TV 거치대 작업 사진" loading="lazy"><span>TV 거치대<i>→</i></span></a></div><a class="t7m" href="/repair/">수리 종류 전체 보기 →</a></div></section>
 <section class="sec alt" id="work"><div class="w">
   <div class="sh"><span class="eb">시공사례</span><h2>최근에 고친 집,<br>직접 보세요</h2><a class="more" href="/cases/">전체 보기 →</a></div>
   <div class="ic ic1" id="types" aria-label="수리 종류"><a href="/repair/dryer-rack/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><circle cx="12" cy="13.5" r="4.5"/><path d="M7.5 6h2M14 6h2.5"/></svg></span>건조기랙</a><a href="/repair/dishwasher/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3.5" width="18" height="17" rx="2"/><path d="M3 8.5h18M8 12v5M12 12v5M16 12v5"/></svg></span>식기세척기</a><a href="/repair/induction-cut/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="8" cy="12" r="2.6"/><circle cx="16" cy="12" r="2.6"/></svg></span>인덕션 매립</a><a href="/repair/countertop-repair/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9h20v3.5H2zM4.5 12.5V21M19.5 12.5V21"/><path d="m11 9 1.4 1.7-1.4 1.8"/></svg></span>상판 복원</a><a href="/repair/water-purifier-hole/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></svg></span>정수기 구멍</a><a href="/repair/door-hinge/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="1"/><circle cx="15" cy="12" r="1" fill="currentColor"/><path d="M3 21.5h18"/></svg></span>문·경첩</a><a href="/repair/closet-roller/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M12 3v18M9.5 10.5v3M14.5 10.5v3"/></svg></span>붙박이장</a><a href="/repair/bathtub-repair/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18v2.5a5.5 5.5 0 0 1-5.5 5.5h-7A5.5 5.5 0 0 1 3 14.5z"/><path d="M6 12V6.5a2.5 2.5 0 0 1 5 0M7 20l-1 1.5M17 20l1 1.5"/></svg></span>욕조 수리</a><a href="/repair/tv-mount/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>TV 거치대</a><a href="/repair/gas-range/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5c3.5 4 5.5 6.5 5.5 10.5a5.5 5.5 0 0 1-11 0c0-2.2 1-4 2.3-5.2.2 2 1.2 3.2 2.5 3.4C11 8.5 11.5 6 12 2.5z"/></svg></span>가스레인지</a><a href="/repair/wall-hole/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M3 15h18M9 3v6M15 9v6M9 15v6"/><circle cx="16.5" cy="17.8" r="1.3" fill="currentColor"/></svg></span>벽 구멍</a><a href="/repair/closet-removal/"><span class="o"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m13.5 3.5 7 7-2.8 2.8-7-7z"/><path d="M12 8 3.5 16.5l3 3L15 11"/></svg></span>철거·복원</a></div>

@@ -313,11 +313,12 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--pri:#FF7A3D;--pri2:#FF9A66;--pril:#3A2116;--acc:#FF7A3D;--acc2:#FF9A66;--accl:#3A2116;--navy:#1C1F66;--navy2:#14164A;--mint:#B5B9F5;--mintl:#23265C}}
 :root[data-theme="dark"]{--pri:#FF7A3D;--pri2:#FF9A66;--pril:#3A2116;--acc:#FF7A3D;--acc2:#FF9A66;--accl:#3A2116;--navy:#1C1F66;--navy2:#14164A;--mint:#B5B9F5;--mintl:#23265C}
 
-/* 헤더 로고: 실제 로고 이미지 */
-.brand img.lgo,.logo img.lgo{width:auto!important;height:42px!important;border-radius:9px;display:block}
-.brand,.logo{gap:0!important}
-@media (max-width:600px){.brand img.lgo,.logo img.lgo{height:36px!important;border-radius:8px}}
-.hd{border-bottom:3px solid var(--pri)!important}
+/* 헤더 로고: 작은 로켓 아이콘 + 글자(로켓=남색, 집수리닷컴=주황) */
+.brand,.logo{display:flex!important;align-items:center;gap:8px!important;text-decoration:none}
+.brand img.lgi,.logo img.lgi{width:30px!important;height:30px!important;display:block;flex:none}
+.lgt{font-weight:900;font-size:1.25rem;letter-spacing:-.05em;color:var(--pri);white-space:nowrap;line-height:1}
+.lgt b{color:var(--navy);font-weight:900}
+@media (max-width:600px){.lgt{font-size:1.12rem}.brand img.lgi,.logo img.lgi{width:27px!important;height:27px!important}}
 
 /* 주황: 메인 버튼 */
 .btn.p,.hd .act .btn.p,.dock .btn.p,.top .call{background:var(--acc)!important;color:#fff!important;border-color:transparent!important}
@@ -367,7 +368,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
 </head>
 <body>
 <script>document.documentElement.classList.add("js")</script>
-<header class="hd"><div class="w"><div class="t"><a class="brand" href="/"><img class="lgo" src="/img/logo-h.png" width="192" height="84" alt="로켓집수리닷컴"></a>
+<header class="hd"><div class="w"><div class="t"><a class="brand" href="/"><img class="lgi" src="/favicon.svg" width="30" height="30" alt=""><span class="lgt"><b>로켓</b>집수리닷컴</span></a>
 <nav class="nav"><a href="/cases/">시공사례</a><a class="on" href="/repair/">수리 종류</a><a href="/reviews/">후기</a><a href="/records/">현장 소식</a><a href="/faq/">자주 묻는 질문</a><a href="/blog/">블로그</a></nav><div class="act"><a class="tel" href="tel:010-3051-8015">010-3051-8015</a><a class="btn p" href="#contact">견적 신청</a></div></div></div></header>
 <main id="main">
 <section class="ph"><div class="w"><nav class="crumb"><a href="/">홈</a> › 수리 종류</nav><span class="eb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0 5 5L21 13l-8 8-2-2 8-8M14.5 6.5 13 5a4 4 0 0 0-5 5L3 15l2 2 5-5"/></svg>생활 집수리</span><h1>고장 난 곳마다<br><em>17가지</em> 수리</h1><p class="lead">세탁실, 주방, 문, 욕실, 거실, 철거까지 직접 다녀온 작업만 모았어요. 증상을 보고 맞는 수리를 골라 보세요.</p><div class="row"><a class="btn p lg" href="#contact">사진으로 견적 받기</a><a class="btn lg" href="tel:010-3051-8015">전화 010-3051-8015</a></div><div class="stats"><div><b>17<small>가지</small></b><span>수리 종류</span></div><div><b>6<small>분야</small></b><span>공간별 분류</span></div><div><b>889<small>편</small></b><span>작업일지</span></div></div></div></section>

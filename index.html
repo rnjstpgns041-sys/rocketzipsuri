@@ -582,7 +582,7 @@ body{letter-spacing:-.02em}
 .t7g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .t7g a{position:relative;display:block;aspect-ratio:4/4.2;border-radius:22px;overflow:hidden;text-decoration:none;background:var(--bg2)}
 .t7g img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}.t7g a:hover img{transform:scale(1.07)}
-.t7g a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(14,16,64,.85))}
+.t7g a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(24,14,8,.82))}
 .t7g span{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;display:flex;justify-content:space-between;align-items:center;color:#fff;font-weight:800;font-size:1.08rem;letter-spacing:-.03em}
 .t7g span i{font-style:normal;width:30px;height:30px;border-radius:50%;background:#FF6A26;display:grid;place-items:center;font-size:.9rem;transition:transform .2s}.t7g a:hover span i{transform:translateX(3px)}
 .t7m{display:table;margin:28px auto 0;font-weight:800;color:#fff;background:var(--navy);padding:14px 26px;border-radius:999px;text-decoration:none}.t7m:hover{background:var(--acc)}
@@ -608,6 +608,21 @@ body{letter-spacing:-.02em}
 .t7{padding:64px 0}.t7g{grid-template-columns:repeat(2,1fr);gap:10px}.t7g a{border-radius:16px;aspect-ratio:1/1}.t7g span{left:12px;right:12px;bottom:10px;font-size:.95rem}.t7g span i{width:24px;height:24px;font-size:.75rem}
 .sec{padding:72px 0}
 }
+/* 2026-11-06 첫 화면 색: 남색 → 따뜻한 크림+주황 (사용자: 파란색 별로) */
+:root{--w7a:#FFF4EC;--w7b:#FFFFFF;--w7ink:#1B1E2B;--w7ink2:#4A4F5C;--w7mut:#8A8F99;--w7line:rgba(60,30,10,.10);--w7card:#FFFFFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--w7a:#2A1A12;--w7b:#141210;--w7ink:#F4F1EE;--w7ink2:#D6CFC9;--w7mut:#A39B94;--w7line:rgba(255,255,255,.12);--w7card:#1E1B19}}
+:root[data-theme="dark"]{--w7a:#2A1A12;--w7b:#141210;--w7ink:#F4F1EE;--w7ink2:#D6CFC9;--w7mut:#A39B94;--w7line:rgba(255,255,255,.12);--w7card:#1E1B19}
+.h7{color:var(--w7ink);background:radial-gradient(760px 480px at 88% 8%,rgba(255,106,38,.30),transparent 62%),radial-gradient(620px 420px at 4% 96%,rgba(255,170,90,.22),transparent 62%),linear-gradient(180deg,var(--w7a),var(--w7b))}
+.h7::before{background-image:radial-gradient(rgba(255,106,38,.22) 1.2px,transparent 1.3px);background-size:22px 22px}
+.h7 h1{color:var(--w7ink)}.h7 h1 em{color:#FF6A26}
+.h7e{color:#C2410C;background:var(--w7card);border-color:#FFD3BC;box-shadow:0 6px 16px -10px rgba(255,106,38,.5)}
+.h7l{color:var(--w7ink2)}
+.h7p{background:var(--w7card);color:var(--w7ink);border-color:var(--w7line)}.h7p:hover{background:var(--w7card);border-color:#FF6A26;color:#E8551A}
+.h7c{color:var(--w7ink2)}.h7c svg{color:#FF6A26}
+.h7ba{box-shadow:0 40px 70px -34px rgba(150,60,10,.45),0 0 0 6px var(--w7card)}
+.h7cap{box-shadow:0 18px 40px -18px rgba(120,50,10,.45)}
+.h7n{border-top-color:var(--w7line)}.h7n div+div::before{background:var(--w7line)}
+.h7n b{color:var(--w7ink)}.h7n small{color:#FF6A26}.h7n span{color:var(--w7mut)}
 </style>
 <script>document.addEventListener("DOMContentLoaded",function(){var h=document.querySelector(".h7b");if(h&&"IntersectionObserver" in window)new IntersectionObserver(function(e){document.body.classList.toggle("h7on",e[0].isIntersecting)}).observe(h)});</script>
 </head>
@@ -620,6 +635,8 @@ body{letter-spacing:-.02em}
   <div class="act"><a class="tel" href="tel:010-3051-8015">010-3051-8015</a><a class="btn p" href="#contact">견적 신청</a></div></div>
 </div></header>
 <main id="main">
+
+
 <section class="h7"><div class="w h7g">
   <div class="h7t">
     <span class="h7e"><i></i>서울·경기 출장 생활 집수리</span>
@@ -638,8 +655,6 @@ body{letter-spacing:-.02em}
 <div class="w"><div class="h7n"><div><b>889<small>편</small></b><span>현장 작업일지</span></div><div><b>25<small>개 구</small></b><span>서울 전 지역</span></div><div><b>31<small>개 시·군</small></b><span>경기 전 지역</span></div><div><b>12<small>개</small></b><span>직접 받은 후기</span></div></div></div>
 </section>
 <div class="mq7" aria-hidden="true"><div class="mq7i"><span>건조기랙 설치</span><span>식기세척기 빌트인</span><span>인덕션 매립</span><span>대리석 절단</span><span>정수기 구멍 복원</span><span>문 경첩 교체</span><span>욕조 코팅</span><span>TV 거치대</span><span>붙박이장 수리</span><span>가스레인지 교체</span><span>상부장 수리</span><span>싱크 팝업</span><span>건조기랙 설치</span><span>식기세척기 빌트인</span><span>인덕션 매립</span><span>대리석 절단</span><span>정수기 구멍 복원</span><span>문 경첩 교체</span><span>욕조 코팅</span><span>TV 거치대</span><span>붙박이장 수리</span><span>가스레인지 교체</span><span>상부장 수리</span><span>싱크 팝업</span></div></div>
-
-
 <section class="t7"><div class="w"><div class="sh"><span class="eb">수리 종류</span><h2>어떤 고장이에요?</h2></div><div class="t7g"><a href="/repair/dryer-rack/"><img src="/img/c/224348238887-a.webp" alt="건조기랙 설치 작업 사진" loading="lazy"><span>건조기랙 설치<i>→</i></span></a><a href="/repair/dishwasher/"><img src="/img/c/224369216537-a.webp" alt="식기세척기 빌트인 작업 사진" loading="lazy"><span>식기세척기 빌트인<i>→</i></span></a><a href="/repair/induction-cut/"><img src="/img/c/224365691797-a.webp" alt="인덕션 매립 작업 사진" loading="lazy"><span>인덕션 매립<i>→</i></span></a><a href="/repair/gas-range/"><img src="/img/c/224399350100-a.webp" alt="가스레인지 교체 작업 사진" loading="lazy"><span>가스레인지 교체<i>→</i></span></a><a href="/repair/door-direction/"><img src="/img/c/224357244224-a.webp" alt="문 방향 바꾸기 작업 사진" loading="lazy"><span>문 방향 바꾸기<i>→</i></span></a><a href="/repair/closet-roller/"><img src="/img/c/224317293941-a.webp" alt="붙박이장 수리 작업 사진" loading="lazy"><span>붙박이장 수리<i>→</i></span></a><a href="/repair/bathtub-repair/"><img src="/img/c/224353976750-a.webp" alt="욕조 코팅 작업 사진" loading="lazy"><span>욕조 코팅<i>→</i></span></a><a href="/repair/tv-mount/"><img src="/img/c/224407277752-a.webp" alt="TV 거치대 작업 사진" loading="lazy"><span>TV 거치대<i>→</i></span></a></div><a class="t7m" href="/repair/">수리 종류 전체 보기 →</a></div></section>
 <section class="sec alt" id="work"><div class="w">
   <div class="sh"><span class="eb">시공사례</span><h2>최근에 고친 집,<br>직접 보세요</h2><a class="more" href="/cases/">전체 보기 →</a></div>

@@ -7,6 +7,8 @@ crumb: 욕조 기스 코팅
 image: /img/c/224353976750-a.webp
 image_alt: 얼룩과 기스를 보수하고 코팅한 욕조
 repair: bathtub-repair
+date: 2026-11-08
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

@@ -15,13 +15,13 @@
 - 화장실 환풍기 소리·고장 교체 (/k/bathroom-fan)
 - 샤워부스 뗀 자리 벽 구멍 메우기 (/repair/wall-hole)
 - 욕실 타일 줄눈 들뜸·까매짐 (/k/*grout)
-- 욕실 부분 수리, 전체 리모델링 없이 되는 것 (/k/bathroom-partial)
+- 욕실 부분 수리, 전체 리모델링 없이 되는 것 (/k/bathroom-partial) (완료: bathroom-partial-repair)
 
 ## 주방
 - 싱크대 수전 교체 시기, 물 샐 때 수전만 바꾸면 되나요? (/repair/faucet)
 - 싱크대 밑 물 샐 때 확인할 곳 (/k/*-sink-leak)
-- 주방 후드 교체, 흡입이 약할 때 (/cases/kitchen-224381877174, /k/kitchen-hood)
-- 가스레인지 교체, 빌트인 규격 맞추는 법 (/repair/gas-range)
+- 주방 후드 교체, 흡입이 약할 때 (/cases/kitchen-224381877174, /k/kitchen-hood) (완료: kitchen-hood-weak-suction)
+- 가스레인지 교체, 빌트인 규격 맞추는 법 (/repair/gas-range) (완료: builtin-gas-range-size)
 - 2구에서 3구로, 가스레인지 크기 바꿀 때 (/k/range-resize 등)
 - 인조대리석 상판 금(크랙) 생겼을 때 (/k/countertop-crack, /repair/countertop-repair)
 - 대리석 상판 이음매 벌어짐·광택 복원 (/k/countertop-seam, /k/marble-polish)

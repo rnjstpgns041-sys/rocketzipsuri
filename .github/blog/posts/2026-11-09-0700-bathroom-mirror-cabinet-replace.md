@@ -6,6 +6,8 @@ tag: 욕실
 crumb: 화장실 거울장 교체
 image: /img/c/224379248848-a.webp
 image_alt: 새 거울장으로 바꿔 단 화장실
+date: 2026-11-09
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

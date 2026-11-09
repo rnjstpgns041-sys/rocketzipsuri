@@ -5,6 +5,8 @@ description: 샤워부스나 욕실 선반을 떼고 나면 타일에 남는 나
 tag: 욕실
 crumb: 샤워부스 뗀 자리 구멍
 repair: wall-hole
+date: 2026-11-10
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

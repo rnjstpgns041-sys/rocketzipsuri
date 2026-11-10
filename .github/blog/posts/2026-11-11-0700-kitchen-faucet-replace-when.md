@@ -5,6 +5,8 @@ description: 싱크대 수전 아래로 물이 새거나 레버가 뻑뻑할 때
 tag: 주방
 crumb: 싱크대 수전 물샘·교체
 repair: faucet
+date: 2026-11-11
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

@@ -7,6 +7,8 @@ crumb: 주방 후드 흡입 약할 때
 image: /img/c/224381877174-a.webp
 image_alt: 오래된 후드를 떼고 새 통후드로 바꾼 주방
 repair: gas-range
+date: 2026-11-12
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

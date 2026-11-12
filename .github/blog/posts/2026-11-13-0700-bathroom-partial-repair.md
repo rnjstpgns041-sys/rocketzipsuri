@@ -7,6 +7,8 @@ crumb: 욕실 부분 수리 범위
 image: /img/c/224353976750-a.webp
 image_alt: 기스와 얼룩을 정리하고 코팅한 욕조
 repair: bathtub-repair
+date: 2026-11-13
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

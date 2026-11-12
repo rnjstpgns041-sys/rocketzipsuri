@@ -7,6 +7,8 @@ crumb: 빌트인 가스레인지 규격
 image: /img/c/224399350100-a.webp
 image_alt: 기존 자리에 맞춰 새 빌트인 가스레인지를 넣은 주방
 repair: gas-range
+date: 2026-11-13
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

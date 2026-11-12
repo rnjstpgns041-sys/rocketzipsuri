@@ -48,7 +48,7 @@
 - 일체형 세탁건조기 자리 만들기 (/k/ai-combo-washer) (완료: combo-washer-dryer-space)
 - 스타일러 붙박이장에 넣기 (/k/styler-closet) (완료: styler-closet-builtin)
 - 빌트인 냉장고 옮기기·철거 (/k/builtin-fridge-move) (완료: builtin-fridge-move-remove)
-- TV 이사할 때 떼고 다시 달기 (/k/tv-move)
+- TV 이사할 때 떼고 다시 달기 (/k/tv-move) (완료: tv-wall-move-remove)
 - 센서등이 안 켜지거나 계속 켜질 때 (/k/sensor-light) (건너뜀: 기존 글·topics.md와 겹침)
 
 ## 벽·바닥·기타
@@ -67,12 +67,12 @@
 
 ## 2026-11-11 추가
 - 냉장고 위 빈 공간 막기·상부장 달기 (/k/fridge-upper-cabinet) (건너뜀: 다른 글·대기 글과 겹침)
-- 상부장 높이 낮추기·올리기 (/k/upper-cabinet-height)
-- 싱크대 하부장 새로 짜기, 한 칸만 바꾸기 (/k/lower-cabinet-make, /k/sink-base-cabinet)
-- 다용도실·베란다 수납장 설치 (/k/utility-room-cabinet)
+- 상부장 높이 낮추기·올리기 (/k/upper-cabinet-height) (건너뜀: 기존 글·대기 글과 겹침)
+- 싱크대 하부장 새로 짜기, 한 칸만 바꾸기 (/k/lower-cabinet-make, /k/sink-base-cabinet) (완료: sink-base-cabinet-rotten)
+- 다용도실·베란다 수납장 설치 (/k/utility-room-cabinet) (완료: utility-room-cabinet-remove)
 - 거실·방 수납장 설치할 때 확인할 것 (/k/storage-cabinet)
 - 연수기 철거 후 정리 (/k/water-softener-removal)
-- 가스오븐 철거하고 그 자리 쓰기 (/k/gas-oven-removal)
+- 가스오븐 철거하고 그 자리 쓰기 (/k/gas-oven-removal) (완료: gas-oven-range-removal)
 - 천장재가 처지거나 떨어질 때 (/k/ceiling-board) (완료: ceiling-board-sagging-leak)
 - 샤시(창틀) 필름으로 새것처럼 (/k/sash-film)
 - 계단 데코타일 시공 (/k/stair-decotile)
@@ -87,18 +87,31 @@
 
 
 ## 2026-11-12 추가
-- 현관 도어락이 안 열릴 때·교체할 때 확인할 것 (/k/front-door-lock)
+- 현관 도어락이 안 열릴 때·교체할 때 확인할 것 (/k/front-door-lock) (완료: front-door-lock-replace)
 - 붙박이장 필름으로 색 바꾸기 (/k/closet-film)
-- 벽걸이 TV 떼고 남은 구멍 정리 (/k/tv-removal)
-- 75인치 이상 대형 TV 벽걸이, 벽이 버틸까? (/k/big-tv-wall-mount)
+- 벽걸이 TV 떼고 남은 구멍 정리 (/k/tv-removal) (완료: tv-wall-move-remove)
+- 75인치 이상 대형 TV 벽걸이, 벽이 버틸까? (/k/big-tv-wall-mount) (완료: big-tv-wall-mount-check)
 - 식당·카페 업소용 식기세척기 설치 자리 (/k/commercial-dishwasher)
-- 싱크대 철거만 따로 맡기기 (/k/sink-removal)
+- 싱크대 철거만 따로 맡기기 (/k/sink-removal) (완료: sink-removal-only)
 - 주방 일부만 고치기, 하부장 한 칸·상판 한쪽 (/k/kitchen-partial)
 - 가스레인지 받침대·스탠드형 설치 (/k/gas-range-stand)
-- 세탁실(다용도실) 정리, 선반·수납 한 번에 (/k/laundry-room)
-- 빨래건조대 천장·벽에 달기 (/k/clothes-dryer-bar)
+- 세탁실(다용도실) 정리, 선반·수납 한 번에 (/k/laundry-room) (완료: laundry-room-shelf-setup)
+- 빨래건조대 천장·벽에 달기 (/k/clothes-dryer-bar) (완료: clothes-dryer-bar-ceiling)
 - 트롬 트윈워시 위 건조기 올리기 (/k/twinwash-rack)
-- 벽에 구멍 안 내고 건조기 올리기 (/k/no-drill-dryer-rack)
+- 벽에 구멍 안 내고 건조기 올리기 (/k/no-drill-dryer-rack) (완료: no-drill-dryer-rack-rent)
 - 가전 설치 한 번에 맡기기 (식세기·인덕션·TV) (/k/appliance-install)
-- 싱크대 상판 구멍 새로 뚫기·막기 (/k/countertop-hole)
+- 싱크대 상판 구멍 새로 뚫기·막기 (/k/countertop-hole) (건너뜀: 기존 글·대기 글과 겹침)
 - TV 설치 기사 부를 때 확인할 것 (/k/tv-installer)
+
+
+## 2026-11-13 추가
+- 경첩이 부러지거나 헐거울 때, 경첩 종류별 교체 (/k/hinge-repair)
+- 가스레인지가 작아서 상판 구멍이 남을 때 메우기 (/k/gas-range-hole-fill)
+- 빌트인 쿡탑 넣기, 상판 타공 순서 (/k/cooktop-builtin)
+- 건조기 받침대(스탠드) vs 건조기랙 (/k/dryer-stand)
+- 싱크대 옆에 식기세척기 넣을 자리 만들기 (/k/sink-dishwasher)
+- 인테리어 필름, 어디까지 붙일 수 있나요 (/k/interior-film)
+- 집수리 견적 받을 때 사진 찍는 법 (/k/house-repair-quote)
+- 오늘 바로 와 줄 수 있나요? 급한 집수리 부를 때 (/k/urgent-repair)
+- 집수리 기사님 부르기 전에 준비할 것 (/k/home-repair-technician)
+- 대리석 바닥·상판 광택이 죽었을 때 (/k/marble-polish)

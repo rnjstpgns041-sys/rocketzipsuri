@@ -5,6 +5,8 @@ description: 싱크대 인조대리석 상판에 금(크랙)이 생기는 이유
 tag: 주방
 crumb: 인조대리석 상판 크랙
 repair: countertop-repair
+date: 2026-11-14
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

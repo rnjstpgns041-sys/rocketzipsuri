@@ -5,6 +5,8 @@ description: 이사나 고장으로 빌트인 식기세척기를 뺄 때, 급수
 tag: 주방
 crumb: 식기세척기 철거 후 하부장
 repair: dishwasher-removal
+date: 2026-11-14
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

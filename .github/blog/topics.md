@@ -36,9 +36,9 @@
 
 ## 문·수납
 - 방문이 안 닫힐 때·문고리 걸림 (/repair/door-hinge)
-- 문 열리는 방향 바꾸기 (/repair/door-direction)
-- 붙박이장 슬라이드 문 덜컹·롤러 교체 (/repair/closet-roller)
-- 붙박이장 철거 후 벽 복원 (/repair/closet-removal)
+- 문 열리는 방향 바꾸기 (/repair/door-direction) (완료: door-direction-change)
+- 붙박이장 슬라이드 문 덜컹·롤러 교체 (/repair/closet-roller) (완료: closet-sliding-roller)
+- 붙박이장 철거 후 벽 복원 (/repair/closet-removal) (완료: closet-removal-wall-restore)
 - 문틀·문 필름 시공으로 새것처럼 (/k/door-film)
 - 현관 중문 문제 (/k/jungmun-wire)
 - 도어스토퍼·말발굽 교체 (/k/door-stopper)

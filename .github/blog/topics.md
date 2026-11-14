@@ -31,8 +31,8 @@
 - 삼성·LG 식기세척기 설치 차이 (/k/samsung-dishwasher, /k/lg-dishwasher)
 - 식기세척기 이전 설치(이사할 때) (/k/dishwasher-move)
 - 빌트인 오븐장 만들기 (/k/oven-cabinet, /k/builtin-oven)
-- 주방 실리콘 곰팡이 (/k/kitchen-silicone)
-- 주방 등 LED로 교체 (/cases/kitchen-224416408778, /k/light-replace)
+- 주방 실리콘 곰팡이 (/k/kitchen-silicone) (완료: kitchen-silicone-mold-redo)
+- 주방 등 LED로 교체 (/cases/kitchen-224416408778, /k/light-replace) (완료: kitchen-fluorescent-to-led)
 
 ## 문·수납
 - 방문이 안 닫힐 때·문고리 걸림 (/repair/door-hinge)
@@ -47,7 +47,7 @@
 - 통돌이 세탁기 위 건조기 올리기 (/cases/laundry-224315290440)
 - 세탁기·건조기 나란히 vs 위아래 (/cases/laundry-224350899273)
 - 세탁실 벽 선반 철거 (/cases/laundry-224348238887)
-- 에어컨 배관 구멍 메우기·배관 테이핑 (/k/aircon-hole, /k/aircon-taping)
+- 에어컨 배관 구멍 메우기·배관 테이핑 (/k/aircon-hole, /k/aircon-taping) (완료: aircon-hole-winter-draft)
 - 대형 TV 벽걸이 설치할 때 벽 확인 (/k/tv-wall-mount)
 - 콘센트 교체·주방 콘센트 추가 (/k/outlet-replace)
 - 센서등 교체 (/k/sensor-light)

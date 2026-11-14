@@ -5,6 +5,8 @@ description: 새 냉장고가 높이나 폭이 모자라 냉장고장에 안 들
 tag: 주방
 crumb: 냉장고 자리 넓히기
 repair: upper-cabinet
+date: 2026-11-15
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

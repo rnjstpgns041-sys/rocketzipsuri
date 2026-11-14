@@ -7,6 +7,8 @@ crumb: 식기세척기 이전 설치
 image: /img/c/224343957645-a.webp
 image_alt: 싱크대 아래 급수·배수를 연결해 설치한 식기세척기
 repair: dishwasher
+date: 2026-11-15
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

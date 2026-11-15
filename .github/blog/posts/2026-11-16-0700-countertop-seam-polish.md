@@ -5,6 +5,8 @@ description: 주방 인조대리석 상판 이음매가 벌어지거나 까맣�
 tag: 주방
 crumb: 상판 이음매·광택 복원
 repair: countertop-repair
+date: 2026-11-16
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

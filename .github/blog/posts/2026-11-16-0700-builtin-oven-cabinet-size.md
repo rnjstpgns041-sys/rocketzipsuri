@@ -5,6 +5,8 @@ description: 오븐을 바꾸려는데 기존 오븐장과 크기가 안 맞을 
 tag: 가전 설치
 crumb: 빌트인 오븐장
 repair: gas-range
+date: 2026-11-16
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

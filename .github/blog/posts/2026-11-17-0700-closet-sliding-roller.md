@@ -7,6 +7,8 @@ crumb: 붙박이장 롤러 교체
 image: /img/c/224317293941-a.webp
 image_alt: 롤러를 손본 슬라이드 붙박이장 문
 repair: closet-roller
+date: 2026-11-17
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

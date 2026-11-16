@@ -7,6 +7,8 @@ crumb: 문 열리는 방향 바꾸기
 image: /img/c/224357244224-a.webp
 image_alt: 열리는 방향을 바꿔 단 세탁실 문
 repair: door-direction
+date: 2026-11-17
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

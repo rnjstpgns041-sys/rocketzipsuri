@@ -49,13 +49,13 @@
 - 세탁실 벽 선반 철거 (/cases/laundry-224348238887)
 - 에어컨 배관 구멍 메우기·배관 테이핑 (/k/aircon-hole, /k/aircon-taping)
 - 대형 TV 벽걸이 설치할 때 벽 확인 (/k/tv-wall-mount)
-- 콘센트 교체·주방 콘센트 추가 (/k/outlet-replace)
-- 센서등 교체 (/k/sensor-light)
+- 콘센트 교체·주방 콘센트 추가 (/k/outlet-replace) (완료: outlet-replace-add)
+- 센서등 교체 (/k/sensor-light) (완료: sensor-light-not-working)
 
 ## 벽·바닥·기타
 - 벽 못 자국·앵커 구멍 메우기 (/repair/wall-hole)
 - 아트월 타일 깨짐·구멍 (/k/artwall)
-- 마루 찍힘·부분 보수 (/k/floor-dent, /k/floor-partial)
+- 마루 찍힘·부분 보수 (/k/floor-dent, /k/floor-partial) (완료: floor-dent-repair)
 - 걸레받이·몰딩 떨어짐 (/k/molding-repair)
 - 이사 나갈 때 원상복구, 어디까지 해야 하나요? (/k/moveout-restore)
 - 이사 들어가기 전 집수리 체크리스트 (/k/after-move-repair)

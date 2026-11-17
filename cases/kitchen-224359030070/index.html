@@ -78,9 +78,9 @@ h2{font-size:1.22rem;margin:0 0 14px;font-weight:800;letter-spacing:-.025em}
 .ba{position:relative;aspect-ratio:3/4;border-radius:28px;overflow:hidden;background:var(--line);position:sticky;top:84px}
 @media (max-width:880px){.ba{position:relative;top:0}}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ba .b{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
-.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}
+
 .ba .h{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
-.ba .h::after{content:"↔";position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px;border-radius:50%;background:#fff;color:#0B0D12;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25);font-weight:700}
+
 .lab{position:absolute;top:12px;z-index:2;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:5px 10px;border-radius:999px;background:rgba(29,27,23,.8);color:#fff}.lab.l{left:12px}.lab.r{right:12px;background:var(--flame)}
 .blk{background:var(--surface);border-radius:24px;padding:26px 28px;margin-bottom:12px}
 .blk ul,.blk ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
@@ -205,7 +205,7 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
   <p class="lead">인덕션이 오기 전에 대리석 상판을 규격대로 잘라 자리를 미리 만들었어요.</p>
   <div class="meta"><span>기록일<b>2026.07.27</b></span><span>현장<b>강남구</b></span><span>분야<b>주방</b></span></div>
   <div class="grid">
-    <div class="ba" style="--p:50%"><img src="/img/c/224359030070-a.webp" alt="인덕션 매립 자리 만들기 작업 후"><img class="b" src="/img/c/224359030070-b.webp" alt="인덕션 매립 자리 만들기 작업 전"><span class="lab l">BEFORE</span><span class="lab r">AFTER</span><span class="h"></span><input type="range" min="0" max="100" value="50" aria-label="작업 전과 후 비교" oninput="this.parentNode.style.setProperty('--p',this.value+'%')"></div>
+    <div class="ba" style="--p:50%"><img src="/img/c/224359030070-a.webp" alt="인덕션 매립 자리 만들기 작업 후"><img class="b" src="/img/c/224359030070-b.webp" alt="인덕션 매립 자리 만들기 작업 전"><span class="lab l">BEFORE</span><span class="lab r">AFTER</span><span class="h"></span></div>
     <div>
       <section class="blk"><h2>고객님 요청사항</h2><ul><li>기존 가스레인지를 철거하고 2구 인덕션으로 교체하고 싶어요.</li><li>인덕션이 도착하기 전에 싱크대 대리석 상판을 미리 절단해 매립 자리를 만들어 주세요.</li><li>제품 규격에 맞춰 오차 없이 정밀하게 타공하고 깔끔하게 마감해 주세요.</li><li>인덕션 설치 시 바로 매립할 수 있도록 상판 손상 없이 안전하게 작업해 주세요.</li></ul></section>
       <section class="blk"><h2>작업 순서</h2><ol><li>인덕션 매립 규격을 정확하게 확인해요.</li><li>싱크대 상판 상태를 꼼꼼하게 점검해요.</li><li>대리석 상판을 정밀하게 절단해요.</li><li>절단면을 깔끔하게 마감해요.</li><li>매립 공간을 최종 점검해요.</li></ol></section>

@@ -78,9 +78,9 @@ h2{font-size:1.22rem;margin:0 0 14px;font-weight:800;letter-spacing:-.025em}
 .ba{position:relative;aspect-ratio:3/4;border-radius:28px;overflow:hidden;background:var(--line);position:sticky;top:84px}
 @media (max-width:880px){.ba{position:relative;top:0}}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ba .b{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
-.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}
+
 .ba .h{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
-.ba .h::after{content:"↔";position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px;border-radius:50%;background:#fff;color:#0B0D12;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25);font-weight:700}
+
 .lab{position:absolute;top:12px;z-index:2;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:5px 10px;border-radius:999px;background:rgba(29,27,23,.8);color:#fff}.lab.l{left:12px}.lab.r{right:12px;background:var(--flame)}
 .blk{background:var(--surface);border-radius:24px;padding:26px 28px;margin-bottom:12px}
 .blk ul,.blk ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
@@ -205,7 +205,7 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
   <p class="lead">안으로 열리던 세탁실 문을 반대로 달아 안쪽 공간을 넓혔어요.</p>
   <div class="meta"><span>기록일<b>2026.07.25</b></span><span>현장<b>—</b></span><span>분야<b>문·수납</b></span></div>
   <div class="grid">
-    <div class="ba" style="--p:50%"><img src="/img/c/224357244224-a.webp" alt="세탁실 문 방향 변경 작업 후"><img class="b" src="/img/c/224357244224-b.webp" alt="세탁실 문 방향 변경 작업 전"><span class="lab l">BEFORE</span><span class="lab r">AFTER</span><span class="h"></span><input type="range" min="0" max="100" value="50" aria-label="작업 전과 후 비교" oninput="this.parentNode.style.setProperty('--p',this.value+'%')"></div>
+    <div class="ba" style="--p:50%"><img src="/img/c/224357244224-a.webp" alt="세탁실 문 방향 변경 작업 후"><img class="b" src="/img/c/224357244224-b.webp" alt="세탁실 문 방향 변경 작업 전"><span class="lab l">BEFORE</span><span class="lab r">AFTER</span><span class="h"></span></div>
     <div>
       <section class="blk"><h2>고객님 요청사항</h2><ul><li>문이 열리는 방향 때문에 세탁실 사용이 불편했어요.</li><li>좁은 세탁실 공간을 더욱 효율적으로 활용하고 싶어 하셨어요.</li><li>기존 문은 그대로 사용하면서 방향만 변경하길 원하셨어요.</li><li>문과 벽면이 손상되지 않는 깔끔한 시공을 요청하셨어요.</li><li>시공 후 더욱 편리한 세탁실 환경을 기대하셨어요.</li></ul></section>
       <section class="blk"><h2>작업 순서</h2><ol><li>세탁실 구조와 문 열림 방향을 먼저 확인해요.</li><li>문짝과 부속품을 안전하게 분리해요.</li><li>문 열림 방향에 맞게 경첩과 부속품을 변경해요.</li><li>문의 수평과 개폐 상태를 꼼꼼하게 맞춰요.</li><li>마감과 사용 상태를 최종 점검해요.</li></ol></section>

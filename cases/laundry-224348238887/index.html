@@ -78,9 +78,9 @@ h2{font-size:1.22rem;margin:0 0 14px;font-weight:800;letter-spacing:-.025em}
 .ba{position:relative;aspect-ratio:3/4;border-radius:28px;overflow:hidden;background:var(--line);position:sticky;top:84px}
 @media (max-width:880px){.ba{position:relative;top:0}}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ba .b{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
-.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}
+
 .ba .h{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
-.ba .h::after{content:"↔";position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px;border-radius:50%;background:#fff;color:#0B0D12;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25);font-weight:700}
+
 .lab{position:absolute;top:12px;z-index:2;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:5px 10px;border-radius:999px;background:rgba(29,27,23,.8);color:#fff}.lab.l{left:12px}.lab.r{right:12px;background:var(--flame)}
 .blk{background:var(--surface);border-radius:24px;padding:26px 28px;margin-bottom:12px}
 .blk ul,.blk ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
@@ -205,7 +205,7 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
   <p class="lead">세탁실 벽 선반을 떼어 내고 그 자리에 건조기 랙을 세웠어요.</p>
   <div class="meta"><span>기록일<b>2026.07.16</b></span><span>현장<b>—</b></span><span>분야<b>세탁실</b></span></div>
   <div class="grid">
-    <div class="ba" style="--p:50%"><img src="/img/c/224348238887-a.webp" alt="벽면 선반 철거 후 건조기 랙 작업 후"><img class="b" src="/img/c/224348238887-b.webp" alt="벽면 선반 철거 후 건조기 랙 작업 전"><span class="lab l">BEFORE</span><span class="lab r">AFTER</span><span class="h"></span><input type="range" min="0" max="100" value="50" aria-label="작업 전과 후 비교" oninput="this.parentNode.style.setProperty('--p',this.value+'%')"></div>
+    <div class="ba" style="--p:50%"><img src="/img/c/224348238887-a.webp" alt="벽면 선반 철거 후 건조기 랙 작업 후"><img class="b" src="/img/c/224348238887-b.webp" alt="벽면 선반 철거 후 건조기 랙 작업 전"><span class="lab l">BEFORE</span><span class="lab r">AFTER</span><span class="h"></span></div>
     <div>
       <section class="blk"><h2>고객님 요청사항</h2><ul><li>세탁기와 건조기를 함께 사용하 싶지만, 세탁실 공간이 부족해 건조기를 별도로 둘 자리가 없어 건조기랙 설치를 요청하셨어요.</li><li>세탁기 위쪽의 남는 공간을 활용해 건조기를 설치하고, 좁은 세탁실을 보다 효율적으로 사용하고 싶어 하셨어요.</li><li>건조기를 안정적으로 올려 사용할 수 있도록 세탁기와 건조기의 크기, 설치 위치에 맞는 건조기랙 설치를 원하셨어요.</li><li>세탁기와 건조기를 함께 사용하는 과정에서 흔들림이나 불안정함이 발생하지 않도록 견고하고 안전한 설치를 요청하셨어요.</li><li>제한된 공간 안에서도 세탁기와 건조기를 편리하게 사용할 수 있도록 깔끔하고 효율적인 건조기랙 설치를 원하셨어요.</li></ul></section>
       <section class="blk"><h2>작업 순서</h2><ol><li>설치 환경 및 제품 상태 확인</li><li>세탁기와 건조기 위치 확인</li><li>건조기랙 설치 진행</li><li>건조기 안착 및 수평 확인</li><li>최종 점검 및 사용 상태 확인</li></ol></section>

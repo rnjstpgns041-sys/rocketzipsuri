@@ -7,6 +7,8 @@ crumb: 붙박이장 철거 후 벽 복원
 image: /img/c/224409040170-a.webp
 image_alt: 필요 없는 가벽과 수납장을 걷어낸 뒤 정리한 공간
 repair: closet-removal
+date: 2026-11-18
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

@@ -78,9 +78,9 @@ h2{font-size:1.22rem;margin:0 0 14px;font-weight:800;letter-spacing:-.025em}
 .ba{position:relative;aspect-ratio:3/4;border-radius:28px;overflow:hidden;background:var(--line);position:sticky;top:84px}
 @media (max-width:880px){.ba{position:relative;top:0}}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ba .b{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
-.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}
+
 .ba .h{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
-.ba .h::after{content:"↔";position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px;border-radius:50%;background:#fff;color:#0B0D12;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25);font-weight:700}
+
 .lab{position:absolute;top:12px;z-index:2;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:5px 10px;border-radius:999px;background:rgba(29,27,23,.8);color:#fff}.lab.l{left:12px}.lab.r{right:12px;background:var(--flame)}
 .blk{background:var(--surface);border-radius:24px;padding:26px 28px;margin-bottom:12px}
 .blk ul,.blk ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
@@ -205,7 +205,7 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
   <p class="lead">처져서 안 닫히던 문을 나사 구멍 보강과 경첩 교체로 바로잡았어요.</p>
   <div class="meta"><span>기록일<b>2026.09.28</b></span><span>현장<b>광진구</b></span><span>분야<b>문·수납</b></span></div>
   <div class="grid">
-    <div class="ba" style="--p:50%"><img src="/img/c/224424459908-a.webp" alt="화장실 문 경첩 교체 작업 후"><img class="b" src="/img/c/224424459908-b.webp" alt="화장실 문 경첩 교체 작업 전"><span class="lab l">BEFORE</span><span class="lab r">AFTER</span><span class="h"></span><input type="range" min="0" max="100" value="50" aria-label="작업 전과 후 비교" oninput="this.parentNode.style.setProperty('--p',this.value+'%')"></div>
+    <div class="ba" style="--p:50%"><img src="/img/c/224424459908-a.webp" alt="화장실 문 경첩 교체 작업 후"><img class="b" src="/img/c/224424459908-b.webp" alt="화장실 문 경첩 교체 작업 전"><span class="lab l">BEFORE</span><span class="lab r">AFTER</span><span class="h"></span></div>
     <div>
       <section class="blk"><h2>고객님 요청사항</h2><ul><li>문이 걸리지 않고 부드럽게 닫히게 해주세요.</li><li>처진 문을 원래대로 맞춰 주세요.</li><li>녹슨 경첩을 새것으로 교체해 주세요.</li><li>문틀과 문짝이 손상되지 않게 해주세요.</li><li>작업 후 주변을 깨끗하게 정리해 주세요.</li></ul></section>
       <section class="blk"><h2>작업 순서</h2><ol><li>경첩 상태 먼저 확인하기</li><li>나사 구멍 보강하기</li><li>문 무게에 맞는 경첩 선택하기</li><li>문짝 수평 다시 맞추기</li><li>작업 후 반복 점검하기</li></ol></section>

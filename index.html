@@ -198,8 +198,8 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{fon
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ba .b{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
 .ba .h{position:absolute;top:0;bottom:0;left:var(--p);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
-.ba .h::after{content:"↔";position:absolute;top:50%;left:50%;width:50px;height:50px;margin:-25px;border-radius:50%;background:var(--pri);color:#fff;display:grid;place-items:center;font-weight:800;box-shadow:0 6px 20px rgba(0,0,0,.3)}
-.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}
+
+
 .ba .l{position:absolute;top:14px;z-index:2;font-size:.8rem;font-weight:800;padding:6px 12px;border-radius:999px;color:#fff;background:rgba(0,0,0,.6)}.ba .x{left:14px}.ba .y{right:14px;background:var(--pri)}
 .bai{background:var(--card);border-radius:20px;padding:30px;display:flex;flex-direction:column;border:1px solid var(--line)}
 .bai h3{margin:0;font-size:1.4rem;letter-spacing:-.03em}.bai p{margin:8px 0 20px;color:var(--muted)}
@@ -563,8 +563,8 @@ body{letter-spacing:-.02em}
 .h7ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .h7af{position:absolute;inset:0;clip-path:inset(0 0 0 var(--p))}
 .h7h{position:absolute;top:0;bottom:0;left:var(--p);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
-.h7h::after{content:"";position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:#FF6A26 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E") center/22px no-repeat;box-shadow:0 0 0 4px #fff,0 8px 20px rgba(0,0,0,.35)}
-.h7ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;touch-action:pan-y}
+
+
 .h7tag{position:absolute;top:16px;padding:6px 12px;border-radius:999px;font-weight:800;font-size:.85rem;color:#fff;background:rgba(16,18,40,.72);pointer-events:none}
 .h7tag.l{left:16px}.h7tag.r{right:16px;background:#FF6A26}
 .h7cap{position:absolute;left:20px;right:20px;bottom:0;display:flex;flex-direction:column;gap:3px;background:#fff;border-radius:18px;padding:15px 20px;box-shadow:0 18px 40px -16px rgba(0,0,0,.55);text-decoration:none;color:#16191D}
@@ -662,9 +662,8 @@ body{letter-spacing:-.02em}
   </div>
   <div class="h7v">
     <div class="h7ba"><img src="/img/c/224337708271-b.webp" alt="좁은 세탁장, 건조기 놓을 자리가 없던 모습" fetchpriority="high"><div class="h7af"><img src="/img/c/224337708271-a.webp" alt="랙을 짜 넣고 세탁기 위에 건조기를 올린 모습"></div>
-      <span class="h7tag l">작업 전</span><span class="h7tag r">작업 후</span><i class="h7h" aria-hidden="true"></i>
-      <input type="range" min="0" max="100" value="50" aria-label="작업 전후 비교" oninput="this.parentNode.style.setProperty('--p',this.value+'%')"></div>
-    <a class="h7cap" href="/cases/laundry-224337708271/"><b>좁은 세탁장, 세탁기 위에 건조기</b><span>실제 작업 사진 · 밀어서 비교해 보세요 →</span></a>
+      <span class="h7tag l">작업 전</span><span class="h7tag r">작업 후</span><i class="h7h" aria-hidden="true"></i></div>
+    <a class="h7cap" href="/cases/laundry-224337708271/"><b>좁은 세탁장, 세탁기 위에 건조기</b><span>실제 작업 사진 · 자세히 보기 →</span></a>
   </div>
 </div>
 <div class="w"><div class="h7n"><div><b>889<small>편</small></b><span>현장 작업일지</span></div><div><b>25<small>개 구</small></b><span>서울 전 지역</span></div><div><b>31<small>개 시·군</small></b><span>경기 전 지역</span></div><div><b>12<small>개</small></b><span>직접 받은 후기</span></div></div></div>
@@ -679,9 +678,9 @@ body{letter-spacing:-.02em}
 </div></section>
 
 <section class="sec" id="ba-sec"><div class="w">
-  <div class="sh"><span class="eb">전·후 비교</span><h2>밀어서 보면<br>차이가 보여요</h2></div>
+  <div class="sh"><span class="eb">전·후 비교</span><h2>전·후 사진으로<br>차이를 보세요</h2></div>
   <div class="baw">
-    <div class="ba" id="ba" style="--p:50%"><img id="baA" src="/img/c/224365691797-a.webp" alt="작업 후"><img class="b" id="baB" src="/img/c/224365691797-b.webp" alt="작업 전"><span class="l x">작업 전</span><span class="l y">작업 후</span><span class="h"></span><input type="range" min="0" max="100" value="50" aria-label="작업 전후 비교" id="baR"></div>
+    <div class="ba" id="ba" style="--p:50%"><img id="baA" src="/img/c/224365691797-a.webp" alt="작업 후"><img class="b" id="baB" src="/img/c/224365691797-b.webp" alt="작업 전"><span class="l x">작업 전</span><span class="l y">작업 후</span><span class="h"></span><input type="hidden" id="baR" value="50"></div>
     <div class="bai"><h3 id="baT">대리석 절단 3구 쿡탑 매립</h3><p id="baD">싱크대 대리석 윗판을 잘라 3구 쿡탑이 딱 맞게 들어가게 했어요.</p><div class="pick" id="pick"><button type="button" class="on" data-b="/img/c/224365691797-b.webp" data-a="/img/c/224365691797-a.webp" data-t="대리석 절단 3구 쿡탑 매립" data-d="싱크대 대리석 윗판을 잘라 3구 쿡탑이 딱 맞게 들어가게 했어요." data-u="/cases/kitchen-224365691797/"><img src="/img/c/224365691797-t.webp" alt="" loading="lazy"><span>대리석 절단 3구 쿡탑 매립</span></button><button type="button" class="" data-b="/img/c/224387214880-b.webp" data-a="/img/c/224387214880-a.webp" data-t="정수기 구멍 복원" data-d="정수기를 빼고 남은 상판 구멍을 메워 티 나지 않게 복원했어요." data-u="/cases/kitchen-224387214880/"><img src="/img/c/224387214880-t.webp" alt="" loading="lazy"><span>정수기 구멍 복원</span></button><button type="button" class="" data-b="/img/c/224424459908-b.webp" data-a="/img/c/224424459908-a.webp" data-t="화장실 문 경첩 교체" data-d="처져서 안 닫히던 문을 나사 구멍 보강과 경첩 교체로 바로잡았어요." data-u="/cases/door-224424459908/"><img src="/img/c/224424459908-t.webp" alt="" loading="lazy"><span>화장실 문 경첩 교체</span></button><button type="button" class="" data-b="/img/c/224353976750-b.webp" data-a="/img/c/224353976750-a.webp" data-t="욕조 코팅 복원" data-d="얼룩지고 기스 난 욕조를 보수하고 광택 코팅으로 새것처럼 만들었어요." data-u="/cases/bath-224353976750/"><img src="/img/c/224353976750-t.webp" alt="" loading="lazy"><span>욕조 코팅 복원</span></button><button type="button" class="" data-b="/img/c/224369216537-b.webp" data-a="/img/c/224369216537-a.webp" data-t="식기세척기 하부장 빌트인" data-d="하부장을 제품 크기에 맞게 리폼해서 6인용 식기세척기를 빌트인으로 넣었어요." data-u="/cases/kitchen-224369216537/"><img src="/img/c/224369216537-t.webp" alt="" loading="lazy"><span>식기세척기 하부장 빌트인</span></button></div><a class="btn p" id="baU" href="/cases/kitchen-224365691797/">이 사례 자세히 보기</a></div>
   </div>
 </div></section>

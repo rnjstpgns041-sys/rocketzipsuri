@@ -5,6 +5,8 @@ description: 에어컨을 떼고 남은 배관 구멍이나 배관 틈으로 겨
 tag: 벽·바닥
 crumb: 에어컨 배관 구멍 막기
 repair: wall-hole
+date: 2026-11-19
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

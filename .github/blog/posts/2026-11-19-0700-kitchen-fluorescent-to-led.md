@@ -6,6 +6,8 @@ tag: 주방
 crumb: 주방 전등 LED 교체
 image: /img/c/224416408778-a.webp
 image_alt: 오래된 주방 형광등을 떼고 LED 등으로 바꿔 단 모습
+date: 2026-11-19
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

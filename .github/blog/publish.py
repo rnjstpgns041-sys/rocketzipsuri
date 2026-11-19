@@ -214,7 +214,38 @@ def load_template():
     return head, tail
 
 
+# 2026-11-19 메이저집수리식 메뉴 구조 (시공분야 중심). 새로 만들어진 페이지도 여기서 맞춰짐.
+MENU = [('/repair/', '시공분야'), ('/cases/', '시공사례'), ('/reviews/', '후기'), ('/records/', '작업일지'),
+        ('/faq/', '자주 묻는 질문'), ('/area/', '시공지역'), ('/blog/', '블로그')]
+
+
+def fix_menu(s):
+    def rep(m):
+        inner = m.group(1)
+        if 'href="/cases/"' not in inner and 'href="/repair/"' not in inner:
+            return m.group(0)
+        on = re.search(r'class="on" href="([^"]+)"', inner)
+        on = on.group(1) if on else None
+        return '<nav class="nav">' + ''.join(
+            f'<a class="on" href="{u}">{t}</a>' if u == on else f'<a href="{u}">{t}</a>' for u, t in MENU) + '</nav>'
+    s = re.sub(r'<nav class="nav">(.*?)</nav>', rep, s, count=1, flags=re.S)
+    s = s.replace('<a href="/repair/">수리 종류</a>', '<a href="/repair/">시공분야</a>')
+    s = s.replace('<a href="/records/">현장 소식</a>', '<a href="/records/">작업일지</a>')
+    s = s.replace('<a href="/">홈</a> · <a href="/cases/">시공사례</a> · <a href="/repair/">시공분야</a>',
+                  '<a href="/">홈</a> · <a href="/repair/">시공분야</a> · <a href="/cases/">시공사례</a>')
+    if '<footer' in s and '<a href="/area/">시공지역</a>' not in s.split('<footer', 1)[-1]:
+        s = s.replace('<a href="/faq/">자주 묻는 질문</a> · ', '<a href="/faq/">자주 묻는 질문</a> · <a href="/area/">시공지역</a> · ', 1)
+    return s
+
+
 def add_nav(s, active=False):
+    s = fix_menu(s)
+    if active:
+        s = s.replace('<a href="/blog/">블로그</a></nav>', '<a class="on" href="/blog/">블로그</a></nav>', 1)
+    return _add_nav_old(s, active)
+
+
+def _add_nav_old(s, active=False):
     link = '<a class="on" href="/blog/">블로그</a>' if active else NAV_LINK
     if 'href="/blog/">블로그</a>' in s:
         return s

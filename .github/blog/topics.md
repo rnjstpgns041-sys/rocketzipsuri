@@ -54,11 +54,11 @@
 
 ## 벽·바닥·기타
 - 벽 못 자국·앵커 구멍 메우기 (/repair/wall-hole)
-- 아트월 타일 깨짐·구멍 (/k/artwall)
+- 아트월 타일 깨짐·구멍 (/k/artwall) (완료: artwall-tile-lifted-hole)
 - 마루 찍힘·부분 보수 (/k/floor-dent, /k/floor-partial)
-- 걸레받이·몰딩 떨어짐 (/k/molding-repair)
+- 걸레받이·몰딩 떨어짐 (/k/molding-repair) (완료: baseboard-molding-loose)
 - 이사 나갈 때 원상복구, 어디까지 해야 하나요? (/k/moveout-restore)
-- 이사 들어가기 전 집수리 체크리스트 (/k/after-move-repair)
+- 이사 들어가기 전 집수리 체크리스트 (/k/after-move-repair) (완료: move-in-repair-checklist)
 - 오래된 아파트 생활 집수리, 한 번에 맡기는 법 (/k/apartment-repair)
 - 부분 철거, 필요 없는 가벽·수납장만 뜯기 (/cases/demolition-224409040170)
 - 집수리 업체 고르는 법, 견적 받을 때 확인할 것 (/k/handyman)

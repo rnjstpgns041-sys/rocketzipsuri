@@ -28,7 +28,7 @@
 - 상부장 처짐, 떨어질까 걱정될 때 (/repair/upper-cabinet)
 - 냉장고장 만들기·냉장고 자리 넓히기 (/k/fridge-cabinet, /k/fridge-space)
 - 식기세척기 철거 후 하부장 채우기 (/repair/dishwasher-removal)
-- 삼성·LG 식기세척기 설치 차이 (/k/samsung-dishwasher, /k/lg-dishwasher)
+- 삼성·LG 식기세척기 설치 차이 (/k/samsung-dishwasher, /k/lg-dishwasher) (완료: samsung-lg-dishwasher-install)
 - 식기세척기 이전 설치(이사할 때) (/k/dishwasher-move)
 - 빌트인 오븐장 만들기 (/k/oven-cabinet, /k/builtin-oven)
 - 주방 실리콘 곰팡이 (/k/kitchen-silicone)
@@ -64,7 +64,7 @@
 - 집수리 업체 고르는 법, 견적 받을 때 확인할 것 (/k/handyman)
 
 ## 계절
-- 겨울 결로·창틀 실리콘 곰팡이 (11~2월)
-- 겨울 수도 동파 뒤 수전 교체 (12~2월)
+- 겨울 결로·창틀 실리콘 곰팡이 (11~2월) (완료: window-condensation-silicone-mold)
+- 겨울 수도 동파 뒤 수전 교체 (12~2월) (완료: frozen-faucet-replace)
 - 이사철 집수리 (2~3월, 8~9월)
 - 장마 전 실리콘·배수구 점검 (5~6월)

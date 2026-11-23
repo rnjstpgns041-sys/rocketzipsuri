@@ -104,7 +104,13 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padd
 .recl{list-style:none;margin:0;padding:0;display:grid}.recl li{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line)}.recl span{color:var(--muted);font-size:.85rem;font-variant-numeric:tabular-nums}.recl a{text-decoration:none;font-weight:500}.recl a:hover{color:var(--flame)}.recl small{color:var(--muted);font-size:.78rem;white-space:nowrap}@media (max-width:600px){.recl li{grid-template-columns:64px 1fr}.recl small{display:none}}
 .hcta{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
 .cats{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px}.cats a{text-decoration:none;border:1px solid var(--line);background:var(--bg);padding:8px 16px;border-radius:999px;font-weight:700;font-size:.92rem}
-</style>
+/*cleanba*/.ba2{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative;width:100%}
+.ba2 figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.ba2 img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:16px;background:#EEE;box-shadow:0 0 0 1px rgba(0,0,0,.05)}
+.ba2 figcaption{font-size:.9rem;font-weight:800;color:#8B95A1;text-align:center;letter-spacing:-.02em}
+.ba2 .af figcaption{color:#FF6A26}
+.ba2 .ar{position:absolute;left:50%;top:calc(50% - 15px);width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:#fff;color:#FF6A26;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;box-shadow:0 4px 14px -4px rgba(0,0,0,.3);z-index:1}
+@media (min-width:601px){.ba2{gap:14px}.ba2 img{border-radius:20px}}/*/cleanba*/</style>
 <script>window.track=function(n,p){p=p||{};window.dataLayer=window.dataLayer||[];dataLayer.push(Object.assign({event:n},p));if(typeof gtag==="function")gtag("event",n,p)};document.addEventListener("click",function(e){var a=e.target.closest("a");if(!a)return;var h=a.getAttribute("href")||"";if(h.indexOf("tel:")===0)track("call_click",{page:location.pathname});else if(h.indexOf("sms:")===0)track("sms_click",{page:location.pathname});else if(a.dataset.q)track("case_quote_click",{page:location.pathname})},true)</script>
 <script>function qqSend(f){track("quick_quote_submit",{page:location.pathname,job:f.dataset.job});smsShow(["[로켓집수리 견적]","작업: "+f.dataset.job,"지역: "+f.area.value,f.note.value?"내용: "+f.note.value:""],true);return false}</script>
 <style>
@@ -213,7 +219,7 @@ function pfSend(form){if(form.dataset.go)return true;var b=form.querySelector('b
   <p class="lead">86인치 대형 TV를 이동식 거치대에 안전하게 올렸어요.</p>
   <div class="meta"><span>기록일<b>2026.06.24</b></span><span>현장<b>서대문구</b></span><span>분야<b>거실·TV</b></span></div>
   <div class="grid">
-    <div class="ba" style="--p:50%"><img src="/img/c/224325843811-a.webp" alt="86인치 TV 거치대 작업 후"><img class="b" src="/img/c/224325843811-b.webp" alt="86인치 TV 거치대 작업 전"><span class="lab l">BEFORE</span><span class="lab r">AFTER</span><span class="h"></span></div>
+    <div class="ba2"><figure><img src="/img/c/224325843811-b.webp" alt="86인치 TV 거치대 작업 전"><figcaption>작업 전</figcaption></figure><span class="ar" aria-hidden="true">→</span><figure class="af"><img src="/img/c/224325843811-a.webp" alt="86인치 TV 거치대 작업 후"><figcaption>작업 후</figcaption></figure></div>
     <div>
       <section class="blk"><h2>고객님 요청사항</h2><ul><li>86인치 TV를 흔들림 없이 고정해 주세요.</li><li>편하게 볼 수 있는 높이로 맞춰 주세요.</li><li>기울지 않게 수평을 맞춰 주세요.</li><li>배선이 안 보이게 정리해 주세요.</li></ul></section>
       <section class="blk"><h2>작업 순서</h2><ol><li>설치 공간과 벽면 상태 확인</li><li>TV 무게를 버티는 거치대 고르기</li><li>시청 높이와 위치 정하기</li><li>브라켓 단단하게 고정</li><li>TV 거치 후 수평 점검</li></ol></section>

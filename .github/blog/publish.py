@@ -386,6 +386,9 @@ def add_nav_everywhere():
                 t = t.replace('target="_blank" rel="noopener">블로그</a>', 'target="_blank" rel="noopener">네이버 블로그</a>')
                 if '<a href="/blog/">' not in t.split('<footer', 1)[-1] and '<footer' in t:
                     t = t.replace(' · <a href="/k/">많이 찾는 집수리</a>', ' · <a href="/blog/">블로그</a> · <a href="/k/">많이 찾는 집수리</a>', 1)
+                # 전체 메뉴(☰ 카테고리) 스크립트: 모든 페이지에
+                if '/menu.js' not in t and '</body>' in t:
+                    t = t.replace('</body>', '<script src="/menu.js" defer></script></body>', 1)
                 if t != s:
                     open(p, 'w', encoding='utf-8').write(t)
                     n += 1

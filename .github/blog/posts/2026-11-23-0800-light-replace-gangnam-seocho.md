@@ -44,7 +44,7 @@ time: 08:00
 
 - [센서등이 안 켜질 때](/blog/sensor-light-not-working/) 글을 보세요.
 - [욕실 부분 수리](/blog/bathroom-partial-repair/) 글을 보세요.
-- [수리 종류 전체](/repair/) 페이지를 보세요.
+- [시공분야 전체](/repair/) 페이지를 보세요.
 
 ## 자주 묻는 질문
 

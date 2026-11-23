@@ -841,5 +841,5 @@ for(var i=0;i<F.children.length;i++)F.children[i].classList.toggle("on",F.childr
 for(var j=0;j<C.length;j++)C[j].hidden=!(c=="all"||C[j].dataset.c==c);S.scrollLeft=0;upd();
 b.scrollIntoView({block:"nearest",inline:"center",behavior:"smooth"});if(window.track)track("hero_cat",{c:c})});
 function step(n){var v=vis(),i=Math.max(0,Math.min(v.length-1,cur()+n));if(v[i])S.scrollTo({left:v[i].offsetLeft-S.offsetLeft,behavior:"smooth"})}
-document.querySelector(".hcar.l").onclick=function(){step(-1)};document.querySelector(".hcar.r").onclick=function(){step(1)};upd()})()</script></body>
+document.querySelector(".hcar.l").onclick=function(){step(-1)};document.querySelector(".hcar.r").onclick=function(){step(1)};upd()})()</script><script src="/menu.js" defer></script></body>
 </html>

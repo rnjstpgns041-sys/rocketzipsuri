@@ -14,7 +14,7 @@ var CATS=[
 ['📺','TV 설치','벽걸이·거치대','/repair/tv-mount/'],
 ['🔨','철거·정리','붙박이장·식세기','/repair/closet-removal/']
 ];
-var LINKS=[['홈으로','/'],['시공분야 전체','/repair/'],['시공사례','/cases/'],['고객 후기','/reviews/'],['현장 소식','/records/'],['자주 묻는 질문','/faq/'],['동네별 집수리','/k/'],['블로그','/blog/']];
+var LINKS=[['홈으로','/'],['시공분야 전체','/repair/'],['시공사례','/cases/'],['고객 후기','/reviews/'],['현장 소식','/records/'],['자주 묻는 질문','/faq/'],['시공지역','/area/'],['동네별 집수리','/k/'],['블로그','/blog/']];
 var css='#mzb{flex:0 0 auto;width:42px;height:42px;margin-left:8px;border:0;border-radius:12px;background:#212575;color:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}'+
 '#mzb svg{display:block}'+
 '#mz{position:fixed;inset:0;z-index:9999;visibility:hidden}'+

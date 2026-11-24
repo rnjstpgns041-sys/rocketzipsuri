@@ -313,7 +313,7 @@ def render_post(p, posts, head, tail):
 <div class="w bl-wrap"><article class="bl">{cover}{summ}
 {content}
 {faq_html}
-<div class="who"><img src="/favicon.svg" alt=""><div><b>{BRAND}</b><span>서울·경기 전 지역과 전국으로 출장 가는 생활 집수리. 블로그에 작업일지 889편을 직접 남겨 왔어요. 상담 <a href="tel:{PHONE}">{PHONE}</a></span></div></div>
+<div class="who"><img src="/favicon.svg" alt=""><div><b>{BRAND}</b><span>서울·경기가 주력인 생활 집수리(그 밖의 지역도 일정 맞춰 출장). 블로그에 작업일지 889편을 직접 남겨 왔어요. 상담 <a href="tel:{PHONE}">{PHONE}</a></span></div></div>
 </article>
 <aside class="bl-side"><div class="box"><b>이 글의 순서</b><ol>{toc_html}</ol></div>
 <div class="box cta"><b>사진 한 장이면 돼요</b>고칠 곳 사진과 동네를 보내 주시면 예상 금액을 먼저 알려드려요.<a class="btn p" href="#contact">사진으로 견적 받기</a><a class="btn" href="tel:{PHONE}" style="background:#fff;color:var(--ink)">전화 {PHONE}</a>{repair}</div></aside></div>

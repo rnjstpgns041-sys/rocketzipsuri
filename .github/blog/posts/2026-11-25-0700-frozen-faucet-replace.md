@@ -5,6 +5,8 @@ description: 한파에 베란다·세탁실 수전이나 싱크대 수전이 얼
 tag: 주방
 crumb: 동파 후 수전 교체
 repair: faucet
+date: 2026-11-25
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

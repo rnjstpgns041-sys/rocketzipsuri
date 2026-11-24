@@ -7,6 +7,8 @@ crumb: 삼성·LG 식기세척기 설치
 image: /img/c/224369216537-a.webp
 image_alt: 하부장을 리폼해 6인용 식기세척기를 빌트인으로 넣은 주방
 repair: dishwasher
+date: 2026-11-25
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

@@ -68,3 +68,8 @@
 - 겨울 수도 동파 뒤 수전 교체 (12~2월)
 - 이사철 집수리 (2~3월, 8~9월)
 - 장마 전 실리콘·배수구 점검 (5~6월)
+
+## 추가 (2026-11-25)
+- 상부장이 너무 높아 손이 안 닿을 때 높이 조절 (/k/upper-cabinet-height) (완료: upper-cabinet-height-adjust)
+- 계단 대리석 깨짐·들뜸, 한 칸만 교체 (/k/stair-marble) (완료: stair-marble-crack-replace)
+- 인터넷으로 산 수납장 조립·벽 고정 (/k/storage-cabinet) (완료: storage-cabinet-assemble-wall-fix)

@@ -5,6 +5,8 @@ description: 액자·선반·TV 거치대를 떼고 남은 못 자국과 앵커 
 tag: 벽·바닥
 crumb: 못 자국·앵커 구멍 메우기
 repair: wall-hole
+date: 2026-11-26
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

@@ -5,6 +5,8 @@ description: 새로 산 냉장고 키가 커서 냉장고 위 상부장에 걸�
 tag: 주방
 crumb: 냉장고 위 상부장 줄이기
 repair: upper-cabinet
+date: 2026-11-27
+time: 07:00
 ---
 
 ## 한 줄로 정리하면

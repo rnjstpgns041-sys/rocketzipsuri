@@ -6,9 +6,9 @@
 **2026-11-26 사용자 규칙: 사람들이 많이 찾는 검색어로만.** 아래 '많이 찾는 검색어' 묶음을 먼저 쓰고, 새 주제는 네이버 자동완성(ac.search.naver.com, Parallel web_fetch 로 열림)에 실제로 뜨는 말만 골라 제목 앞에 그대로 넣어요. 자동완성에 안 뜨는 좁은 주제는 쓰지 않아요.
 
 ## 많이 찾는 검색어 (2026-11-26, 네이버 자동완성, topics-geo.md 와 겹치지 않게)
-- 건조기 설치 위치, 어디에 둘 수 있나요 (/k/dryer-rack-install) (검색어: 건조기 설치 위치, 건조기 설치 공간)
-- 식기세척기 설치 위치, 싱크대 어느 쪽이 좋나요 (/k/dishwasher-install) (검색어: 식기세척기 설치 위치)
-- 인덕션 설치 전기, 전기 공사가 필요한가요 (/k/induction-install) (검색어: 인덕션 설치 전기)
+- 건조기 설치 위치, 어디에 둘 수 있나요 (/k/dryer-rack-install) (검색어: 건조기 설치 위치, 건조기 설치 공간) (완료: dryer-install-location)
+- 식기세척기 설치 위치, 싱크대 어느 쪽이 좋나요 (/k/dishwasher-install) (검색어: 식기세척기 설치 위치) (완료: dishwasher-install-location)
+- 인덕션 설치 전기, 전기 공사가 필요한가요 (/k/induction-install) (검색어: 인덕션 설치 전기) (완료: induction-install-electric)
 - 화장실 환풍기 24시간 틀어도 되나요 (/k/bathroom-fan) (검색어: 화장실 환풍기 24시간)
 - 벽 구멍 가리기 말고 메우기 (/k/wall-hole-repair) (검색어: 벽 구멍 가리기, 벽 구멍 보수)
 - 월세 수리 집주인, 집수리 요청할 때 사진 남기기 (/k/after-move-repair) (검색어: 월세 수리 집주인, 월세 수리요청)

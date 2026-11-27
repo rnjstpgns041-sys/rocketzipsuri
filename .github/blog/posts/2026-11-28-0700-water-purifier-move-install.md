@@ -5,6 +5,8 @@ description: 이사하면서 쓰던 정수기를 새 집으로 옮겨 달 때, �
 tag: 주방
 crumb: 정수기 이전 설치
 repair: water-purifier-hole
+date: 2026-11-28
+time: 07:00
 ---
 
 ## 한 줄로 정리하면
